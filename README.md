@@ -1,4 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://yabatech.netlify.app/assets/img/logo-black.svg" width="400"></a></p>
+<p align="center"><a href="https://yabatech.edu.ng/" target="_blank"><img src="https://yabatech.edu.ng/img/logss.png" width="160" height="50"></a></p>
+
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
