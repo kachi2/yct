@@ -2,18 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8"/>
-
     <!-- Title-->
     <title>Yaba College of Technology @yield('title')</title>
-
     <!-- SEO Meta-->
     <meta
         name="description"
         content="Yaba College of Technology Lagos Nigeria the first institution and best polytechnic in Nigeria"
     />
-
     <meta name="author" content="Yabatech"/>
-
     <meta
         name="keywords"
         content="Yabatech, Polytechnic, NBTE, Yct, College, Technology"
@@ -25,11 +21,9 @@
         name="description"
         content="Yaba College of Technology, the first institution and best polytechnic in Nigeria"
     />
-
     <meta name="rating" content="general"/>
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow"/>
-
     <meta property="og:url" content="https://facebook.com/yabatech"/>
     <meta property="og:type" content="website"/>
     <meta
@@ -44,13 +38,11 @@
         property="og:image"
         content="./assets/img/favicon/favicon-96x96.png"
     />
-
     <!-- viewport scale-->
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-
     <!-- Favicon and Apple Icons-->
     <link
         rel="apple-touch-icon"
@@ -133,7 +125,6 @@
 <!-- Include individual page styles-->
     @yield('styles')
 </head>
-
 <body>
 <header class="site-header bg-dark text-white-0_5">
     <div class="container">
@@ -589,7 +580,7 @@
 <div class="scroll-top">
     <i class="ti-angle-up"></i>
 </div>
-
+<!-- Scripts-->
 @include('pages.includes.main-js')
 @stack('scripts')
 </body>
