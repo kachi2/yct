@@ -28,3 +28,6 @@ Route::group([''], function () {
     Route::get('privacy', [PageController::class, 'privacy'])->name('pages.privacy');
     Route::get('support', [PageController::class, 'support'])->name('pages.support');
 });
+Route::fallback(function () {
+    return view('404');
+})->name('fallback.404');
