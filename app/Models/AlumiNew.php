@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class admission_list extends Model
+class AlumiNew extends Model
 {
     use HasFactory;
 }

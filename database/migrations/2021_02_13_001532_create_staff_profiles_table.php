@@ -16,11 +16,11 @@ class CreateStaffProfilesTable extends Migration
         Schema::create('staff_profiles', function (Blueprint $table) {
             $table->id();
             $table->integer('staff_list_id')->nullable();
-            $table->string('publications')->nullable();
-            $table->string('qualifications')->nullable();
+            $table->string('publication')->nullable();
+            $table->string('qualification')->nullable();
             $table->string('cv')->nullable();
             $table->string('email')->nullable();
-            $table->string('research_areas')->nullable();
+            $table->text('reseach_areas')->nullable();
             $table->timestamps();
         });
     }
