@@ -149,14 +149,16 @@
                 <li
                     class="list-inline-item mr-0 p-2 border-right border-left border-white-0_1"
                 >
-                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="http://facebook.com/yabatech" target="_blank" rel="noreferrer"><i class="ti-facebook"></i></a>
                 </li>
                 <li class="list-inline-item mr-0 p-2 border-right border-white-0_1">
-                    <a href="#"><i class="ti-twitter"></i></a>
+                    <a href="http://twitter.com/yabatechng"
+                       target="_blank" rel="noreferrer"><i class="ti-twitter"></i></a>
                 </li>
 
                 <li class="list-inline-item mr-0 p-2 border-right border-white-0_1">
-                    <a href="#"><i class="ti-linkedin"></i></a>
+                    <a href="http://instagram.com/yabatechofficial"
+                       target="_blank" rel="noreferrer"><i class="ti-instagram"></i></a>
                 </li>
             </ul>
             <ul class="list-inline mb-0">
@@ -179,11 +181,11 @@
 <!-- END site header-->
 
 <nav class="ec-nav sticky-top bg-white">
-    <div class="container">
+    <div class="px-4">
         <div class="navbar p-0 navbar-expand-lg">
             <div class="navbar-brand">
                 <a class="logo-default" href="{{ route('pages.index') }}"
-                ><img width="217" alt="" src="{{ asset('./assets/img/logo-black.svg') }}"
+                ><img width="70" height="70" alt="" src="{{ asset('./assets/img/yabatech-logo.svg') }}"
                     /></a>
             </div>
             <span
@@ -200,8 +202,7 @@
           </span>
             <div
                 class="collapse navbar-collapse when-collapsed"
-                id="ec-nav__collapsible"
-            >
+                id="ec-nav__collapsible">
                 <ul class="nav navbar-nav ec-nav__navbar ml-auto">
                     <li class="nav-item nav-item__has-dropdown">
                         <a
@@ -220,6 +221,34 @@
                                 <a href="#" class="nav-link__list">History</a>
                             </li>
                         </ul>
+                    </li>
+
+                    <li class="nav-item nav-item__has-megamenu">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >Administration</a
+                        >
+                        <div class="dropdown-menu p-2 col-6">
+                            <div class="row mx-0">
+                                <div class="col-md-12">
+                                    <ul class="list-unstyled col-md-12 d-flex">
+                                        <li class="col-md-6">
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Visitor</a
+                                            >
+                                        </li>
+
+                                        <li class="col-md-6">
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Deputy Rector Administrator</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                     <li class="nav-item nav-item__has-dropdown">
@@ -248,6 +277,51 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item nav-item__has-megamenu">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >TETFund</a
+                        >
+                        <div class="dropdown-menu p-2 p-md-4 col-8">
+                            <div class="row mx-0">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Special Intervention</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Academic Staff Training & Development</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Annual Intervention</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >High Impact</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-item nav-item__has-dropdown">
                         <a
                             class="nav-link dropdown-toggle"
@@ -379,40 +453,182 @@
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item nav-item__has-megamenu">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >Units</a
+                        >
+                        <div class="dropdown-menu p-2 p-md-4">
+                            <div class="row mx-0">
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Service Units</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Audit</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
 
-                    <li class="nav-item nav-item__has-dropdown">
-                        <a class="nav-link" href="#">Payments</a>
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Academic Units</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Academic Planning Units</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Registry</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Academic Board Matters</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Bursary</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Budget & Expenditure</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-
-                    <li class="nav-item nav-item__has-dropdown">
-                        <a class="nav-link" href="#">News</a>
-                    </li>
-
-                    <li class="nav-item nav-item__has-dropdown">
+                    <li class="nav-item nav-item__has-megamenu">
                         <a
                             class="nav-link dropdown-toggle"
                             href="#"
                             data-toggle="dropdown"
                         >More</a
                         >
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#" class="nav-link__list">Consult</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list"> Library</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list">TETFund</a>
-                            </li>
+                        <div class="dropdown-menu p-2 p-md-4">
+                            <div class="row mx-0">
+                                <div class="col-md-5 d-flex">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">Consult</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0"> Library</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">Payments</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">News</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">Events</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">Announcements</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">Epe Campus</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">e-Journal</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="nav-link__list px-0">FSDC</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                            <li>
-                                <a href="#" class="nav-link__list">Alumni</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list">Contact</a>
-                            </li>
-                        </ul>
+                                <div class="col-md-2">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Staff</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Staff List</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Alumni</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Transcript Application Guidelines</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a
+                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                href="#"
+                                            >Contact</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="nav-link__list px-0" href="#"
+                                            >Contact Us</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -470,18 +686,18 @@
                     </div>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href=""
-                            ><i class="ti-facebook"> </i
+                            <a class="iconbox bg-white-0_2 hover:primary" href="http://facebook.com/yabatech"
+                            target="_blank" rel="noreferrer"><i class="ti-facebook"> </i
                                 ></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href=""
-                            ><i class="ti-twitter"> </i
+                            <a class="iconbox bg-white-0_2 hover:primary" href="http://twitter.com/yabatechng"
+                            target="_blank" rel="noreferrer"><i class="ti-twitter"> </i
                                 ></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href=""
-                            ><i class="ti-linkedin"> </i
+                            <a class="iconbox bg-white-0_2 hover:primary" href="http://instagram.com/yabatechofficial"
+                            target="_blank" rel="noreferrer"><i class="ti-instagram"> </i
                                 ></a>
                         </li>
                     </ul>
@@ -519,16 +735,15 @@
                     <h4 class="h5 text-white">Quick links</h4>
                     <div class="width-3rem bg-primary height-3 mt-3"></div>
                     <ul class="list-unstyled marginTop-40">
-                        <li class="mb-2"><a href="#">Apply to Yabatech</a></li>
-                        <li class="mb-2"><a href="#">Yabatech radio</a></li>
+                        <li class="mb-2"><a href="#">Art Gallery</a></li>
+                        <li class="mb-2"><a href="#">Yabatech Radio</a></li>
                         <li class="mb-2">
-                            <a href="#">National Board for Technical Education</a>
+                            <a href="https://net.nbte.gov.ng/" target="_blank" rel="noreferrer">NBTE</a>
                         </li>
-                        <li class="mb-2"><a href="#">Ministry of Education</a></li>
+                        <li class="mb-2"><a href="https://education.gov.ng/" target="_blank" rel="noreferrer">Ministry of Education</a></li>
+                        <li class="mb-2"><a href="#">FSDC</a></li>
                         <li class="mb-2"><a href="#">Give to Yabatech</a></li>
-                        <li class="mb-2"><a href="#">Give to Yabatech</a></li>
-                        <li class="mb-2"><a href="#">Principal officers</a></li>
-                        <li class="mb-2"><a href="#">Alumni</a></li>
+                        <li class="mb-2"><a href="#">Principal Officers</a></li>
                     </ul>
                 </div>
 
@@ -569,7 +784,7 @@
             <p class="text-white-0_5 mb-0">
                 &copy; @php echo date('Y') @endphp Yaba College Of Technology . All rights reserved.
                 Created by
-                <a href="#" target="_blunk">CITM</a>
+                <a href="#" target="_blank">CITM</a>
             </p>
         </div>
     </div>
