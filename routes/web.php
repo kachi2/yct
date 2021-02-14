@@ -28,6 +28,18 @@ Route::group([''], function () {
     Route::get('privacy', [PageController::class, 'privacy'])->name('pages.privacy');
     Route::get('support', [PageController::class, 'support'])->name('pages.support');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard', function () {
+        return view('admin.index');
+    })->name('admin.dashboard');
+    Route::get('login', function () {
+        return view('admin.auth.login');
+    })->name('admin.login');
+    Route::get('forgot-password', function () {
+        return view('admin.auth.forgot-password');
+    })->name('admin.forgot-password');
+});
 Route::fallback(function () {
     return view('404');
 })->name('fallback.404');
