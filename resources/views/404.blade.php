@@ -1,0 +1,28 @@
+@extends('pages.layout.app')
+@section('title', ' | 404')
+@section('styles')
+    <!-- Include additional page css files here-->
+@endsection
+@section('content')
+    <section class="height-100vh flex-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-primary display-1">404</h1>
+                    <h2 class="mb-4">Sorry! The Page Not Found</h2>
+                    <p>
+                        The Link You Followed Probably Broken, or the page has been
+                        removed.
+                    </p>
+                    <a href="index.html" class="btn btn-rounded btn-primary mt-5">Back To Home</a>
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+@endsection
+@push('scripts')
+    <!-- Include additional page js files here-->
+@endpush
+
