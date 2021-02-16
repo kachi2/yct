@@ -16,11 +16,11 @@ class CreateSchoolsTable extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('links')->nullable();
-            $table->text('description')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('link')->nullable();
+            $table->longText('description')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 

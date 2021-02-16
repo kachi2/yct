@@ -16,13 +16,13 @@ class CreateAlumniNewsTable extends Migration
         Schema::create('alumni_news', function (Blueprint $table) {
             $table->id();
             $table->string('topic')->nullable();
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->string('links')->nullable();
             $table->integer('status')->nullable();
             $table->integer('views')->nullable();
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 

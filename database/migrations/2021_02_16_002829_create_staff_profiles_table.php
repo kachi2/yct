@@ -15,12 +15,12 @@ class CreateStaffProfilesTable extends Migration
     {
         Schema::create('staff_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('staff_lists_id')->references('id')->on('staff_lists')->onDelete('cascade');
             $table->string('publications')->nullable();
             $table->string('qualifications')->nullable();
             $table->string('cv')->nullable();
             $table->string('email')->nullable();
             $table->string('research_areas')->nullable();
+            $table->foreignId('staff_list_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

@@ -15,12 +15,12 @@ class CreateNavDropdownsTable extends Migration
     {
         Schema::create('nav_dropdowns', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nav_lists_id')->references('id')->on('nav_lists')->onDelete('cascade');
             $table->string('name')->nullable();
-            $table->string('links')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('link')->nullable();
+            $table->integer('status')->default(1);
+            $table->foreignId('nav_list_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 
