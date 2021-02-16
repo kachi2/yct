@@ -15,8 +15,9 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
-            $table->integer('school_id')->nullable();
+            $table->foreignId('schools_id')->references('id')->on('schools')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 

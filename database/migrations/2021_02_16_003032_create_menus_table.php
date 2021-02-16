@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlumiNewsTable extends Migration
+class CreateMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateAlumiNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumi_news', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('topic')->nullable();
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('links')->nullable();
+            $table->string('name')->nullable();
             $table->integer('status')->nullable();
-            $table->integer('views')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -32,6 +29,6 @@ class CreateAlumiNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumi_news');
+        Schema::dropIfExists('menus');
     }
 }

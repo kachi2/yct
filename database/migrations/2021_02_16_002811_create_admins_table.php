@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEuploadsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateEuploadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('euploads', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('upload_file')->nullable();
+            $table->string('email')->nullable();
+            $table->integer('role')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -28,6 +30,6 @@ class CreateEuploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('euploads');
+        Schema::dropIfExists('admins');
     }
 }

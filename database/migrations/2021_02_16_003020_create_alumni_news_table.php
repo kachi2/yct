@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMemosTable extends Migration
+class CreateAlumniNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateMemosTable extends Migration
      */
     public function up()
     {
-        Schema::create('memos', function (Blueprint $table) {
+        Schema::create('alumni_news', function (Blueprint $table) {
             $table->id();
-            $table->integer('school_id')->nullable();
-            $table->string('image')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('topic')->nullable();
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            $table->string('links')->nullable();
+            $table->integer('status')->nullable();
+            $table->integer('views')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -30,6 +33,6 @@ class CreateMemosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memos');
+        Schema::dropIfExists('alumni_news');
     }
 }

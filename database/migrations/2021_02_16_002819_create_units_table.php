@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNavDropdownsTable extends Migration
+class CreateUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,18 @@ class CreateNavDropdownsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nav_dropdowns', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
             $table->id();
-            $table->integer('nav_list_id')->nullable();
             $table->string('name')->nullable();
+            $table->string('header_image')->nullable();
+            $table->string('mini_about')->nullable();
+            $table->string('title')->nullable();
             $table->string('links')->nullable();
+            $table->string('images')->nullable();
+            $table->text('story')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -30,6 +35,6 @@ class CreateNavDropdownsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nav_dropdowns');
+        Schema::dropIfExists('units');
     }
 }

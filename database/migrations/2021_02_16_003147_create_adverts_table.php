@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdmissionListsTable extends Migration
+class CreateAdvertsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateAdmissionListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admission_lists', function (Blueprint $table) {
+        Schema::create('adverts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -26,6 +27,6 @@ class CreateAdmissionListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admission_lists');
+        Schema::dropIfExists('adverts');
     }
 }

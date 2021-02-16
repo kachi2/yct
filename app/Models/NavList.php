@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class staff_profile extends Model
+class NavList extends Model
 {
     use HasFactory;
 }

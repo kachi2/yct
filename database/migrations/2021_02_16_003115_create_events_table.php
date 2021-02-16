@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnitsTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateUnitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('units', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('schools_id')->references('id')->on('schools')->onDelete('cascade');
             $table->string('name')->nullable();
-            $table->string('header_image')->nullable();
-            $table->string('mini_about')->nullable();
-            $table->string('title')->nullable();
+            $table->string('image')->nullable();
             $table->string('links')->nullable();
-            $table->string('images')->nullable();
-            $table->text('story')->nullable();
+            $table->text('description')->nullable();
             $table->integer('status')->nullable();
+            $table->dateTime('event_date')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 
@@ -34,6 +34,6 @@ class CreateUnitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('units');
+        Schema::dropIfExists('events');
     }
 }
