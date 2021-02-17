@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Department extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'school_id',
+        'description',
+        'image',
+        'link',
+
+    ];
+
+    public function staffList()
+    {
+        return $this->hasMany(StaffList::class);
+    }
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
 }

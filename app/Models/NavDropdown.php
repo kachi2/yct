@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class NavDropdown extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'link',
+        'nav_list_id'
+    ];
+
+    public function navList()
+    {
+        return $this->belongsTo(NavList::class);
+    }
 }

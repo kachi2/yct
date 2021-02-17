@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-  use HasFactory;
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        ''
+    ];
+
+    public function navList()
+    {
+        return $this->hasMany(NavList::class);
+    }
 
 }
