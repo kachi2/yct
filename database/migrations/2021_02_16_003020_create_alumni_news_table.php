@@ -15,7 +15,7 @@ class CreateAlumniNewsTable extends Migration
     {
         Schema::create('alumni_news', function (Blueprint $table) {
             $table->id();
-            $table->string('topic')->nullable();
+            $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->string('links')->nullable();

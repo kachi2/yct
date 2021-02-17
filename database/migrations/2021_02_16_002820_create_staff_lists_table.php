@@ -19,7 +19,8 @@ class CreateStaffListsTable extends Migration
             $table->integer('department_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->string('designation')->nullable();
-            $table->foreignId('staff_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('school_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });
