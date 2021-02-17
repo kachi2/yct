@@ -181,11 +181,11 @@
 <!-- END site header-->
 
 <nav class="ec-nav sticky-top bg-white">
-    <div class="px-4">
+    <div class="px-5">
         <div class="navbar p-0 navbar-expand-lg">
             <div class="navbar-brand">
                 <a class="logo-default" href="{{ route('pages.index') }}"
-                ><img width="70" height="70" alt="" src="{{ asset('./assets/img/yabatech-logo.svg') }}"
+                ><img width="120" height="60" alt="" src="{{ asset('./assets/img/yabatech.svg') }}"
                     /></a>
             </div>
             <span
@@ -322,29 +322,29 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item nav-item__has-dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            data-toggle="dropdown"
-                        >Students</a
-                        >
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#" class="nav-link__list">Student Portal</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list">
-                                    Sports & Societies</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list"
-                                >Downloads</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
+{{--                    <li class="nav-item nav-item__has-dropdown">--}}
+{{--                        <a--}}
+{{--                            class="nav-link dropdown-toggle"--}}
+{{--                            href="#"--}}
+{{--                            data-toggle="dropdown"--}}
+{{--                        >Students</a--}}
+{{--                        >--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li>--}}
+{{--                                <a href="#" class="nav-link__list">Student Portal</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="#" class="nav-link__list">--}}
+{{--                                    Sports & Societies</a--}}
+{{--                                >--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a href="#" class="nav-link__list"--}}
+{{--                                >Downloads</a--}}
+{{--                                >--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
 
                     <li class="nav-item nav-item__has-megamenu">
                         <a
