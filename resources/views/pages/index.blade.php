@@ -141,9 +141,8 @@
         class="paddingTop-60 paddingBottom-100"
         data-dark-overlay="6"
         style="
-        background: url(assets/img/site/graduate.jpg) no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background: url({{ asset('./assets/img/site/graduate.jpg') }}) no-repeat fixed;
       "
     >
         <div class="container">
