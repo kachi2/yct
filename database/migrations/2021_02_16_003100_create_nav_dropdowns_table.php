@@ -17,8 +17,8 @@ class CreateNavDropdownsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('link')->nullable();
-            $table->integer('status')->default(1);
             $table->foreignId('nav_list_id')->constrained()->cascadeOnDelete();
+            $table->integer('status')->default(1);
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });
