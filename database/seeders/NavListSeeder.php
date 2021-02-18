@@ -15,9 +15,9 @@ class NavListSeeder extends Seeder
     public function run()
     {
         $navDropdownItems = [
-            ['name' => 'About_m', 'menu_id' => 1],
-            ['name' => 'Administration_m', 'menu_id' => 2],
-            ['name' => 'Admissions_m', 'menu_id' => 3],
+            ['name' => 'About', 'menu_id' => 1],
+            ['name' => 'Administration', 'menu_id' => 2],
+            ['name' => 'Admissions', 'menu_id' => 3],
             ['name' => 'Special Intervention', 'menu_id' => 4],
             ['name' => 'Annual Intervention', 'menu_id' => 4],
 //            ['name' => 'Students_m', 'menu_id' => 5],
@@ -28,10 +28,10 @@ class NavListSeeder extends Seeder
             ['name' => 'Academic Units', 'menu_id' => 6],
             ['name' => 'Registry', 'menu_id' => 6],
             ['name' => 'Bursary', 'menu_id' => 6],
+            ['name' => 'More', 'menu_id' => 7],
             ['name' => 'Staff', 'menu_id' => 7],
             ['name' => 'Alumni', 'menu_id' => 7],
             ['name' => 'Contact', 'menu_id' => 7],
-            ['name' => 'More', 'menu_id' => 7],
         ];
 
         foreach ($navDropdownItems as $navDropdownItem) {
