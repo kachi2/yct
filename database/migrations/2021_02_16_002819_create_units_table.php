@@ -17,14 +17,14 @@ class CreateUnitsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('header_image')->nullable();
-            $table->string('mini_about')->nullable();
+            $table->text('mini_about')->nullable();
             $table->string('title')->nullable();
             $table->string('links')->nullable();
             $table->string('images')->nullable();
             $table->text('story')->nullable();
-            $table->integer('status')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 

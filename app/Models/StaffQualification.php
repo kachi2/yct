@@ -6,16 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class StaffQualification extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name'
+        'title',
+        'year',
+        'school'
     ];
 
-    public function staffList()
+    public function staffProfile()
     {
-        return $this->belongsTo(StaffList::class);
+        return $this->belongsTo(StaffProfile::class);
     }
 }

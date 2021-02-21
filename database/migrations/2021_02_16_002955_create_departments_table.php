@@ -15,13 +15,13 @@ class CreateDepartmentsTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schools_id')->references('id')->on('schools')->onDelete('cascade');
-            $table->text('description')->nullable();
+            $table->foreignId('school_id')->constrained()->cascadeOnDelete();
+            $table->longText('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('links')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('link')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 

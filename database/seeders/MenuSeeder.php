@@ -15,38 +15,14 @@ class MenuSeeder extends Seeder
     public function run()
     {
         $menuItems = [
-            [
-                'name' => 'About',
-                'status' => 1
-            ],
-            [
-                'name' => 'Administration',
-                'status' => 1
-            ],
-            [
-                'name' => 'Admissions',
-                'status' => 1
-            ],
-            [
-                'name' => 'TETFund',
-                'status' => 1
-            ],
-            [
-                'name' => 'Students',
-                'status' => 1
-            ],
-            [
-                'name' => 'Academics',
-                'status' => 1
-            ],
-            [
-                'name' => 'Units',
-                'status' => 1
-            ],
-            [
-                'name' => 'More',
-                'status' => 1
-            ]
+            ['name' => 'About'],
+            ['name' => 'Administration'],
+            ['name' => 'Admissions'],
+            ['name' => 'TETFund'],
+//            ['name' => 'Students'],
+            ['name' => 'Academics'],
+            ['name' => 'Units'],
+            ['name' => 'More']
         ];
         foreach ($menuItems as $menuItem) {
             Menu::create($menuItem);

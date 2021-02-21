@@ -4,12 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-<<<<<<< HEAD:app/saved/Menu.php
 class Menu extends Model
-=======
-class Unit extends Model
->>>>>>> 69fe9ed31a7ed06813012594833488cb71acb9be:app/Models/Unit.php
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name'
+    ];
+
+    public function navItems()
+    {
+        return $this->hasManyThrough(NavDropdown::class,NavList::class, 'menu_id', 'nav_list_id')
+            ->select('nav_dropdowns.id', 'nav_dropdowns.name', 'nav_dropdowns.link');
+    }
+
 }

@@ -15,11 +15,11 @@ class CreateNavListsTable extends Migration
     {
         Schema::create('nav_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menus_id')->references('id')->on('menus')->onDelete('cascade');
-            $table->string('name')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('name');
+            $table->foreignId('menu_id')->constrained()->cascadeOnDelete();
+            $table->integer('status')->default(1);
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 

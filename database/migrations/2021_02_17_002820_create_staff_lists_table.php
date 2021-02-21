@@ -15,13 +15,14 @@ class CreateStaffListsTable extends Migration
     {
         Schema::create('staff_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('staff_id')->references('id')->on('staff')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->integer('department_id')->nullable();
-            $table->integer('categories_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('designation')->nullable();
+            $table->foreignId('school_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes('deleted_at');
         });
     }
 
