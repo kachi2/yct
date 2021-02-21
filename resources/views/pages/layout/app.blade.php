@@ -126,7 +126,7 @@
     @yield('styles')
 </head>
 <body>
-<header class="site-header bg-dark text-white-0_5">
+<header class="site-header  text-white" style="background:#006600">
     <div class="container">
         <div class="row align-items-center justify-content-between mx-0">
             <ul class="list-inline d-none d-lg-block mb-0">
@@ -203,7 +203,7 @@
             <div
                 class="collapse navbar-collapse when-collapsed"
                 id="ec-nav__collapsible">
-                <ul class="nav navbar-nav ec-nav__navbar ml-auto">
+                <ul class="nav navbar-nav ec-nav__navbar ml-auto  font-weight-bold">
                     <li class="nav-item nav-item__has-dropdown">
                         <a
                             class="nav-link dropdown-toggle"
