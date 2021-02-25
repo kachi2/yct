@@ -20,7 +20,7 @@ class Department extends Model
 
     public function staffList()
     {
-        return $this->hasMany(StaffList::class);
+       return $this->hasMany(StaffList::class);
     }
 
     public function school()

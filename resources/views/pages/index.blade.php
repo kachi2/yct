@@ -99,94 +99,123 @@
             <i class="ti-angle-right iconbox bg-black-0_5 hover:primary"></i>
         </a>
     </div>
+<section class="padding-y-10 flex-center bg-cover" data-dark-overlay="6">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <p class="lead text-center text-white mb-4">
+         Quick Links
+        </p>
+        <div class="owl-carousel arrow-on-hover text-center"
+          data-space="10"
+          data-items="5"
+          data-arrow="true"
+          data-loop="true"
+          data-tablet="4"
+          >
+          <a href="#" class="card p-4 hover:primary">
+            <i class="ti-camera font-size-34 text-primary"></i>
+            <h6 class="mt-2">
+             Students Portals
+            </h6>
+          </a>
+          <a href="#" class="card p-4 hover:primary">
+            <i class="ti-stats-up font-size-34 text-primary"></i>
+            <h6 class="mt-2">
+              Staff Portals
+            </h6>
+          </a>
+          <a href="#" class="card p-4 hover:primary">
+            <i class="ti-layers font-size-34 text-primary"></i>
+            <h6 class="mt-2">
+              News and Events
+            </h6>
+          </a>
+          <a href="#" class="card p-4 hover:primary">
+            <i class="ti-desktop font-size-34 text-primary"></i>
+            <h6 class="mt-2">
+              Apply to Yabatech
+            </h6>
+          </a>
+          <a href="#" class="card p-4 hover:primary">
+            <i class="ti-announcement font-size-34 text-primary"></i>
+            <h6 class="mt-2">
+              Carrers
+            </h6>
+          </a>
+        </div>
+      </div>
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
 
     <!-- Start section-->
-
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div class="text-right">
-                        <img src="assets/img/site/rector4.jpg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-6 mt-3">
-                    <h2>
-                        <small class="text-primary d-block"> Hello, and </small>
+<section class="bg-light-v2 padding-y-100">
+  <div class="container">
+    <div class="row">
+       <div class="col-lg-6 marginTop-30">
+        <div class="card">
+          <img src="assets/img/site/rector4.jpg"  height="80%" width="250px" alt=""/>
+          <div class="card-body">
+           <p class="text-primary">
+            Engr. Obafemi Omokungbe
+Rector, <br>
+Yaba College of Technology
+           </p>
+           <h4>
+            <a href="#">
+                 <small class="text-primary d-block"> Hello, </small>
                         Welcome to Yabatech.
-                    </h2>
-                    <p class="lead">
-                        People make a university great, so whether you are a prospective
-                        student, current student, professor.
-                    </p>
-                    <p>
-                        Investig ationes demons trave wanrunt lectores legere liushgfy
-                        quod legunt saeph claritas nvestig ationes demons trave rugngt
-                        investiga legere liushgfy quod legunt saeph claritas nvestig
-                        ationes.
-                    </p>
-                    <h4 class="mt-2">Engr. Obafemi Omokungbe</h4>
-                    <p>
-                        Rector, <br/>
-                        Yaba College of Technology
-                    </p>
-                    <img src="assets/img/sign.png" alt=""/>
-                </div>
-            </div>
+            </a>
+           </h4>
+           <p>
+             Investig ationes demons trave wanrunt the lectore legere kliushy was aequod legunt saeph claritas.
+           </p>
+            <a href="#" class="btn btn-outline-primary">
+              Read More
+            </a>
+          </div>
         </div>
-    </section>
-
-    <section
-        class="paddingTop-60 paddingBottom-100"
-        data-dark-overlay="6"
-        style="
-        background-size: cover;
-        background: url({{ asset('./assets/img/site/graduate.jpg') }}) no-repeat fixed;
-      "
-    >
-        <div class="container">
-            <div class="row text-center text-white">
-                <div
-                    class="col-lg-3 col-md-6 mt-5 wow zoomIn"
-                    data-wow-delay=".1"
-                    style="visibility: visible; animation-name: zoomIn"
-                >
-                    <h2 class="h1 text-primary">520</h2>
-                    <p class="lead">All Courses</p>
-                </div>
-
-                <div
-                    class="col-lg-3 col-md-6 mt-5 wow zoomIn"
-                    data-wow-delay=".2"
-                    style="visibility: visible; animation-name: zoomIn"
-                >
-                    <h2 class="h1 text-primary">690</h2>
-                    <p class="lead">Trusted Tutors</p>
-                </div>
-
-                <div
-                    class="col-lg-3 col-md-6 mt-5 wow zoomIn"
-                    data-wow-delay=".3"
-                    style="visibility: visible; animation-name: zoomIn"
-                >
-                    <h2 class="h1 text-primary">235K</h2>
-                    <p class="lead">Total Students</p>
-                </div>
-
-                <div
-                    class="col-lg-3 col-md-6 mt-5 wow zoomIn"
-                    data-wow-delay=".4"
-                    style="visibility: visible; animation-name: zoomIn"
-                >
-                    <h2 class="h1 text-primary">150K</h2>
-                    <p class="lead">Success Stories</p>
-                </div>
-            </div>
-            <!-- END row-->
+      </div>
+      <div class="col-lg-6">
+        <div class="list-card align-items-center marginTop-30">
+          <div class="col-md-4 px-md-0">
+            <img class="w-100" src="assets/img/262x230/1.jpg" alt="">
+          </div>
+          <div class="col-md-8 p-4">
+            <p class="text-primary">Dr. registra</p>
+            <a href="#" class="h5">
+              Regista Yaba college of Technology
+            </a>
+          </div>
         </div>
-        <!-- END container-->
-    </section>
+        <div class="list-card align-items-center marginTop-30">
+          <div class="col-md-4 px-md-0">
+            <img class="w-100" src="assets/img/262x230/2.jpg" alt="">
+          </div>
+          <div class="col-md-8 p-4">
+            <p class="text-primary">Dr. Students</p>
+            <a href="#" class="h5">
+              Director of Students Affairs
+            </a>
+          </div>
+        </div>
+        <div class="list-card align-items-center marginTop-30">
+          <div class="col-md-4 px-md-0">
+            <img class="w-100" src="assets/img/262x230/3.jpg" alt="">
+          </div>
+          <div class="col-md-8 p-4">
+            <p class="text-primary">Dr. Adigun</p>
+            <a href="#" class="h5">
+              Director of CITM 
+            </a>
+          </div>
+        </div>
+      </div>
+   
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section> 
 
     <section
         class="padding-y-100"
@@ -197,90 +226,319 @@
         background-attachment: fixed;
       "
     >
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center text-white mb-md-4">
-                    <h2 class="mb-4">Upcoming Events</h2>
-                    <div class="width-3rem height-4 rounded bg-white mx-auto"></div>
-                </div>
-
-                <div class="col-md-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/360x220/1.jpg" alt=""/>
-                        <div class="card-body">
-                            <h4 class="h5">Yabatech Panel Examines Future of Cities</h4>
-                            <ul class="list-unstyled my-4 line-height-xl">
-                                <li>
-                                    <i class="ti-time mr-2 text-primary"></i>
-                                    April 13, 2018 @ 8:00 am
-                                </li>
-                                <li>
-                                    <i class="ti-location-pin mr-2 text-primary"></i>
-                                    184 Main Collins Street
-                                </li>
-                            </ul>
-                            <a href="#" class="text-primary">
-                                View Details
-                                <i class="ti-angle-double-right small"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END col-md-4-->
-
-                <div class="col-md-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/360x220/2.jpg" alt=""/>
-                        <div class="card-body">
-                            <h4 class="h5">Farmer's Market at Yabatech, Collins Street</h4>
-                            <ul class="list-unstyled my-4 line-height-xl">
-                                <li>
-                                    <i class="ti-time mr-2 text-primary"></i>
-                                    April 13, 2018 @ 8:00 am
-                                </li>
-                                <li>
-                                    <i class="ti-location-pin mr-2 text-primary"></i>
-                                    184 Main Collins Street
-                                </li>
-                            </ul>
-                            <a href="#" class="text-primary">
-                                View Details
-                                <i class="ti-angle-double-right small"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END col-md-4-->
-
-                <div class="col-md-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/360x220/3.jpg" alt=""/>
-                        <div class="card-body">
-                            <h4 class="h5">A Conversation with Wynton Marsalis</h4>
-                            <ul class="list-unstyled my-4 line-height-xl">
-                                <li>
-                                    <i class="ti-time mr-2 text-primary"></i>
-                                    April 13, 2018 @ 8:00 am
-                                </li>
-                                <li>
-                                    <i class="ti-location-pin mr-2 text-primary"></i>
-                                    184 Main Collins Street
-                                </li>
-                            </ul>
-                            <a href="#" class="text-primary">
-                                View Details
-                                <i class="ti-angle-double-right small"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END col-md-4-->
-                <div class="col-12 mt-5 text-center">
-                    <a href="#" class="btn btn-outline-white-hover">More Events</a>
-                </div>
+    <section class="padding-y-10 bg-light">
+  <div class="container">
+    <div class="row">
+     <div class="col-12 text-center mb-5">
+       <h2 class="mb-4">
+      Latest News
+      </h2>
+      <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+     </div>
+      <div class="col-12">
+       <div class="owl-carousel arrow-on-hover" data-state-outer-class="py-3" data-space="30" data-arrow="true" data-loop="true">
+         <div class="card shadow-v3 hover:parent">
+          <img class="card-img-top" src="assets/img/360x220/1.jpg" alt="">
+          <div class="card-body">
+            <h4>
+              Accounting
+            </h4>
+            <p class="text-primary">
+              Western Governors University
+            </p>
+            <p class="mb-0">
+              Investig atones demns traivg sed vunt lectoes legere
+            </p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center border-top position-relative p-4">
+           <span class="d-inline-block bg-primary text-white px-4 py-1 rounded-pill">
+             $576
+           </span>
+            <div class="group">
+              <button class="btn btn-opacity-primary iconbox iconbox-sm mr-2">
+                <i class="ti-heart"></i>
+              </button>
+              <button class="btn btn-opacity-primary iconbox iconbox-sm">
+                <i class="ti-share"></i>
+              </button>
             </div>
-            <!-- END row-->
+            <a href="#" class="position-absolute btn btn-primary btn-sm left-20 hover:show">
+              View Details
+            </a>
+          </div>
         </div>
+       
+        <div class="card shadow-v3 hover:parent">
+          <img class="card-img-top" src="assets/img/360x220/2.jpg" alt="">
+          <div class="card-body">
+            <h4>
+              Human Resources
+            </h4>
+            <p class="text-primary">
+              Cedarville University
+            </p>
+            <p class="mb-0">
+              Investig atones demns traivg sed vunt lectoes legere
+            </p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center border-top position-relative p-4">
+           <span class="d-inline-block bg-primary text-white px-4 py-1 rounded-pill">
+             $576
+           </span>
+            <div class="group">
+              <button class="btn btn-opacity-primary iconbox iconbox-sm mr-2">
+                <i class="ti-heart"></i>
+              </button>
+              <button class="btn btn-opacity-primary iconbox iconbox-sm">
+                <i class="ti-share"></i>
+              </button>
+            </div>
+            <a href="#" class="position-absolute btn btn-primary btn-sm left-20 hover:show">
+              View Details
+            </a>
+          </div>
+        </div>
+       
+        <div class="card shadow-v3 hover:parent">
+          <img class="card-img-top" src="assets/img/360x220/3.jpg" alt="">
+          <div class="card-body">
+            <h4>
+              Engineering
+            </h4>
+            <p class="text-primary">
+              University of Connecticut
+            </p>
+            <p class="mb-0">
+              Investig atones demns traivg sed vunt lectoes legere
+            </p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center border-top position-relative p-4">
+           <span class="d-inline-block bg-primary text-white px-4 py-1 rounded-pill">
+             $576
+           </span>
+            <div class="group">
+              <button class="btn btn-opacity-primary iconbox iconbox-sm mr-2">
+                <i class="ti-heart"></i>
+              </button>
+              <button class="btn btn-opacity-primary iconbox iconbox-sm">
+                <i class="ti-share"></i>
+              </button>
+            </div>
+            <a href="#" class="position-absolute btn btn-primary btn-sm left-20 hover:show">
+              View Details
+            </a>
+          </div>
+        </div>
+        
+        <div class="card shadow-v3 hover:parent">
+          <img class="card-img-top" src="assets/img/360x220/4.jpg" alt="">
+          <div class="card-body">
+            <h4>
+              Engineering
+            </h4>
+            <p class="text-primary">
+              University of Connecticut
+            </p>
+            <p class="mb-0">
+              Investig atones demns traivg sed vunt lectoes legere kurus quodk
+            </p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center border-top position-relative p-4">
+           <span class="d-inline-block bg-primary text-white px-4 py-1 rounded-pill">
+             $576
+           </span>
+            <div class="group">
+              <button class="btn btn-opacity-primary iconbox iconbox-sm mr-2">
+                <i class="ti-heart"></i>
+              </button>
+              <button class="btn btn-opacity-primary iconbox iconbox-sm">
+                <i class="ti-share"></i>
+              </button>
+            </div>
+            <a href="#" class="position-absolute btn btn-primary btn-sm left-20 hover:show">
+              View Details
+            </a>
+          </div>
+        </div>
+        
+        <div class="card shadow-v3 hover:parent">
+          <img class="card-img-top" src="assets/img/360x220/5.jpg" alt="">
+          <div class="card-body">
+            <h4>
+              Computer Engineering
+            </h4>
+            <p class="text-primary">
+              University of Connecticut
+            </p>
+            <p class="mb-0">
+              Investig atones demns traivg sed vunt lectoes legere kurus quodk
+            </p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center border-top position-relative p-4">
+           <span class="d-inline-block bg-primary text-white px-4 py-1 rounded-pill">
+             $576
+           </span>
+            <div class="group">
+              <button class="btn btn-opacity-primary iconbox iconbox-sm mr-2">
+                <i class="ti-heart"></i>
+              </button>
+              <button class="btn btn-opacity-primary iconbox iconbox-sm">
+                <i class="ti-share"></i>
+              </button>
+            </div>
+            <a href="#" class="position-absolute btn btn-primary btn-sm left-20 hover:show">
+              View Details
+            </a>
+          </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 mt-5 text-center">
+        <a href="#" class="btn btn-primary">
+          See All Degrees
+        </a>
+      </div>
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+       <section class="padding-y-5 bg-light">
+  <div class="container">
+    <div class="row">
+     
+      <div class="col-12 text-center">
+        <h2 class="mb-4">
+          Upcoming Events
+        </h2>
+        <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+      </div> 
+    </div> <!-- END row-->
+    
+    <div class="row mt-4">
+ 
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".1s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              Open Schools for Open Societies 2018
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".2s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              Conference on Early School Leaving
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".3s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              A collection of Innovative and Inspiring Resources
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div>  
+ 
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".1s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              A collection of Innovative and Inspiring Resources
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div> 
+      
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".2s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              Open Schools for Open Societies 2018
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".3s">
+        <div class="card shadow-v1">
+          <div class="padding-40 border-bottom">
+            <a href="#" class="h4">
+              Conference on Early School Leaving
+            </a>
+          </div>
+          <ul class="list-unstyled padding-x-40 py-4 line-height-xl">
+            <li>
+               <i class="ti-time mr-2 text-primary"></i>
+               April 13, 2018 @ 8:00 am
+            </li>
+            <li>
+               <i class="ti-location-pin mr-2 text-primary"></i>
+               184 Main Collins Street
+            </li>
+          </ul>
+        </div>
+      </div>
+     
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+
         <!-- END container-->
     </section>
     <section class="paddingTop-100">

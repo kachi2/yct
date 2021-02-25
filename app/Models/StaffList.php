@@ -26,12 +26,12 @@ class StaffList extends Model
 
     public function school()
     {
-        return $this->belongsTo(School::class);
+       return $this->belongsTo(School::class);
     }
 
     public function department()
     {
-        return $this->belongsTo(Department::class);
+       return $this->belongsTo(Department::class);
     }
 
     public function category()

@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav ec-nav__navbar ml-auto  font-weight-bold">
                     <li class="nav-item nav-item__has-dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle hover:primary"
                             href="#"
                             data-toggle="dropdown"
                         >About</a
@@ -42,37 +42,34 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item nav-item__has-megamenu">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            data-toggle="dropdown"
-                        >Administration</a
-                        >
-                        <div class="dropdown-menu p-2 col-6">
-                            <div class="row mx-0">
-                                <div class="col-md-12">
-                                    <ul class="list-unstyled col-md-12 d-flex">
-                                        <li class="col-md-6">
-                                            <a class="nav-link__list px-0" href="#"
-                                            >Visitor</a
-                                            >
-                                        </li>
+                      <li class="nav-item nav-item__has-megamenu megamenu-col-2">
+              <a class="nav-link dropdown-toggle hover:primary" href="#" data-toggle="dropdown">Administration</a>
+              <div class="dropdown-menu left-auto p-2 p-md-4">
+                <div class="row mx-0">
+                  <div class="col-lg-6">
+                    <ul class="list-unstyled">
+                      <li><a class="nav-link__list px-0" href="index-school-default.html">Demo School</a></li>
+                      <li><a class="nav-link__list px-0" href="index-school-online.html">Demo Online School</a></li>
+                      <li><a class="nav-link__list px-0" href="index-college.html">Demo College</a></li>
+                      <li><a class="nav-link__list px-0" href="index-university.html">Demo Harvard University</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6">
+                    <ul class="list-unstyled">
+                      <li><a class="nav-link__list px-0" href="index-online-university.html">Demo Online University</a></li>
+                      <li><a class="nav-link__list px-0" href="index-lynda.html">Demo Lynda</a></li>
+                      <li><a class="nav-link__list px-0" href="index-udemy.html">Demo Udemy</a></li>
+                      <li><a class="nav-link__list px-0" href="index-one-course.html">Demo One Course</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
 
-                                        <li class="col-md-6">
-                                            <a class="nav-link__list px-0" href="#"
-                                            >Deputy Rector Administrator</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
 
                     <li class="nav-item nav-item__has-dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle hover:primary"
                             href="#"
                             data-toggle="dropdown"
                         >Admissions</a
@@ -95,52 +92,85 @@
                             </li>
                         </ul>
                     </li>
+          <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link dropdown-toggle hover:primary" href="#" data-toggle="dropdown"> Students </a>
+                <div class="dropdown-menu">
+                  <ul class="list-unstyled">
 
-                    <li class="nav-item nav-item__has-megamenu">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            data-toggle="dropdown"
-                        >TETFund</a
-                        >
-                        <div class="dropdown-menu p-2 p-md-4 col-8">
-                            <div class="row mx-0">
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a
-                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
-                                                href="#"
-                                            >Special Intervention</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a class="nav-link__list px-0" href="#"
-                                            >Academic Staff Training & Development</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown"> Special Intervention</a>
+                      </li>
 
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a
-                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
-                                                href="#"
-                                            >Annual Intervention</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a class="nav-link__list px-0" href="#"
-                                            >High Impact</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
                     </li>
+                    <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
+                    </li>
+                    <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
+                    </li>
+                  </ul>
+                </div>
+            </li>
+
+                      <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link dropdown-toggle hover:primary" href="#" data-toggle="dropdown"> Staff </a>
+                <div class="dropdown-menu">
+                  <ul class="list-unstyled">
+
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown"> Special Intervention</a>
+                      </li>
+
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
+                    </li>
+                    <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
+                    </li>
+                    <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list " href="#" data-toggle="dropdown">Annual Intervention</a>
+                    </li>
+                  </ul>
+                </div>
+            </li>
+            <li class="nav-item nav-item__has-dropdown ">
+                <a class="nav-link hover:primary" href="#" data-toggle="dropdown">Payments</a>
+          </li>
+            <li class="nav-item nav-item__has-dropdown">
+                <a class="nav-link dropdown-toggle hover:primary" href="#" data-toggle="dropdown"> TETFund </a>
+                <div class="dropdown-menu">
+                  <ul class="list-unstyled">
+
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list dropdown-toggle" href="#" data-toggle="dropdown"> Special Intervention</a>
+                      <div class="dropdown-menu">
+                        <ul class="list-unstyled">
+                          <li><a class="nav-link__list" href="blog-standard.html"> Standard </a></li>
+                          <li><a class="nav-link__list" href="blog-card.html"> Card </a></li>
+                          <li><a class="nav-link__list" href="blog-masonry.html"> Mesonry </a></li>
+                          <li><a class="nav-link__list" href="blog-list.html"> List </a></li>
+                        </ul>
+                      </div>
+                    </li>
+
+                     <li class="nav-item__has-dropdown">
+                      <a class="nav-link__list dropdown-toggle" href="#" data-toggle="dropdown">Annual Intervention</a>
+                      <div class="dropdown-menu">
+                        <ul class="list-unstyled">
+                          <li><a class="nav-link__list" href="blog-single.html"> Image </a></li>
+                          <li><a class="nav-link__list" href="blog-single-audio.html"> Audio </a></li>
+                          <li><a class="nav-link__list" href="blog-single-soundcloud.html"> Sound Cloud </a></li>
+                          <li><a class="nav-link__list" href="blog-single-video-HTML5.html"> HTML5 Video </a></li>
+                          <li><a class="nav-link__list" href="blog-single-video-youtube.html"> Youtube Video </a></li>
+                          <li><a class="nav-link__list" href="blog-single-video-vimeo.html"> Vimeo Video </a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+            </li>
 {{--                    <li class="nav-item nav-item__has-dropdown">--}}
 {{--                        <a--}}
 {{--                            class="nav-link dropdown-toggle"--}}
@@ -167,10 +197,8 @@
 
                     <li class="nav-item nav-item__has-megamenu">
                         <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            data-toggle="dropdown"
-                        >Academics</a
+                            class="nav-link dropdown-toggle hover:primary"
+                            href="#"     data-toggle="dropdown" >Academics</a
                         >
                         <div class="dropdown-menu p-2 p-md-4">
                             <div class="row mx-0">
@@ -233,7 +261,7 @@
                                     <ul class="list-unstyled">
                                         <li>
                                             <a
-                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                class="nav-link__list hover:primary px-0 font-weight-bold text-uppercase"
                                                 href="#"
                                             >Students</a
                                             >
@@ -274,7 +302,7 @@
                     </li>
                     <li class="nav-item nav-item__has-megamenu">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle hover:primary"
                             href="#"
                             data-toggle="dropdown"
                         >Units</a
@@ -302,7 +330,7 @@
                                     <ul class="list-unstyled">
                                         <li>
                                             <a
-                                                class="nav-link__list px-0 font-weight-bold text-uppercase"
+                                                class="nav-link__list px-0 hover:primary font-weight-bold text-uppercase"
                                                 href="#"
                                             >Academic Units</a
                                             >
@@ -352,7 +380,7 @@
                     </li>
                     <li class="nav-item nav-item__has-megamenu">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class="nav-link dropdown-toggle hover:primary"
                             href="#"
                             data-toggle="dropdown"
                         >More</a
