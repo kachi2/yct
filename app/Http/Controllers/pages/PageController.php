@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
