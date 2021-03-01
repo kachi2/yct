@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Menu;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -20,7 +21,9 @@ class AppServiceProvider extends ServiceProvider
 
     public function navMenu()
     {
-        $menuCollection = Menu::select('id', 'name')->with('navItems')->get();
+        $menuCollection = Cache::remember('menuCollection', 1440, function () {
+            return Menu::select('id', 'name')->with('navItems')->get();
+        });
         $about = $administration = $admissions = $bursary = $staff = $alumni = $contact = $ccs = $schools =
         $students = $sIntervention = $aIntervention = $registry = $academicUnits = $serviceUnits = $empty = $more = '';
 
@@ -43,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
             $navCollection->name === 'More_Alumni' ? $alumni = $navCollection->navItems : $empty = '';
         }
         $menuItems = ['about' => $about, 'administration' => $administration, 'admission' => $admissions, 'bursary' => $bursary,
-            'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'contact' => $contact, 'css' => $ccs, 'schools' => $schools,
+            'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'contact' => $contact, 'ccs' => $ccs, 'schools' => $schools,
             'students' => $students, 'sIntervention' => $sIntervention, 'aIntervention' => $aIntervention, 'registry' => $registry,
             'academicUnits' => $academicUnits, 'serviceUnits' => $serviceUnits];
         view()->composer(['pages.layout.app'], function ($view) use ($menuItems) {
