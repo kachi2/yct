@@ -129,7 +129,7 @@ class NavDropdownSeeder extends Seeder
             ['name' => 'Contact Us', 'link' => 'contact.contact_us', 'nav_list_id' => 16],
             ['name' => 'Social Media', 'link' => 'contact.social_media', 'nav_list_id' => 16],
             ['name' => 'Buildings in College', 'link' => 'contact.buildings_in_college', 'nav_list_id' => 16],
-            ['name' => 'Knowledge Base', 'link' => 'contact.knowledge_base', 'nav_list_id' => 16],
+            ['name' => 'Faq', 'link' => 'contact.faq', 'nav_list_id' => 16],
             ['name' => 'Careers', 'link' => 'contact.careers', 'nav_list_id' => 16],
         ];
 
