@@ -65,7 +65,7 @@ class PageController extends Controller
      * Return faculties page
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function faculties()
+    public function schools()
     {
         return view('pages.faculties');
     }
@@ -74,7 +74,7 @@ class PageController extends Controller
      * Return faculty details page
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function facultyDetail()
+    public function schoolDetail()
     {
         return view('pages.faculty-detail');
     }
