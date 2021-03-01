@@ -18,11 +18,19 @@ class MenuSeeder extends Seeder
             ['name' => 'About'],
             ['name' => 'Administration'],
             ['name' => 'Admissions'],
-            ['name' => 'TETFund'],
-//            ['name' => 'Students'],
-            ['name' => 'Academics'],
-            ['name' => 'Units'],
-            ['name' => 'More']
+            ['name' => 'TETFund_Special'],
+            ['name' => 'TETFund_Annual'],
+            ['name' => 'Academics_CCS'],
+            ['name' => 'Academics_Schools'],
+            ['name' => 'Academics_Students'],
+            ['name' => 'Units_Service'],
+            ['name' => 'Units_Academic'],
+            ['name' => 'Units_Registry'],
+            ['name' => 'Units_Bursary'],
+            ['name' => 'More_Others'],
+            ['name' => 'More_Staff'],
+            ['name' => 'More_Alumni'],
+            ['name' => 'More_Contact']
         ];
         foreach ($menuItems as $menuItem) {
             Menu::create($menuItem);

@@ -31,14 +31,15 @@
                         >About</a
                         >
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ route('about.vision') }}" class="nav-link__list"
-                                >Vision & Mission</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link__list">History</a>
-                            </li>
+                            @if($menuNavs['about'])
+                                @foreach($menuNavs['about'] as $about)
+                                    <li class="nav-link__list px-0">
+                                        <a href="{{ route($about->link) }}" class="nav-link__list"
+                                        >{{ $about->name }}</a
+                                        >
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </li>
 
@@ -48,10 +49,15 @@
                 <div class="row mx-0">
                   <div class="col-lg-6">
                     <ul class="list-unstyled">
-                      <li><a class="nav-link__list px-0" href="index-school-default.html">Demo School</a></li>
-                      <li><a class="nav-link__list px-0" href="index-school-online.html">Demo Online School</a></li>
-                      <li><a class="nav-link__list px-0" href="index-college.html">Demo College</a></li>
-                      <li><a class="nav-link__list px-0" href="index-university.html">Demo Harvard University</a></li>
+                        @if($menuNavs['about'])
+                            @foreach($menuNavs['administration'] as $administration)
+                                <li class="nav-link__list px-0">
+                                    <a href="{{ route($administration->link) }}" class="nav-link__list"
+                                    >{{ $administration->name }}</a
+                                    >
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                   </div>
                   <div class="col-lg-6">

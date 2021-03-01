@@ -21,25 +21,26 @@ class AppServiceProvider extends ServiceProvider
     public function navMenu()
     {
         $menuCollection = Menu::select('id', 'name')->with('navItems')->get();
-        $about = $administration = $admissions = $bursary = $staff = $alumni = $more = $contact = $ccs = $schools =
-        $students = $sIntervention = $aIntervention = $registry = $academicUnits = $serviceUnits = '';
+        $about = $administration = $admissions = $bursary = $staff = $alumni = $contact = $ccs = $schools =
+        $students = $sIntervention = $aIntervention = $registry = $academicUnits = $serviceUnits = $empty = $more = '';
+
         foreach ($menuCollection as $navCollection) {
-            $about = $navCollection->name === 'About' ? $navCollection->navItems : '';
-            $administration = $navCollection->name === 'Administration' ? $navCollection->navItems : '';
-            $admissions = $navCollection->name === 'Admissions' ? $navCollection->navItems : '';
-            $bursary = $navCollection->name === 'Bursary' ? $navCollection->navItems : '';
-            $staff = $navCollection->name === 'Staff' ? $navCollection->navItems : '';
-            $alumni = $navCollection->name === 'Alumni' ? $navCollection->navItems : '';
-            $more = $navCollection->name === 'More' ? $navCollection->navItems : '';
-            $contact = $navCollection->name === 'Contact' ? $navCollection->navItems : '';
-            $ccs = $navCollection->name === 'CCS' ? $navCollection->navItems : '';
-            $schools = $navCollection->name === 'Schools' ? $navCollection->navItems : '';
-            $students = $navCollection->name === 'Students' ? $navCollection->navItems : '';
-            $sIntervention = $navCollection->name === 'Special Intervention' ? $navCollection->navItems : '';
-            $aIntervention = $navCollection->name === 'Annual Intervention' ? $navCollection->navItems : '';
-            $registry = $navCollection->name === 'Registry' ? $navCollection->navItems : '';
-            $academicUnits = $navCollection->name === 'Academic Units' ? $navCollection->navItems : '';
-            $serviceUnits = $navCollection->name === 'Service Units' ? $navCollection->navItems : '';
+            $navCollection->name === 'About' ? $about = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Administration' ? $administration = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Admissions' ? $admissions = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'TETFund_Special' ? $sIntervention = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'TETFund_Annual' ? $aIntervention = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Academics_CCS' ? $ccs = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Academics_Schools' ? $schools = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Academics_Students' ? $students = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Units_Academic' ? $academicUnits = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Units_Service' ? $serviceUnits = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Units_Bursary' ? $bursary = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Units_Registry' ? $registry = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'More_Others' ? $more = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'More_Contact' ? $contact = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'More_Staff' ? $staff = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'More_Alumni' ? $alumni = $navCollection->navItems : $empty = '';
         }
         $menuItems = ['about' => $about, 'administration' => $administration, 'admission' => $admissions, 'bursary' => $bursary,
             'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'contact' => $contact, 'css' => $ccs, 'schools' => $schools,
