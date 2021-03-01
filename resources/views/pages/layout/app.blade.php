@@ -182,26 +182,6 @@
 @include('pages.includes.nav')
 <!-- END ec-nav -->
 
-<div class="site-search">
-    <div class="site-search__close bg-black-0_8"></div>
-    <form class="form-site-search" action="#" method="POST">
-        <div class="input-group">
-            <input
-                type="text"
-                placeholder="Search"
-                class="form-control py-3 border-white"
-                required=""
-            />
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
-                    <i class="ti-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-<!-- END site-search-->
-
 <!-- Main content-->
 @yield('content')
 <!-- Main content end-->
