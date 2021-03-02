@@ -16,7 +16,7 @@ class CreateNavListsTable extends Migration
         Schema::create('nav_lists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('menu_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('menu_id')->nullable()->constrained()->cascadeOnDelete();
             $table->integer('status')->default(1);
             $table->timestamps();
             $table->softDeletes('deleted_at');
