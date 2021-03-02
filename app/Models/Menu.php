@@ -11,12 +11,13 @@ class Menu extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name'
+        'name',
+        'status'
     ];
 
     public function navItems()
     {
-        return $this->hasManyThrough(NavDropdown::class,NavList::class, 'menu_id', 'nav_list_id')
+        return $this->hasManyThrough(NavDropdown::class, NavList::class, 'menu_id', 'nav_list_id')
             ->select('nav_dropdowns.id', 'nav_dropdowns.name', 'nav_dropdowns.link');
     }
 

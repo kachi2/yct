@@ -12,7 +12,8 @@ class NavList extends Model
 
     protected $fillable = [
         'name',
-        'menu_id'
+        'menu_id',
+        'status'
     ];
 
     public function menu()
