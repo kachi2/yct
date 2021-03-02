@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            MenuSeeder::class,
             NavListSeeder::class,
+            MenuSeeder::class,
             NavDropdownSeeder::class
         ]);
     }
