@@ -20,8 +20,8 @@ Route::get('support', [PageController::class, 'support'])->name('pages.support')
 
 // About routes
 Route::group(['prefix' => 'about'], function () {
-    Route::get('vision', [PageController::class, 'vision'])->name('about.vision');
-    Route::get('history', [PageController::class, 'vision'])->name('about.history');
+    Route::get('vision_and_mission', [PageController::class, 'vision'])->name('about.vision');
+    Route::get('history', [PageController::class, 'history'])->name('about.history');
 });
 // Administration
 Route::group(['prefix' => 'administration'], function () {
@@ -139,7 +139,7 @@ Route::group(['prefix' => 'more'], function () {
     Route::get('library', [PageController::class, 'careerDetail'])->name('more.library');
     Route::get('payments', [PageController::class, 'careerDetail'])->name('more.payments');
     Route::get('news', [PageController::class, 'careerDetail'])->name('more.news');
-    Route::get('events', [PageController::class, 'careerDetail'])->name('more.events');
+    Route::get('events', [PageController::class, 'events'])->name('more.events');
     Route::get('event-detail', [PageController::class, 'eventDetail'])->name('pages.event-detail');
     Route::get('epe_campus', [PageController::class, 'careerDetail'])->name('more.epe_campus');
     Route::get('announcements', [PageController::class, 'careerDetail'])->name('more.announcements');
@@ -156,11 +156,11 @@ Route::group(['prefix' => 'staff'], function () {
 });
 // Contact
 Route::group(['prefix' => 'contact'], function () {
-    Route::get('contact_us', [PageController::class, 'careerDetail'])->name('contact.contact_us');
+    Route::get('contact_us', [PageController::class, 'contact'])->name('contact.contact_us');
     Route::get('social_media', [PageController::class, 'careerDetail'])->name('contact.social_media');
     Route::get('buildings_in_college', [PageController::class, 'careerDetail'])->name('contact.buildings_in_college');
     Route::get('faq', [PageController::class, 'faq'])->name('contact.faq');
-    Route::get('careers', [PageController::class, 'careerDetail'])->name('contact.careers');
+    Route::get('careers', [PageController::class, 'careers'])->name('contact.careers');
 });
 // Alumni
 Route::group(['prefix' => 'alumni'], function () {
