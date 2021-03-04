@@ -23,7 +23,7 @@
         <div class="container">
             <div class="list-card align-items-center shadow-v2 px-3">
                 <div class="col-lg-4 py-4">
-                    <img class="w-100" src="assets/img/384x320/1.jpg" alt=""/>
+                    <img class="w-100" src="{{ asset('assets/img/384x320/1.jpg') }}" alt=""/>
                 </div>
                 <div class="col-lg-8 py-4">
                     <a href="#" class="h4"> Yabatech Upcoming Event 2021 </a>
