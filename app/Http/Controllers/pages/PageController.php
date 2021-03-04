@@ -14,7 +14,16 @@ class PageController extends Controller
      */
     public function vision()
     {
-        return view('pages.about.vision');
+        return view('pages.about.vision-mission');
+    }
+
+    /**
+     * Return history page
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function history()
+    {
+        return view('pages.about.history');
     }
 
     /**
