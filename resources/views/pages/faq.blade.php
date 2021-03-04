@@ -13,7 +13,7 @@
             <ol
                 class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0"
             >
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('contact.faq') }}">Home</a></li>
                 <li class="breadcrumb-item">FAQ</li>
             </ol>
         </div>
