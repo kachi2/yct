@@ -13,7 +13,7 @@
             <ol
                 class="breadcrumb breadcrumb-double-angle text-white bg-transparent p-0"
             >
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('pages.index') }}">Home</a></li>
                 <li class="breadcrumb-item">Privacy Policy</li>
             </ol>
         </div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="mb-5">
-                        <h2 class="mb-4">Welcome to Yabatech Privacy Policy</h2>
+                        <h2 class="mb-4">Yabatech Privacy Policy</h2>
                         <p>
                             Nam liber tempor cum soluta nobis eleifend option congue is
                             nihil imper per tem por legere me that doming vulputate the
