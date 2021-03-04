@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h1 class="text-primary display-1">404</h1>
-                    <h2 class="mb-4">Sorry! The Page Not Found</h2>
+                    <h2 class="mb-4">Sorry! Page Not Found</h2>
                     <p>
-                        The Link You Followed Probably Broken, or the page has been
-                        removed.
+                        The Link You Followed Is Probably Broken, Or The Page Has Been
+                        Removed.
                     </p>
-                    <a href="index.html" class="btn btn-rounded btn-primary mt-5">Back To Home</a>
+                    <a href="{{ route('pages.index') }}" class="btn btn-rounded btn-primary mt-5">Back To Home</a>
                 </div>
             </div>
             <!-- END row-->
