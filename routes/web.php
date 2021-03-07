@@ -17,6 +17,7 @@ use App\Http\Controllers\pages\PageController;
 Route::get('/', [PageController::class, 'index'])->name('pages.index');
 Route::get('privacy', [PageController::class, 'privacy'])->name('pages.privacy');
 Route::get('support', [PageController::class, 'support'])->name('pages.support');
+Route::get('research', [PageController::class, 'research'])->name('separate.research');
 
 // About routes
 Route::group(['prefix' => 'about'], function () {
@@ -134,7 +135,7 @@ Route::group(['prefix' => 'bursary'], function () {
     Route::get('treasury', [PageController::class, 'careerDetail'])->name('bursary.treasury');
 });
 // More
-Route::group(['prefix' => 'more'], function () {
+Route::group(['prefix' => ''], function () {
     Route::get('consult', [PageController::class, 'careerDetail'])->name('more.consult');
     Route::get('library', [PageController::class, 'careerDetail'])->name('more.library');
     Route::get('payments', [PageController::class, 'careerDetail'])->name('more.payments');
@@ -143,8 +144,20 @@ Route::group(['prefix' => 'more'], function () {
     Route::get('event-detail', [PageController::class, 'eventDetail'])->name('pages.event-detail');
     Route::get('epe_campus', [PageController::class, 'careerDetail'])->name('more.epe_campus');
     Route::get('announcements', [PageController::class, 'careerDetail'])->name('more.announcements');
-    Route::get('e-journal', [PageController::class, 'careerDetail'])->name('more.e-journal');
-    Route::get('fsdc', [PageController::class, 'careerDetail'])->name('more.fsdc');
+    Route::get('e-journal', [PageController::class, 'ejournal'])->name('more.e-journal');
+    Route::get('e-journal/ijss', function () {
+        return redirect('http://ijssyabatech.com/');
+    })->name('separate.ijss');
+    Route::get('e-journal/ses-2013', function () {
+        return response()->download('', '');
+    })->name('separate.ses');
+    Route::get('e-journal/yct-tech-2019', function () {
+        return response()->download('', '');
+    })->name('separate.yct-tech');
+
+    Route::get('fsdc', function () {
+        return redirect('https://yctfsdc.org/');
+    })->name('more.fsdc');
 });
 // Staff
 Route::group(['prefix' => 'staff'], function () {
