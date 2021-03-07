@@ -124,4 +124,15 @@ class PageController extends Controller
     {
         return view('pages.support');
     }
+
+    public function research()
+    {
+        return view('pages.separate.research');
+    }
+
+
+    public function ejournal()
+    {
+        return view('pages.separate.e-journal');
+    }
 }
