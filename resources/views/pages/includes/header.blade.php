@@ -37,7 +37,7 @@
                 <li
                     class="list-inline-item mr-0 p-md-2 p-2 border-right border-left border-white-0_1"
                 >
-                    <a href="#">Research</a>
+                    <a href="{{ route('separate.research') }}">Research</a>
                 </li>
                 <li
                     class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
