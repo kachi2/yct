@@ -1,4 +1,5 @@
 @extends('pages.layout.app')
+@section('title', '>> History')
 @section('styles')
     <!-- Include additional page css files here-->
 @endsection

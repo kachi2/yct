@@ -1,4 +1,5 @@
 @extends('pages.layout.app')
+@section('title', '>> Vision & Mission')
 @section('styles')
     <!-- Include additional page css files here-->
 @endsection
