@@ -20,9 +20,9 @@ Route::get('support', [PageController::class, 'support'])->name('pages.support')
 Route::get('research', [PageController::class, 'research'])->name('separate.research');
 
 // About routes
-Route::group(['prefix' => 'about'], function () {
-    Route::get('vision_and_mission', [PageController::class, 'vision'])->name('about.vision');
-    Route::get('history', [PageController::class, 'history'])->name('about.history');
+Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
+    Route::get('vision_and_mission', [PageController::class, 'vision'])->name('vision');
+    Route::get('history', [PageController::class, 'history'])->name('history');
 });
 // Administration
 Route::group(['prefix' => 'administration'], function () {
