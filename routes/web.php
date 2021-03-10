@@ -17,6 +17,16 @@ use App\Http\Controllers\pages\PageController;
 Route::get('/', [PageController::class, 'index'])->name('pages.index');
 Route::get('privacy', [PageController::class, 'privacy'])->name('pages.privacy');
 Route::get('support', [PageController::class, 'support'])->name('pages.support');
+Route::get('event-detail', [PageController::class, 'eventDetail'])->name('pages.event-detail');
+Route::get('e-journal/ijss', function () {
+    return redirect('http://ijssyabatech.com/');
+})->name('separate.ijss');
+Route::get('e-journal/ses-2013', function () {
+    return response()->download('', '');
+})->name('separate.ses');
+Route::get('e-journal/yct-tech-2019', function () {
+    return response()->download('', '');
+})->name('separate.yct-tech');
 Route::get('research', [PageController::class, 'research'])->name('separate.research');
 
 // About routes
@@ -144,17 +154,6 @@ Route::group(['prefix' => '', 'as' => 'more.'], function () {
     Route::get('epe_campus', [PageController::class, 'careerDetail'])->name('epe_campus');
     Route::get('announcements', [PageController::class, 'careerDetail'])->name('announcements');
     Route::get('e-journal', [PageController::class, 'ejournal'])->name('e-journal');
-    Route::get('event-detail', [PageController::class, 'eventDetail'])->name('pages.event-detail');
-    Route::get('e-journal/ijss', function () {
-        return redirect('http://ijssyabatech.com/');
-    })->name('separate.ijss');
-    Route::get('e-journal/ses-2013', function () {
-        return response()->download('', '');
-    })->name('separate.ses');
-    Route::get('e-journal/yct-tech-2019', function () {
-        return response()->download('', '');
-    })->name('separate.yct-tech');
-
     Route::get('fsdc', function () {
         return redirect('https://yctfsdc.org/');
     })->name('fsdc');
