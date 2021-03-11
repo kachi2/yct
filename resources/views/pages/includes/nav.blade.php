@@ -49,18 +49,18 @@
                             data-toggle="dropdown"
                         >Administration</a
                         >
-                                    <ul class="list-unstyled dropdown-menu px-0">
-                                        @if($menuNavs['administration'])
-                                            @foreach($menuNavs['administration'] as $administration)
-                                                <li class="px-0 col-12">
-                                                    <a href="{{ route($administration->link) }}"
-                                                       class="nav-link__list"
-                                                    >{{ $administration->name }}</a
-                                                    >
-                                                </li>
-                                            @endforeach
-                                        @endif
-                                    </ul>
+                        <ul class="list-unstyled dropdown-menu px-0">
+                            @if($menuNavs['administration'])
+                                @foreach($menuNavs['administration'] as $administration)
+                                    <li class="px-0 col-12">
+                                        <a href="{{ route($administration->link) }}"
+                                           class="nav-link__list"
+                                        >{{ $administration->name }}</a
+                                        >
+                                    </li>
+                                @endforeach
+                            @endif
+                        </ul>
                     </li>
 
                     <li class="nav-item nav-item__has-dropdown">
@@ -161,7 +161,7 @@
                                         @if($menuNavs['schools'])
                                             @foreach($menuNavs['schools'] as $schools)
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($schools->link) }}"
+                                                    <a href="{{ route(explode('.', $schools->link)[0], explode('.', $schools->link)[1]) }}"
                                                        class="nav-link__list"
                                                     >{{ $schools->name }}</a
                                                     >
