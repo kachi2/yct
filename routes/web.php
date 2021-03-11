@@ -14,6 +14,13 @@ use App\Http\Controllers\pages\PageController;
 |
 */
 
+// Schools subdomain routing
+Route::group(['domain' => '{school}.' . config('app.base_domain')], function () {
+    Route::get('/', function ($school) {
+        return view('pages.faculty-detail');
+    })->name('schools');
+});
+
 Route::get('/', [PageController::class, 'index'])->name('pages.index');
 Route::get('privacy', [PageController::class, 'privacy'])->name('pages.privacy');
 Route::get('support', [PageController::class, 'support'])->name('pages.support');
@@ -79,17 +86,6 @@ Route::group(['prefix' => 'ccs/programmes', 'as' => 'ccs.'], function () {
     Route::get('weekend', [PageController::class, 'careerDetail'])->name('weekend-programmes');
     Route::get('weekday', [PageController::class, 'careerDetail'])->name('weekday');
 });
-// Schools
-Route::group(['prefix' => 'schools'], function () {
-    Route::get('adp', [PageController::class, 'schoolDetail'])->name('schools.adp');
-    Route::get('engineering', [PageController::class, 'schoolDetail'])->name('schools.engineering');
-    Route::get('environmental_studies', [PageController::class, 'schoolDetail'])->name('schools.environmental');
-    Route::get('liberal_studies', [PageController::class, 'schoolDetail'])->name('schools.liberal');
-    Route::get('smbs', [PageController::class, 'schoolDetail'])->name('schools.smbs');
-    Route::get('technical_education', [PageController::class, 'schoolDetail'])->name('schools.technical');
-    Route::get('Science', [PageController::class, 'schoolDetail'])->name('schools.science');
-    Route::get('technology', [PageController::class, 'schoolDetail'])->name('schools.technology');
-});
 // Students
 Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
     Route::get('portal', [PageController::class, 'careerDetail'])->name('portal');
@@ -101,7 +97,7 @@ Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
     Route::get('calenders', [PageController::class, 'careerDetail'])->name('calenders');
 });
 // Service Units
-Route::group(['prefix' => 'service-units', 'service_units.'], function () {
+Route::group(['prefix' => 'service-units', 'as' => 'service_units.'], function () {
     Route::get('audit', [PageController::class, 'careerDetail'])->name('audit');
     Route::get('citm', [PageController::class, 'careerDetail'])->name('citm');
     Route::get('medical_services', [PageController::class, 'careerDetail'])->name('medical_services');
