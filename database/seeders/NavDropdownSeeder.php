@@ -53,12 +53,12 @@ class NavDropdownSeeder extends Seeder
             ['name' => 'Weekend Programmes', 'link' => 'ccs.weekend-programmes', 'nav_list_id' => 6],
             ['name' => 'Weekday/Evening Programmes', 'link' => 'ccs.weekday', 'nav_list_id' => 6],
 
-            ['name' => 'Art, Design & Printing', 'link' => 'schools.adp', 'nav_list_id' => 7],
+            ['name' => 'Art, Design & Printing', 'link' => 'schools.art-design-printing', 'nav_list_id' => 7],
             ['name' => 'Engineering', 'link' => 'schools.engineering', 'nav_list_id' => 7],
-            ['name' => 'Environmental Studies', 'link' => 'schools.environmental', 'nav_list_id' => 7],
-            ['name' => 'Liberal Studies', 'link' => 'schools.liberal', 'nav_list_id' => 7],
+            ['name' => 'Environmental Studies', 'link' => 'schools.environmental-studies', 'nav_list_id' => 7],
+            ['name' => 'Liberal Studies', 'link' => 'schools.liberal-studies', 'nav_list_id' => 7],
             ['name' => 'Management & Business Studies Studies', 'link' => 'schools.smbs', 'nav_list_id' => 7],
-            ['name' => 'Technical Education', 'link' => 'schools.technical', 'nav_list_id' => 7],
+            ['name' => 'Technical Education', 'link' => 'schools.technical-education', 'nav_list_id' => 7],
             ['name' => 'Science', 'link' => 'schools.science', 'nav_list_id' => 7],
             ['name' => 'Technology', 'link' => 'schools.technology', 'nav_list_id' => 7],
 
