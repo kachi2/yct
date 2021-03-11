@@ -15,7 +15,8 @@ class CreateRoutingsTable extends Migration
     {
         Schema::create('routings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->foreignId('school_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });
