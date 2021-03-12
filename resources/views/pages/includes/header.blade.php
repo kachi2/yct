@@ -1,4 +1,4 @@
-<header class="site-header  text-white" style="background:#006600">
+<header class="site-header bg-dark text-white-0_5">
     <div class="container">
         <div class="row align-items-center justify-content-between mx-0">
             <ul class="list-inline d-none d-lg-block mb-0">

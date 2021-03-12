@@ -29,10 +29,14 @@
                             data-toggle="dropdown"
                         >About</a
                         >
+                   
                         <ul class="dropdown-menu px-0">
+                       
                             @if($menuNavs['about'])
+                          
                                 @foreach($menuNavs['about'] as $about)
                                     <li class="px-0 col-12">
+                                    
                                         <a href="{{ route($about->link) }}" class="nav-link__list"
                                         >{{ $about->name }}</a
                                         >
@@ -425,22 +429,5 @@
 </nav>
 <!-- END ec-nav -->
 
-<div class="site-search">
-    <div class="site-search__close bg-black-0_8"></div>
-    <form class="form-site-search" action="#" method="POST">
-        <div class="input-group">
-            <input
-                type="text"
-                placeholder="Search"
-                class="form-control py-3 border-white"
-                required=""
-            />
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
-                    <i class="ti-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+
 <!-- END site-search-->

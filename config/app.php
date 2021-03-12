@@ -230,6 +230,6 @@ return [
     ],
 
     'log' => 'errorlog',
-    'base_domain' => env('APP_BASE_DOMAIN', 'yabatech.edu.eng')
+    'base_domain' => env('APP_BASE_DOMAIN', 'yabatech.com')
 
 ];
