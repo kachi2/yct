@@ -1,9 +1,9 @@
 <nav class="ec-nav sticky-top bg-white">
-    <div class="px-5">
+    <div class="pl-3 pr-2">
         <div class="navbar p-0 navbar-expand-lg">
             <div class="navbar-brand">
                 <a class="logo-default" href="{{ route('pages.index') }}"
-                ><img width="120" height="60" alt="" src="{{ asset('./assets/img/yabatech.svg') }}"
+                ><img width="120" height="50" alt="" src="{{ asset('./assets/img/yabatech.svg') }}"
                     /></a>
             </div>
             <span
@@ -29,7 +29,15 @@
                             data-toggle="dropdown"
                         >About</a
                         >
-                   
+                   <li class="nav-item">
+                  <a href="" class="nav-link"> Payments </a>
+                  </li>
+                  <li class="nav-item ">
+                  <a href="" class="nav-link">Library</a>
+                  </li>
+                  <li class="nav-item ">
+                  <a href="" class="nav-link">Consult</a>
+                  </li>
                         <ul class="dropdown-menu px-0">
                        
                             @if($menuNavs['about'])
@@ -46,7 +54,8 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item nav-item__has-dropdown">
+               
+                    <li class="nav-item ">
                         <a
                             class="nav-link dropdown-toggle"
                             href="#"
@@ -414,15 +423,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="nav-toolbar">
-                <ul class="navbar-nav ec-nav__navbar">
-                    <li class="nav-item">
-                        <a class="nav-link site-search-toggler" href="#">
-                            <i class="ti-search"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          
         </div>
     </div>
     <!-- END container-->

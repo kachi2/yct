@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers;
-
 use App\Models\Menu;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
