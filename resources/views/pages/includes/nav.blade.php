@@ -25,19 +25,7 @@
                     <li class="nav-item nav-item__has-dropdown">
                         <a
                             class="nav-link dropdown-toggle"
-                            href="#"
-                            data-toggle="dropdown"
-                        >About</a
-                        >
-                   <li class="nav-item">
-                  <a href="" class="nav-link"> Payments </a>
-                  </li>
-                  <li class="nav-item ">
-                  <a href="" class="nav-link">Library</a>
-                  </li>
-                  <li class="nav-item ">
-                  <a href="" class="nav-link">Consult</a>
-                  </li>
+                            href="#" data-toggle="dropdown">About</a>
                         <ul class="dropdown-menu px-0">
                        
                             @if($menuNavs['about'])
@@ -53,9 +41,12 @@
                             @endif
                         </ul>
                     </li>
+                    
+                  
+                 
 
-               
-                    <li class="nav-item ">
+              
+                    <li class="nav-item nav-item__has-dropdown">
                         <a
                             class="nav-link dropdown-toggle"
                             href="#"
@@ -65,10 +56,13 @@
                         <ul class="list-unstyled dropdown-menu px-0">
                             @if($menuNavs['administration'])
                                 @foreach($menuNavs['administration'] as $administration)
+                                @php 
+                                    $name =  explode('.', $administration->link);
+                                @endphp
                                     <li class="px-0 col-12">
-                                        <a href="{{ route($administration->link) }}"
+                                        <a href="{{ route('administration', $name[1])}}"
                                            class="nav-link__list"
-                                        >{{ $administration->name }}</a
+                                        >{{$administration->name}}</a
                                         >
                                     </li>
                                 @endforeach
@@ -86,8 +80,11 @@
                         <ul class="dropdown-menu px-0">
                             @if($menuNavs['admission'])
                                 @foreach($menuNavs['admission'] as $admission)
+                                @php 
+                                    $name =  explode('.', $admission->link);
+                                @endphp
                                     <li class="px-0 col-12">
-                                        <a href="{{ route($admission->link) }}"
+                                        <a href="{{ route('admission', $name[1])}}"
                                            class="nav-link__list"
                                         >{{ $admission->name }}</a
                                         >
@@ -96,7 +93,15 @@
                             @endif
                         </ul>
                     </li>
-
+                    <li class="nav-item">
+                  <a href="https://portal.yabatech.edu.ng/payment/home/paymentportal" class="nav-link"> Payments </a>
+                  </li>
+                  <li class="nav-item ">
+                  <a href="https://library.yabatech.edu.ng/" class="nav-link">Library</a>
+                  </li>
+                  <li class="nav-item ">
+                  <a href="{{route('more.news')}}"  class="nav-link">News</a>
+                  </li>
                     <li class="nav-item nav-item__has-megamenu">
                         <a
                             class="nav-link dropdown-toggle"

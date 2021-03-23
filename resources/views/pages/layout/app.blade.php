@@ -144,6 +144,7 @@
 <!-- Scripts-->
 @include('pages.includes.main-js')
 @stack('scripts')
+@yield('script')
 </body>
 </html>
 

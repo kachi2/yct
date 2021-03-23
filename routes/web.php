@@ -42,26 +42,26 @@ Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
     Route::get('history', [PageController::class, 'history'])->name('history');
 });
 // Administration
-Route::group(['prefix' => 'administration', 'as' => 'administration.'], function () {
-    Route::get('visitor', [PageController::class, 'careerDetail'])->name('visitor');
-    Route::get('chairman_council', [PageController::class, 'careerDetail'])->name('chairman_council');
-    Route::get('rector', [PageController::class, 'careerDetail'])->name('rector');
-    Route::get('governing_council', [PageController::class, 'careerDetail'])->name('governing_council');
-    Route::get('deputy_academics', [PageController::class, 'careerDetail'])->name('deputy_academics');
-    Route::get('deputy_administration', [PageController::class, 'careerDetail'])->name('deputy_administration');
-    Route::get('registrar', [PageController::class, 'careerDetail'])->name('registrar');
-    Route::get('bursar', [PageController::class, 'careerDetail'])->name('bursar');
-    Route::get('librarian', [PageController::class, 'careerDetail'])->name('librarian');
-});
+//Route::group(['prefix' => 'administration', 'as' => 'administration.'], function () {
+    //Route::get('visitor', [PageController::class, 'careerDetail'])->name('visitor');
+    //Route::get('chairman_council', [PageController::class, 'careerDetail'])->name('chairman_council');
+    Route::get('administration/{name}', [PageController::class, 'administration'])->name('administration');
+    //Route::get('governing_council', [PageController::class, 'careerDetail'])->name('governing_council');
+    //Route::get('deputy_academics', [PageController::class, 'careerDetail'])->name('deputy_academics');
+    //Route::get('deputy_administration', [PageController::class, 'careerDetail'])->name('deputy_administration');
+    //Route::get('registrar', [PageController::class, 'careerDetail'])->name('registrar');
+    //Route::get('bursar', [PageController::class, 'careerDetail'])->name('bursar');
+    //Route::get('librarian', [PageController::class, 'careerDetail'])->name('librarian');
+//});
 // Admissions
-Route::group(['prefix' => 'admissions', 'as' => 'admissions.'], function () {
-    Route::get('programmes', [PageController::class, 'careerDetail'])->name('programmes');
-    Route::get('apply_to_yct', [PageController::class, 'careerDetail'])->name('apply_to_yct');
-    Route::get('entry_requirement', [PageController::class, 'careerDetail'])->name('entry_requirement');
-    Route::get('nd_pt', [PageController::class, 'careerDetail'])->name('nd_pt');
-    Route::get('hnd_pt', [PageController::class, 'careerDetail'])->name('hnd_pt');
-    Route::get('acceptance_fee', [PageController::class, 'careerDetail'])->name('acceptance_fee');
-});
+//Route::group(['prefix' => 'admissions', 'as' => 'admissions.'], function () {
+    Route::get('admission/{name}', [PageController::class, 'admission'])->name('admission');
+  //  Route::get('apply_to_yct', [PageController::class, 'careerDetail'])->name('apply_to_yct');
+  //  Route::get('entry_requirement', [PageController::class, 'careerDetail'])->name('entry_requirement');
+  //  Route::get('nd_pt', [PageController::class, 'careerDetail'])->name('nd_pt');
+   // Route::get('hnd_pt', [PageController::class, 'careerDetail'])->name('hnd_pt');
+   // Route::get('acceptance_fee', [PageController::class, 'careerDetail'])->name('acceptance_fee');
+//});
 // Special Intervention
 Route::group(['prefix' => 'special-intervention', 'as' => 's_intervention.'], function () {
     Route::get('academic_staff', [PageController::class, 'careerDetail'])->name('academic_staff');
@@ -145,7 +145,8 @@ Route::group(['prefix' => '', 'as' => 'more.'], function () {
     Route::get('consult', [PageController::class, 'careerDetail'])->name('consult');
     Route::get('library', [PageController::class, 'careerDetail'])->name('library');
     Route::get('payments', [PageController::class, 'careerDetail'])->name('payments');
-    Route::get('news', [PageController::class, 'careerDetail'])->name('news');
+    Route::get('news', [PageController::class, 'collegeNews'])->name('news');
+    Route::get('news/details', [PageController::class, 'collegeNewsDetails'])->name('news.details');
     Route::get('events', [PageController::class, 'events'])->name('events');
     Route::get('epe_campus', [PageController::class, 'careerDetail'])->name('epe_campus');
     Route::get('announcements', [PageController::class, 'careerDetail'])->name('announcements');

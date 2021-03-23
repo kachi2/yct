@@ -4,6 +4,7 @@ namespace App\Http\Controllers\pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Rector;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -135,4 +136,50 @@ class PageController extends Controller
     {
         return view('pages.separate.e-journal');
     }
+
+    public function collegeNews(){
+
+        return view('pages.news.index');
+
+    }
+    public function collegeNewsDetails(){
+
+        return view('pages.news.details');
+
+    }
+
+    public function administration($name){
+        //dd($name);
+        $rector = Rector::where('link', $name)->first();
+       // dd($rector);
+        return view('pages.administration', compact('rector'));
+
+    }
+
+    public function admission($name){
+
+        if($name == 'programmes'){
+
+            return redirect()->intended('https://portal.yabatech.edu.ng/app/programs/');
+
+        }elseif ($name == 'apply_to_yct'){
+            return redirect()->intended('https://erp.yabatech.edu.ng/yabaapplication');
+
+        }elseif($name == 'entry_requirement'){
+            return redirect()->intended('https://portal.yabatech.edu.ng/entry/');
+
+        }elseif($name == 'nd_pt'){
+
+            return redirect()->intended('https://yabatech.edu.ng/admlist/ndptlist1.htm');
+        }elseif($name == 'hnd_pt'){
+
+            return redirect()->intended('https://yabatech.edu.ng/admlist/hndptlist1.htm');
+        }elseif($name == 'acceptance_fee'){
+
+            return redirect()->intended('http://erp.yabatech.edu.ng/portal/index.php?register/account_verification_acceptancefees');
+        }
+
+    }
+
+
 }

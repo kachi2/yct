@@ -106,13 +106,13 @@
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <i class="ti-angle-right iconbox bg-black-0_5 hover:primary"></i>
   </a>
-     <div class="owl-carousel arrow-on-hover text-center padding-y-10 flex-center bg-cover" data-dark-overlay="6"
-          data-space="10"
+     <div class="owl-carousel arrow-on-hover text-center padding-y-10 flex-center bg-cover" data-dark-overlay="1"
+          data-space="4"
           data-items="5"
           data-arrow="true"
           data-loop="false"
           data-tablet="4"
-          data-delay = "13923"
+          data-delay = "1"
           >
 
           <a href="https:portal.yabatech.edu.ng" class="card p-4 hover:primary">
@@ -356,11 +356,8 @@
     </div> <!-- END row-->
   </div> <!-- END container-->
 </section>
-
-
         <!-- END container-->
-    </section>
-    
+    </section>   
 <section class="padding-y-100">
   <div class="container">
     <div class="row">
