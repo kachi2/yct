@@ -15,7 +15,7 @@ class PageController extends Controller
      */
     public function vision()
     {
-        return view('pages.about.vision-mission');
+        return view('users.about.vision-mission');
     }
 
     /**
@@ -24,7 +24,7 @@ class PageController extends Controller
      */
     public function history()
     {
-        return view('pages.about.history');
+        return view('users.about.history');
     }
 
     /**
@@ -33,7 +33,7 @@ class PageController extends Controller
      */
     public function careers()
     {
-        return view('pages.careers');
+        return view('users.careers');
     }
 
     /**
@@ -42,7 +42,7 @@ class PageController extends Controller
      */
     public function careerDetail()
     {
-        return view('pages.career-detail');
+        return view('users.career-detail');
     }
 
     /**
@@ -51,7 +51,7 @@ class PageController extends Controller
      */
     public function contact()
     {
-        return view('pages.contact.contact-us');
+        return view('users.contact.contact-us');
     }
 
     /**
@@ -60,7 +60,7 @@ class PageController extends Controller
      */
     public function events()
     {
-        return view('pages.events');
+        return view('users.events');
     }
 
     /**
@@ -69,7 +69,7 @@ class PageController extends Controller
      */
     public function eventDetail()
     {
-        return view('pages.event-detail');
+        return view('users.event-detail');
     }
 
     /**
@@ -78,7 +78,7 @@ class PageController extends Controller
      */
     public function schools()
     {
-        return view('pages.faculties');
+        return view('users.faculties');
     }
 
     /**
@@ -87,7 +87,7 @@ class PageController extends Controller
      */
     public function schoolDetail()
     {
-        return view('pages.faculty-detail');
+        return view('users.faculty-detail');
     }
 
     /**
@@ -96,7 +96,7 @@ class PageController extends Controller
      */
     public function faq()
     {
-        return view('pages.faq');
+        return view('users.faq');
     }
 
     /**
@@ -105,7 +105,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('users.index');
     }
 
     /**
@@ -114,7 +114,7 @@ class PageController extends Controller
      */
     public function privacy()
     {
-        return view('pages.privacy');
+        return view('users.privacy');
     }
 
     /**
@@ -123,28 +123,28 @@ class PageController extends Controller
      */
     public function support()
     {
-        return view('pages.support');
+        return view('users.support');
     }
 
     public function research()
     {
-        return view('pages.separate.research');
+        return view('users.separate.research');
     }
 
 
     public function ejournal()
     {
-        return view('pages.separate.e-journal');
+        return view('users.separate.e-journal');
     }
 
     public function collegeNews(){
 
-        return view('pages.news.index');
+        return view('users.news.index');
 
     }
     public function collegeNewsDetails(){
 
-        return view('pages.news.details');
+        return view('users.news.details');
 
     }
 
@@ -152,7 +152,7 @@ class PageController extends Controller
         //dd($name);
         $rector = Rector::where('link', $name)->first();
        // dd($rector);
-        return view('pages.administration', compact('rector'));
+        return view('users.administration', compact('rector'));
 
     }
 

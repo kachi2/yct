@@ -1,108 +1,184 @@
-@extends('admin.layout.app')
-@section('styles')
-    <!-- Page specific css files -->
-@endsection
+@extends('layouts.admin')
 @section('content')
-<!-- start page content -->
-<div class="page-content-wrapper">
-    <div class="page-content">
-        <div class="page-bar">
-            <div class="page-title-breadcrumb">
-                <div class=" pull-left">
-                    <div class="page-title">Dashboard</div>
-                </div>
-                <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                           href="{{ route('admin.dashboard') }}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-                    </li>
-                    <li class="active">Dashboard</li>
-                </ol>
-            </div>
-        </div>
-        <!-- start widget -->
-        <div class="state-overview">
-            <div class="row">
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="info-box bg-b-green">
-                        <span class="info-box-icon push-bottom"><i class="material-icons">share</i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Total Events</span>
-                            <span class="info-box-number">450</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 50%"></div>
-                            </div>
-                            <span class="progress-description">
-											25 upcoming
-										</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="info-box bg-b-yellow">
-                        <span class="info-box-icon push-bottom"><i class="material-icons">share</i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">All News</span>
-                            <span class="info-box-number">155</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 80%"></div>
-                            </div>
-                            <span class="progress-description">
-											100 Published
-										</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="info-box bg-b-blue">
-                        <span class="info-box-icon push-bottom"><i class="material-icons">volume_up</i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Announcements</span>
-                            <span class="info-box-number">102</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 85%"></div>
-                            </div>
-                            <span class="progress-description">
-											85 in 28 Days
-										</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="info-box bg-b-pink">
-									<span class="info-box-icon push-bottom"><i
-                                            class="material-icons">person_add</i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Users</span>
-                            <span class="info-box-number">13</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 50%"></div>
-                            </div>
-                            <span class="progress-description">
-											5 online
-										</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-            </div>
-        </div>
-        <!-- end widget -->
-    </div>
-</div>
-<!-- end page content -->
-@endsection
 
-@push('scripts')
-    <!-- Page specific js files -->
-@endpush
+
+ <div class="main-content">
+
+        <!-- begin::page-header -->
+        <div class="page-header">
+            <div class="container-fluid d-sm-flex justify-content-between">
+                <h4>Dashboard</h4>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Index</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- end::page-header -->
+
+        <!-- begin::page content -->
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Tickets Purchased</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($booking)}}</h2>
+                                               <p class="small text-muted mb-0 line-height-20">
+                                                    <span class="text-success">N{{number_format($booking->sum('payable'))}}</span> Total Paid
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-success-bright text-success rounded-circle">
+                                                    <i class="fa fa-ticket"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Journal Purchased</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($journals)}}</h2>
+                                                <p class="small text-muted mb-0 line-height-20">
+                                                    <span class="text-success">N{{number_format($journal)}}</span> Total Paid
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                                    <i class="fa fa-book"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Registered Talents</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($talent)}}</h2>
+                                                
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-info-bright text-info rounded-circle">
+                                                    <i class="fa fa-money"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Sponsors</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($cc)}}</h2>
+                                              <p class="small text-muted mb-0 line-height-20">
+                                                    <span class="text-success">N{{number_format($campaign)}}</span> Total Paid
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-success-bright text-success rounded-circle">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Advertizers</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($sponsor)}}</h2>
+                                                <p class="small text-muted mb-0 line-height-20">
+                                                    <span class="text-success">N{{number_format($sponsor->sum('amount'))}}</span> Total Paid
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                                    <i class="fa fa-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="card-title mb-3">Total Users</h6>
+                                            <div class="d-flex d-sm-block d-lg-flex align-items-end">
+                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($users)}}</h2> 
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="avatar avatar-lg">
+                                                <div class="avatar-title bg-info-bright text-info rounded-circle">
+                                                    <i class="fa fa-graduation-cap"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+
+              
+                </div>
+            </div>
+        </div>
+        <!-- end::page content -->
+
+
+@endsection

@@ -49,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'contact' => $contact, 'ccs' => $ccs, 'schools' => $schools,
             'students' => $students, 'sIntervention' => $sIntervention, 'aIntervention' => $aIntervention, 'registry' => $registry,
             'academicUnits' => $academicUnits, 'serviceUnits' => $serviceUnits];
-        view()->composer(['pages.layout.app'], function ($view) use ($menuItems) {
+        view()->composer(['users.layout.app'], function ($view) use ($menuItems) {
             $view->with('menuNavs', $menuItems);
         });
     }
