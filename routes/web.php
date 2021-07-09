@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pages\PageController;
+use App\Http\Controllers\SchoolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,7 @@ use App\Http\Controllers\pages\PageController;
 
 // Schools subdomain routing
 Route::group(['domain' => '{school}.' . config('app.base_domain')], function () {
-    Route::get('/', function ($school) {
-        return view('pages.faculty-detail');
-    })->name('schools');
+Route::get('/index', [SchoolController::class, 'index'])->name('schools');
 });
 
 Route::get('/', [PageController::class, 'index'])->name('pages.index');
@@ -41,28 +40,11 @@ Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
     Route::get('vision_and_mission', [PageController::class, 'vision'])->name('vision');
     Route::get('history', [PageController::class, 'history'])->name('history');
 });
-// Administration
-//Route::group(['prefix' => 'administration', 'as' => 'administration.'], function () {
-    //Route::get('visitor', [PageController::class, 'careerDetail'])->name('visitor');
-    //Route::get('chairman_council', [PageController::class, 'careerDetail'])->name('chairman_council');
-    Route::get('administration/{name}', [PageController::class, 'administration'])->name('administration');
-    //Route::get('governing_council', [PageController::class, 'careerDetail'])->name('governing_council');
-    //Route::get('deputy_academics', [PageController::class, 'careerDetail'])->name('deputy_academics');
-    //Route::get('deputy_administration', [PageController::class, 'careerDetail'])->name('deputy_administration');
-    //Route::get('registrar', [PageController::class, 'careerDetail'])->name('registrar');
-    //Route::get('bursar', [PageController::class, 'careerDetail'])->name('bursar');
-    //Route::get('librarian', [PageController::class, 'careerDetail'])->name('librarian');
-//});
-// Admissions
-//Route::group(['prefix' => 'admissions', 'as' => 'admissions.'], function () {
-    Route::get('admission/{name}', [PageController::class, 'admission'])->name('admission');
-  //  Route::get('apply_to_yct', [PageController::class, 'careerDetail'])->name('apply_to_yct');
-  //  Route::get('entry_requirement', [PageController::class, 'careerDetail'])->name('entry_requirement');
-  //  Route::get('nd_pt', [PageController::class, 'careerDetail'])->name('nd_pt');
-   // Route::get('hnd_pt', [PageController::class, 'careerDetail'])->name('hnd_pt');
-   // Route::get('acceptance_fee', [PageController::class, 'careerDetail'])->name('acceptance_fee');
-//});
-// Special Intervention
+ Route::get('administration/{name}', [PageController::class, 'administration'])->name('administration');
+ Route::get('admission/{name}', [PageController::class, 'admission'])->name('admission');
+Route::get('/schools', [SchoolController::class, 'index'])->name('schools.index');
+
+ #====================================== old routes =========================================
 Route::group(['prefix' => 'special-intervention', 'as' => 's_intervention.'], function () {
     Route::get('academic_staff', [PageController::class, 'careerDetail'])->name('academic_staff');
     Route::get('education_support', [PageController::class, 'careerDetail'])->name('education_support');

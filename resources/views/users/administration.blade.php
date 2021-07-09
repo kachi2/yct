@@ -1,4 +1,4 @@
-@extends('pages.layout.app')
+@extends('users.layout.app')
 @section('content')
 
 <div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url({{ asset('./assets/img/site/categ.jpg') }}) no-repeat">

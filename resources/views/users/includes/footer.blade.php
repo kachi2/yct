@@ -107,7 +107,7 @@
     </div>
     <!-- END footer-top-->
 
-    <div class="footer-bottom bg-black-0_9 py-5 text-center">
+    <div class="footer-bottom py-5 text-white text-center" style="background:#006600">
         <div class="container">
             <p class="text-white-0_5 mb-0">
                 &copy; @php echo date('Y') @endphp Yaba College Of Technology . All rights reserved.

@@ -17,7 +17,6 @@ class PageController extends Controller
     {
         return view('users.about.vision-mission');
     }
-
     /**
      * Return history page
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -177,6 +176,8 @@ class PageController extends Controller
         }elseif($name == 'acceptance_fee'){
 
             return redirect()->intended('http://erp.yabatech.edu.ng/portal/index.php?register/account_verification_acceptancefees');
+        }else{
+            return redirect()->intended($name->link);
         }
 
     }
