@@ -201,7 +201,52 @@
   </div> <!-- END container-->
 </section>
 
-
+<section class="padding-y-100 border-bottom border-light">
+  <div class="container">
+    <div class="row">
+     <div class="col-12 text-center mb-5">
+       <h4>{{$school->name}} <span class="text-primary">image Gallery</span></h4>
+     </div>
+     <div class="col-12">
+       <div class="owl-carousel" data-items="4" data-space="30" data-arrow="true">
+         <div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/4.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/4.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
+              </a>
+            </div>
+          </div>
+         <div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/2.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/2.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
+              </a>
+            </div>
+          </div>
+         <div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/3.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/3.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
+              </a>
+            </div>
+          </div>
+         <div class="media-viewer">
+            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
+            <div class="media-viewer__overlay bg-black-0_7 flex-center">
+              <a href="assets/img/360x300/1.jpg" class="text-white font-size-30" data-fancybox="gallery">
+                <i class="ti-plus"></i>
+              </a>
+            </div>
+          </div>
+       </div>
+     </div>
+    </div> <!-- END row-->
+  </div> <!-- END container-->
+</section>
+ 
 
 @endsection
 
