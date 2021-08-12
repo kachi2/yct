@@ -74,9 +74,6 @@ Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
     Route::get('student_affairs', [PageController::class, 'careerDetail'])->name('student_affairs');
     Route::get('email', [PageController::class, 'careerDetail'])->name('email');
     Route::get('sports_societies', [PageController::class, 'careerDetail'])->name('sports_societies');
-    Route::get('handbook', [PageController::class, 'careerDetail'])->name('handbook');
-    Route::get('downloads', [PageController::class, 'careerDetail'])->name('downloads');
-    Route::get('calenders', [PageController::class, 'careerDetail'])->name('calenders');
 });
 // Service Units
 Route::group(['prefix' => 'service-units', 'as' => 'service_units.'], function () {
