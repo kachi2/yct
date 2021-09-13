@@ -9,98 +9,19 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
   </ol>
         <div class="carousel-inner">
-            <div class="carousel-item padding-y-80 height-80vh active">
+             @foreach ($sliders as $slider )
+            <div class="carousel-item padding-y-80 height-80vh {{$slider->is_active ==1? 'active': ''}}">
                 <div
                     class="bg-absolute"
                     data-dark-overlay="0"
                     style="
-              background: url({{asset('/assets/img/assa.png')}})
+              background: url({{asset('/assets/img/'.$slider->image)}})
                 no-repeat;
             "
                 ></div>
-              <!--  <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 mx-auto text-center text-white">
-                            <h2 class="font-weight-bold animated slideInUp">
-                                Nabteb Inspects Yabatech Workplaces Training Centres
-                            </h2>
-                            <p class="lead animated fadeInUp">
-                                The National Business and Technical Examination Board (NABTEB)
-                                recently inspects several workplaces in computer village
-                                Ikeja, that will serve as Yabatech Training Centre for mobile
-                                phones and computer hardware repairs and maintenance under the
-                                National Skills Qualification Framework (NSQF).
-                            </p>
-                            <a href="#" class="btn btn-primary mt-3 mx-2 animated slideInUp"
-                            >Read More</a
-                            >
-                           
-                        </div>
-                    </div>
-                </div>  -->
+              
             </div>
-
-            <div class="carousel-item padding-y-80 height-80vh">
-                <div
-                    class="bg-absolute"
-                    data-dark-overlay="0"
-                    style="
-              background: url({{asset('/assets/img/ada.png')}})
-                no-repeat;
-            "
-                ></div>
-             <!--   <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 mx-auto text-center text-white">
-                            <h2 class="font-weight-bold animated slideInUp">
-                                Nans Honours Yabatech Rector
-                            </h2>
-                            <p class="lead animated fadeInUp">
-                                National Association of Nigerian Students (NANS) South-West
-                                zone recently presented the 2020 NANS South-West Outstanding
-                                Personality Distinguished Award to the Rector, Yaba College of
-                                Technology (Yabatech), Engr. Obafemi Omokungbe as Icon of
-                                Education Development.
-                            </p>
-                            <a href="#" class="btn btn-primary mt-3 mx-2 animated slideInUp"
-                            >Read More</a
-                            >
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="carousel-item padding-y-80 height-80vh">
-                <div
-                    class="bg-absolute"
-                    data-dark-overlay="0"
-                    style="
-              background: url({{asset('/assets/img/dsd.jpg')}})
-                no-repeat;
-            "
-                >
-                
-                </div>
-             <!--   <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 mx-auto text-center text-white">
-                            <h2 class="font-weight-bold animated slideInUp">
-                                Nans Honours Yabatech Rector
-                            </h2>
-                            <p class="lead animated fadeInUp">
-                                National Association of Nigerian Students (NANS) South-West
-                                zone recently presented the 2020 NANS South-West Outstanding
-                                Personality Distinguished Award to the Rector, Yaba College of
-                                Technology (Yabatech), Engr. Obafemi Omokungbe as Icon of
-                                Education Development.
-                            </p>
-                            <a href="#" class="btn btn-primary mt-3 mx-2 animated slideInUp"
-                            >Read More</a
-                            >
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
+                  @endforeach
          </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <i class="ti-angle-left iconbox bg-black-0_5 hover:primary"></i>
@@ -131,63 +52,19 @@
         data-autoplay="false"
         data-space="30"
         data-loop="true">
-         
+         @foreach ($news as  $new)
           <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-              <img class="w-100" src="{{asset('/assets/img/sas.jpg')}}" alt="">
+            <a href="{{route('news.details',encrypt($new->id))}}">
+              <img class="w-100" src="{{asset('/assets/img/'.$new->image)}}" alt="" width="100px" height="200px">
             </a>
             <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
+              <a href="{{route('news.details',encrypt($new->id))}}" class="h6">
+                {{substr($new->title,0,40)}}{{strlen($new->title) > 40? '...':''}}
               </a>
            
             </div>
          </div>
-         
-         
-          <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-              <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
-           <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-            <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
-           <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-          <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>  <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-             <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
+           @endforeach
         </div>
       </div>
     </div> <!-- END row-->
@@ -196,59 +73,39 @@
    <!-- END row-->
   </div> <!-- END container-->
 </section> 
+
+
 <section class="padding-y-30" data-primary-overlay="7" style="background: url(assets/img/1920/962.jpg) no-repeat"><div class="container">
 </section>
     <!-- Start section-->
 <section class="bg-light-v2 padding-y-10">
   <div class="container">
     <div class="row">
-       <div class="col-lg-6 marginTop-30">
+       <div class="col-lg-6 marginTop-20">
         <div class="card">
         <center>  <img src="{{asset('')}}assets/img/site/rector.jpg"  height="350px" width="350px" alt=""/></center>
-          <div class="card-body">
-           <p class="text-primary">
-            Engr. Obafemi Omokungbe
-              Rector, <br>
+          <div class="card-body" style="padding-left:100px">
+           <p class="text-dark">
+            {{$rector->name}}
+             <br> {{$rector->designation}},
                Yaba College of Technology
            </p>
            <h4>
-            <a href="#">
-                 <small class="text-primary d-block"> Hello, </small>
-                        Welcome to Yabatech.
-            </a>
-           </h4>
-           <p>
-             Investig ationes demons trave wanrunt the lectore legere kliushy was aequod legunt saeph claritas.
-           </p>
-            <a href="#" class="btn btn-outline-primary">
-              Read More
-            </a>
+         
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="list-card align-items-center marginTop-30">
-          <div class="col-md-4 px-md-0">
-            <img class="w-100" src="{{asset('/assets/img/regis.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4">
-            <p class="text-primary">Dr. S. O. Momodu</p>
-            <a href="#" class="h5">
-              Regista Yaba college of Technology
-            </a>
-          </div>
-        </div>
-        <div class="list-card align-items-center marginTop-30">
-          <div class="col-md-4 px-md-0">
-            <img class="w-100" src="{{asset('/assets/img/depu.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4">
-            <p class="text-primary">Dr. Engr. Kehinde B</p>
-            <a href="#" class="h5">
-              The Deputy Rector (Academics) 
-            </a>
-          </div>
-        </div>
+        <div class="col-md-6 mt-3">
+        <h2>
+         <small class="text-primary d-block">
+           Hello, and Welcome to
+         </small>
+          Yaba COllege of Technology.
+        </h2>
+       
+        <p style="text-align:justify">
+      {{substr($rector->message,0,600)}}
+       <a href="{{route('administration',$rector->link)}}" class="btn btn-outline-primary"> Read More</a>
       </div>
    
     </div> <!-- END row-->
@@ -299,37 +156,20 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
             </span>
           </div>
           
+          @foreach ($notices as $notice )
           <div class="p-4 border-bottom wow fadeInUp">
             <p class="text-primary mb-1">
-              March 10th, 2021
+              {{$notice->created_at->DiffForHumans()}}
             </p>
-             <h6>School Resumption</h6>
-            <a href="#">
-              School considers resumption of school activities on 22nd march, 2021.
-              This news came after the academic board meeting on friday, 12th of march, 2021.
-
+             <h6>{{$notice->headline}}</h6>
+            <a href="{{route('noticeDetails', encrypt($notice->id))}}">{{substr($notice->content,0,100)}}
             </a>
-             <a href="#" class="btn btn-outline-primary">
+             <a href="{{route('noticeDetails', encrypt($notice->id))}}" class="btn btn-outline-primary">
               Read More
             </a>
           </div>
+          @endforeach
     
-          
-          <div class="p-4 border-bottom wow fadeInUp">
-            <p class="text-primary mb-1">
-              March 5th, 2021
-            </p>
-            <h6> School Fees payment Extention</h6>
-            <a href="#">
-             School extends closing of portal for school feees payments.
-             The academic unit has consider it neccesary to extend payment of school fees for 
-             students due to the Technical issues encountered at the CITM which could not allow students
-
-            </a>
-             <a href="#" class="btn btn-outline-primary">
-              Read More
-            </a>
-          </div>
           
         
           <div class="p-4">
@@ -350,84 +190,51 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
       "
     >
    
-    <section class="padding-y-10 bg-light-v5">
+ 
+        <!-- END container-->
+    </section>   
+
+    <section class="paddingTop-50 paddingBottom-100">
   <div class="container">
     <div class="row">
      
-      <div class="col-12 text-center">
+      <div class="col-md-6 mt-5">
         <h2 class="mb-4">
-          Latest College News
+          Facebook Page
         </h2>
-        <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
+        <div class="width-3rem height-4 rounded bg-primary mb-5"></div>
+        
+        <div class="mb-5 wow fadeIn" data-wow-delay=".1">
+          <div class="media mb-3">    
+          </div>
+         <div class="fb-page" data-href="https://web.facebook.com/Yabatech/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://web.facebook.com/Yabatech/" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/Yabatech/">Yaba College of Technology - Yabatech</a></blockquote></div>
+        </div>
+        
+     
+        
       </div> 
+     
+      <div class="col-md-6 mt-5">
+        <h2 class="mb-4">
+        Instagram Page
+        </h2>
+        <div class="width-3rem height-4 rounded bg-primary mb-5"></div>
+        
+        <div class="mb-5 wow fadeIn" data-wow-delay=".1">
+        
+          <p>
+        <a href="https://www.instagram.com/yabatechofficial/?utm_source=ig_embed&ig_rid=90f7f2ea-fd5b-47df-a4af-a084f860dad8"> </p>
+         
+        </div>
+        
+       
+        
+      </div> 
+      
     </div> <!-- END row-->
-    
-    <div class="row mt-4">
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".1s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/news.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h6>
-              Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </h6>
-            <p>
-              <i class="ti-location-pin"></i>COllege Hall
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".2s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/skills.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h4>
-              Skills Acquisition Centre Kicks Off Training
-            </h4>
-            <p>
-              <i class="ti-location-pin"></i> College 
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".1s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/skills.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h4>
-              College Entertainment week
-            </h4>
-            <p>
-              <i class="ti-location-pin"></i> College Sport Complex
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".2s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/news.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h4>
-              College Students Orientation week
-            </h4>
-            <p>
-              <i class="ti-location-pin"></i>College Hall
-            </p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- END row-->
+
   </div> <!-- END container-->
 </section>
-        <!-- END container-->
-    </section>   
 
 
 

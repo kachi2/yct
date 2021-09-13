@@ -39,30 +39,18 @@
        <div class="card shadow-v2 marginTop-30">
          <h4 class="card-header bg-white text-black mb-0">Top News</h4>
 
-      <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1 p-2">
-          <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
+    @foreach ($latest as $lats)
+      <div href="{{route('news.details',encrypt($lats->id))}}" class="card text-gray shadow-v1 p-2">
+          <img class="card-img-top" src="{{asset('/assets/img/'.$lats->image)}}" alt="">
           <div class="p-1">
             <a href="#" class="h6">
-              Programming Real-World Examples
+              {{substr($lats->title,0,20)}}{{strlen($lats->title) > 40? '...':''}}
             </a> 
           </div>
         </div>
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1 p-2">
-          <img class="card-img-top" src="{{asset('/assets/img/sas.jpg')}}" alt="">
-          <div class="p-1">
-            <a href="#" class="h6">
-              Programming Real-World Examples
-            </a> 
-          </div>
-        </div>
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1 p-2">
-          <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-          <div class="p-1">
-            <a href="#" class="h6">
-              Programming Real-World Examples
-            </a> 
-          </div>
-        </div>
+         
+    @endforeach
+     
         
        </div>
 
@@ -81,90 +69,22 @@
      </aside> <!-- END col-lg-3 -->
      <div class="col-lg-9 order-1 order-lg-1">
        <div class="row">
+
+       @foreach ($news as $new )
       <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
+        <div href="{{route('news.details',encrypt($new->id))}}" class="card text-gray shadow-v1">
+          <img class="card-img-top" src="{{asset('/assets/img/'.$new->image)}}" width="100px" height="200px" alt="{{$new->title}}">
           <div class="card-body">
            <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
+       {{$new->created_at->DiffForHumans()}} <i class="fa fa-clock"></i>  <span class="pl-4"><i class="fa fa-calendar"></i> {{$new->created_at->format('M d, Y h:iA')}}</span>
            </span>
-            <a href="{{route('more.news.details')}}" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
+            <a href="{{route('news.details',encrypt($new->id))}}" class="h5">
+                {{substr($new->title,0,40)}}{{strlen($new->title) > 40? '...':''}}
             </a>
           </div>
         </div>
       </div>
-        <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/sas.jpg')}}" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
-           </span>
-            <a href="#" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </a>
-          </div>
-        </div>
-      </div>
-      
-        <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
-           </span>
-            <a href="{{route('more.news.details')}}" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </a>
-          </div>
-        </div>
-      </div>
-      
-        <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
-           </span>
-            <a href="{{route('more.news.details')}}" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </a>
-          </div>
-        </div>
-      </div>
-      
-        <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/sas.jpg')}}" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
-           </span>
-            <a href="{{route('more.news.details')}}" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </a>
-          </div>
-        </div>
-      </div>
-        <div class="col-md-6 marginTop-30">
-        <div href="{{route('more.news.details')}}" class="card text-gray shadow-v1">
-          <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-          <div class="card-body">
-           <span class="badge position-absolute top-0 bg-success text-white" data-offset-top="-13">
-       0 <i class="fa fa-comment"></i>  <span class="pl-4"><i class="fa fa-clock"></i> 2 hrs ago</span>
-           </span>
-            <a href="{{route('more.news.details')}}" class="h5">
-               Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      
-  
+      @endforeach
        </div> <!-- END row-->
      </div> <!-- END col-lg-9 -->
      

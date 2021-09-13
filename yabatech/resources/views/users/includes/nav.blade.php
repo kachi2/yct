@@ -84,7 +84,7 @@
                                     $name =  explode('.', $admission->link);
                                 @endphp
                                     <li class="px-0 col-12">
-                                        <a href="{{ route('admission', $name[1])}}"
+                                        <a target="_blank" href="{{ route('admission', $name[1])}}"
                                            class="nav-link__list"
                                         >{{ $admission->name }}</a
                                         >
@@ -94,13 +94,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                  <a href="https://portal.yabatech.edu.ng/payment/home/paymentportal" class="nav-link"> Payments </a>
+                  <a  target="_blank" href="https://portal.yabatech.edu.ng/payment/home/paymentportal" class="nav-link"> Payments </a>
                   </li>
                   <li class="nav-item ">
-                  <a href="https://library.yabatech.edu.ng/" class="nav-link">Library</a>
+                  <a href="{{route('library')}}" class="nav-link">Library</a>
                   </li>
                   <li class="nav-item ">
-                  <a href="{{route('more.news')}}"  class="nav-link">News</a>
+                  <a href="{{route('news')}}"  class="nav-link">News</a>
                   </li>
                     <li class="nav-item nav-item__has-megamenu">
                         <a
@@ -223,7 +223,7 @@
                                         @if($menuNavs['students'])
                                             @foreach($menuNavs['students'] as $students)
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($students->link) }}"
+                                                    <a href="#"
                                                        class="nav-link__list"
                                                     >{{ $students->name }}</a
                                                     >
@@ -255,8 +255,11 @@
                                         </li>
                                         @if($menuNavs['serviceUnits'])
                                             @foreach($menuNavs['serviceUnits'] as $serviceUnits)
+                                               @php 
+                                              $slug =  explode('.', $serviceUnits->link);
+                                             @endphp
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($serviceUnits->link) }}"
+                                                    <a href="{{ route('units', $slug[1])}}"
                                                        class="nav-link__list"
                                                     >{{ $serviceUnits->name }}</a
                                                     >
@@ -277,8 +280,11 @@
                                         </li>
                                         @if($menuNavs['academicUnits'])
                                             @foreach($menuNavs['academicUnits'] as $academicUnits)
+                                                  @php 
+                                              $slug1 =  explode('.', $academicUnits->link);
+                                             @endphp
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($academicUnits->link) }}"
+                                                    <a href="{{ route('units', $slug1[1])}}"
                                                        class="nav-link__list"
                                                     >{{ $academicUnits->name }}</a
                                                     >
@@ -299,8 +305,11 @@
                                         </li>
                                         @if($menuNavs['registry'])
                                             @foreach($menuNavs['registry'] as $registry)
+                                               @php 
+                                              $slug2 =  explode('.', $registry->link);
+                                             @endphp
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($registry->link) }}"
+                                                    <a href="{{ route('units', $slug2[1])}}"
                                                        class="nav-link__list"
                                                     >{{ $registry->name }}</a
                                                     >
@@ -320,8 +329,11 @@
                                         </li>
                                         @if($menuNavs['bursary'])
                                             @foreach($menuNavs['bursary'] as $bursary)
+                                               @php 
+                                              $slug3 =  explode('.', $bursary->link);
+                                             @endphp
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($bursary->link) }}"
+                                                    <a href="{{ route('units', $slug3[1])}}"
                                                        class="nav-link__list"
                                                     >{{ $bursary->name }}</a
                                                     >
@@ -347,8 +359,11 @@
                                         <ul class="list-unstyled px-0 nav-link__list">
                                             @if($menuNavs['more'])
                                                 @foreach($menuNavs['more'] as $more)
+                                                  @php 
+                                            $name =  explode('.', $more->link);
+                                                @endphp
                                                     <li class="col-md-12 px-0">
-                                                        <a href="{{ route($more->link) }}"
+                                                        <a href="{{ route('morePages', $name[1])}}"
                                                            class="nav-link__list"
                                                         >{{ $more->name }}</a
                                                         >

@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-4 mt-4">
           <div class="card shadow-v1">
-            <div class="card-header text-center border-bottom pt-5 mb-4">
+            <div class="card-header text-center  pt-5 mb-4">
              <img class="rounded-circle mb-4" src="{{asset('/assets/img/site/'.$rector->image)}}" width="200" height="200" alt="">
              <h4>
               @if(isset($rector->name)) {{$rector->name}} @endif

@@ -42,7 +42,7 @@
                 <li
                     class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
                 >
-                    <a href="#">Apply to Yabatech</a>
+                    <a  target="_blank" href="https://portal.yabatech.edu.ng/misc/resultchecker/"><button class="btn btn-warning btn-sm">Check Post-UTME Result</button></a>
                 </li>
             </ul>
         </div>

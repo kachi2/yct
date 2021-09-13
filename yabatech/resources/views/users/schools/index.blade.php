@@ -1,7 +1,7 @@
 @extends('users.layout.app')
 @section('content')
 
-<div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url({{ asset('./assets/img/site/categ.jpg') }}) no-repeat">
+<div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url({{ asset('./assets/img/'.$gallery->header_image) }}) no-repeat">
   <div class="container">
    <div class="row align-items-center">
      <div class="col-lg-6 my-2 text-white">
@@ -10,7 +10,7 @@
         <li class="breadcrumb-item"><a href="#">Schools</a></li>
       </ol>
       <h2 class="h1">
-       School of Technology
+       {{$school->name}}
       </h2>
      </div>
    </div>
@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-4 mt-4">
           <div class="card shadow-v1">
-            <div class="card-header text-center border-bottom pt-5 mb-4">
+            <div class="card-header text-center pt-5 mb-4">
              <img class="rounded-circle mb-4" src="{{asset('/assets/img/site/'.$dean->image)}}" width="200" height="200" alt="">
              <h4>
               @if(isset($dean->name)) {{$dean->name}} @endif
@@ -71,33 +71,15 @@
             </span>
           </div>
           
+          @foreach ($notice as  $nots)
           <div class="p-4 border-bottom wow fadeInUp">
             <p class="text-primary mb-1">
-              March 10th, 2021
+              {{$nots->created_at->DiffForHumans()}}
             </p>
-             <p>School Resumption</p>
-            <a href="#" style="font-size:12px">
-              School considers resumption of school activities on 22nd march, 2021.
-              This news came after the academic board meeting on friday, 12th of march, 2021.
-
-            </a>
-             
+             <a href="{{route('noticeDetails', encrypt($nots->id))}}">{{$nots->headline}} <span class="btn btn-outline-primary btn-sm"> Read More</span></a>
+            
           </div>
-          
-          <div class="p-4 border-bottom wow fadeInUp">
-            <p class="text-primary mb-1">
-              March 10th, 2021
-            </p>
-             <p>School Resumption</p>
-            <a href="#" style="font-size:12px">
-              School considers resumption of school activities on 22nd march, 2021.
-              This news came after the academic board meeting on friday, 12th of march, 2021.
-
-            </a>
-             
-          </div>
-    
-          
+              @endforeach      
           </div>
         </div>
       </div>
@@ -136,62 +118,20 @@
         data-space="30"
         data-loop="true">
          
-          <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-              <img class="w-100" src="{{asset('/assets/img/sas.jpg')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
-         
-         
-          <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-              <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
+         @foreach ($news as $new )
            <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-            <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
+            <a href="{{route('news.details',encrypt($new->id))}}">
+              <img class="w-100" src="{{asset('/assets/img/'.$new->image)}}" alt="" width="100px" height="200px">
             </a>
             <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
+              <a href="{{route('news.details',encrypt($new->id))}}" class="h6">
+                {{substr($new->title,0,40)}}{{strlen($new->title) > 40? '...':''}}
               </a>
            
             </div>
          </div>
-           <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-          <img class="card-img-top" src="{{asset('/assets/img/sss.png')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>  <div class="card text-gray height-100p shadow-v2">
-            <a href="">
-             <img class="card-img-top" src="{{asset('/assets/img/qq.jpg')}}" alt="">
-            </a>
-            <div class="p-4">
-              <a href="#" class="h6">
-                Yabatech Unveils Art Museum, Launches Policy Document On Sexual Harassment
-              </a>
-           
-            </div>
-         </div>
+            @endforeach
+         
         </div>
       </div>
     </div> <!-- END row-->
@@ -209,38 +149,20 @@
      </div>
      <div class="col-12">
        <div class="owl-carousel" data-items="4" data-space="30" data-arrow="true">
+        @php 
+      $img = json_decode($gallery->gallery,true);
+        @endphp
+        @foreach ($img as  $images)
          <div class="media-viewer">
-            <img class="media-viewer__media" src="assets/img/360x300/4.jpg" alt="">
+            <img class="media-viewer__media" src="{{asset('/assets/img/'.$images)}}" alt="">
             <div class="media-viewer__overlay bg-black-0_7 flex-center">
-              <a href="assets/img/360x300/4.jpg" class="text-white font-size-30" data-fancybox="gallery">
+              <a href="{{asset('/assets/img/'.$images)}}" class="text-white font-size-30" data-fancybox="gallery">
                 <i class="ti-plus"></i>
               </a>
             </div>
           </div>
-         <div class="media-viewer">
-            <img class="media-viewer__media" src="assets/img/360x300/2.jpg" alt="">
-            <div class="media-viewer__overlay bg-black-0_7 flex-center">
-              <a href="assets/img/360x300/2.jpg" class="text-white font-size-30" data-fancybox="gallery">
-                <i class="ti-plus"></i>
-              </a>
-            </div>
-          </div>
-         <div class="media-viewer">
-            <img class="media-viewer__media" src="assets/img/360x300/3.jpg" alt="">
-            <div class="media-viewer__overlay bg-black-0_7 flex-center">
-              <a href="assets/img/360x300/3.jpg" class="text-white font-size-30" data-fancybox="gallery">
-                <i class="ti-plus"></i>
-              </a>
-            </div>
-          </div>
-         <div class="media-viewer">
-            <img class="media-viewer__media" src="assets/img/360x300/1.jpg" alt="">
-            <div class="media-viewer__overlay bg-black-0_7 flex-center">
-              <a href="assets/img/360x300/1.jpg" class="text-white font-size-30" data-fancybox="gallery">
-                <i class="ti-plus"></i>
-              </a>
-            </div>
-          </div>
+          @endforeach
+        
        </div>
      </div>
     </div> <!-- END row-->
