@@ -56,10 +56,10 @@
             <div class="tab-content">
               <div class="tab-pane fade show active" id="Tabs_1-1" role="tabpanel">
                <p  style="text-align:justify">
-             @if(isset($rector->message)) {{substr($rector->message,0,650)}} 
+             @if(isset($rector->message)) {!!substr($rector->message,0,650)!!} 
             <br>  <button class="btn btn-primary" id="more"> Read More</button> 
 <span style="text-align:justify" id="readMore" hidden>
- {{substr($rector->message,650,6000)}} 
+ {!!substr($rector->message,650,6000)!!} 
 </span>
 @endif
               </div>
@@ -68,7 +68,7 @@
                   <div class="col-md-12 mt-4">
                     
                         <p style="text-align:justify">
-                              @if(isset($rector->about)) {{$rector->about}} @endif
+                              @if(isset($rector->about)) {!!$rector->about!!} @endif
                         </p>
                       
                     
@@ -94,52 +94,7 @@
 
   @endif
 
- <section class="padding-y-10 bg-light-v5">
-  <div class="container">
-    <div class="row">
-     
-      <div class="col-12 text-center">
-        <h2 class="mb-4">
-         From the Administration Desk
-        </h2>
-        <div class="width-3rem height-4 rounded bg-primary mx-auto"></div>
-      </div> 
-    </div> <!-- END row-->
-    
-    <div class="row mt-4">
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".1s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/news.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h6>
-              Samsung Boost E-Learning At Yabatech With Donation Of Innovation Hub
-            </h6>
-            <p>
-              <i class="ti-location-pin"></i>COllege Hall
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mt-4 wow slideInUp" data-wow-delay=".2s">
-        <div class="list-card align-items-center height-100p m-0 shadow-v1">
-          <div class="col-md-4 p-4 p-md-5 border-right text-center">
-            <img src="{{asset('/assets/img/skills.jpg')}}" alt="">
-          </div>
-          <div class="col-md-8 p-4 p-md-5">
-            <h4>
-              Skills Acquisition Centre Kicks Off Training
-            </h4>
-            <p>
-              <i class="ti-location-pin"></i> College 
-            </p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- END row-->
-  </div> <!-- END container-->
-</section>
+
 
 
 

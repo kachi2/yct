@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eventhub | Admin</title>
+    <title>Yabatech | Admin</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('/images/fav2.png')}}"/>
+    <link rel="shortcut icon" href="{{asset('./assets/img/favicon/favicon-16x16.png')}}"/>
+     <link rel="stylesheet" href="{{asset('/backend/vendors/dataTable/dataTables.min.css')}}" type="text/css">
 
     <!-- Plugin styles -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/bundle.css')}}" type="text/css">
@@ -17,8 +18,14 @@
 
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
+
+ <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+
+
 </head>
 <body>
 
@@ -43,7 +50,6 @@
                 </a>
             </li>
             <!-- end::navigation-toggler -->
-
         </ul>
     </div>
     <div>
@@ -59,7 +65,7 @@
             <!-- end::header notification dropdown -->
             <!-- begin::user menu -->
             <li class="nav-item dropdown">
-                <a href="{{route('admin.profile')}}" class="nav-link" title="User menu" >
+                <a href="" class="nav-link" title="User menu" >
                     <i data-feather="settings"></i>
                 </a>
             </li>
@@ -105,16 +111,16 @@
               <div>
                 <ul>
                     <li>
-                        <a href="{{route('admin.profile')}}" data-toggle="tooltip" data-placement="right" title="Settings">
+                        <a href="" data-toggle="tooltip" data-placement="right" title="Settings">
                             <i data-feather="settings"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('logout') }}" onclick="event.preventDefault() 
+                        <a href="" onclick="event.preventDefault() 
                                         document.getElementById('logout-form').submit()" data-placement="right" title="Logout">
                             <i data-feather="log-out"></i>
                         </a>
-                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         <form id="logout-form" action="" method="POST" style="display: none;">
                                         @csrf
                                     </form> 
                     </li>
@@ -129,8 +135,8 @@
             <div>
                 <div id="navigation-logo">
                     <a href="{{route('admin.index')}}">
-                        <img class="logo" src="{{asset('/images/logoss.png')}}">
-                        <img class="logo-light" src="{{asset('/images/logos.png')}}" alt="light logo">
+                        <img width="120" height="50" class="logo" src="{{ asset('./assets/img/yabatech.svg') }}">
+                        <img width="120" height="50"  class="logo-light" src="{{ asset('./assets/img/yabatech.svg') }}" alt="light logo">
                     </a>
                 </div>
             </div>
@@ -143,79 +149,105 @@
                     <ul>
                      <li class="navigation-divider">Dashboard</li>
                            <li>
-                            <a href="#" >Events</a>
+                            <a href="#" > <i data-feather="package"></i>&nbsp; Administration</a>
                             <ul>
-                                <li><a  href="{{route('admin.event.create')}}">Create New</a></li>
-                                <li><a href="{{route('admin.event.index')}}">Event List</a></li>
+                                <li><a  href="{{route('pages.administration')}}">Administration List</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Journals</a>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Admission</a>
                             <ul>
-                                <li><a href="{{route('admin.journal.create')}}">Create New</a></li>
-                                <li><a href="{{route('admin.journal.index')}}">Journals List</a></li>
+                                <li><a href="{{route('admission.list')}}">Admission List</a></li>
                             </ul>
                         </li>
                         
-                            <li>
-                            <a href="#">Blogs</a>
+                   <!--         <li>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Students</a>
                             <ul>
-                                <li><a href="{{route('admin.blog.create')}}">Create Post</a></li>
-                                <li><a href="{{route('admin.blog.index')}}">Blog Post</a></li>
+                                <li><a href="">Calendar</a></li>
+                                <li><a href="">Downloads</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                          <li>
-                            <a href="#">Sponsorship</a>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Staff</a>
                             <ul>
-                              <li><a href="{{route('admin.sponsor.create')}}">Create Category</a></li>
-                                <li><a href="{{route('admin.sponsor.index')}}">Category List</a></li>
+                              <li><a href="{{route('admin.staff.list')}}">Staff List</a></li>
                             </ul>
                         </li>
                       <li>
-                            <a href="#">Advertizers</a>
+                              <a href="#">
+                                 <i data-feather="package"></i>&nbsp; News</a>
                             <ul>
-                                  <li><a href="{{route('admin.advertiser.create')}}">Create Category</a></li>
-                                <li><a href="{{route('admin.advertiser.index')}}">Category List </a></li>
+                                 <li><a href="{{route('news.index')}}">All News</a></li>
+                                 <li><a href="{{route('notice.index')}}">All Notice</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Advert Placement</a>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; TETFund</a>
                             <ul>
-                                <li><a href="{{route('admin.advert.create')}}">Post Advert</a></li>
-                                <li><a href="{{route('admin.advert.index')}}">Advert List</a></li>
+                                <li><a href="">Academic Staff Training</a></li>
+                                <li><a href="">Physical Infrastructure</a></li>
+                                 <li><a href="">Book Intervention</a></li>
+                                  <li><a href="">Training & Development</a></li>
                             </ul>
                         </li>
                       <li>
-                            <a href="#">Talent Hunt</a>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Academics</a>
                             <ul>
-                                <li><a href="{{route('admin.users.talent')}}">Registered Users</a></li>
-                                <li><a href="{{route('audition.date')}}">Set Audition Date</a></li>
+                                <li><a href="{{route('admin.schools.index')}}">Schools</a></li>
+                                   <li><a href="{{route('schools.deans')}}">School Deans</a></li>
+                                    <li><a href="{{route('admin.departments.index')}}">Departments</a></li>
+                            </ul>
+                        </li>
+                      <li>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Units</a>
+                            <ul>
+                                <li><a href="">UNits</a></li>
+                                <li><a href="">Set Audition Date</a></li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="#">
+                                 <i data-feather="package"></i>&nbsp; Users</a>
+                            <ul>
+                                <li><a href="">Add Admin</a></li>
                             </ul>
                         </li>
                       
-                         <li><a href="{{route('admin.users.index')}}">Users List</a></li>
-                         <li><a href="{{route('admin.about')}}">Contact Page</a></li>
-                          
                     </ul>
                 </div>
             </div>
         </div>
         <!-- end::navigation menu -->
-
     </div>
-
         <!-- end::page-header -->
+         <div class="main-content">
+        <div class="page-header">
+            <div class="container-fluid d-sm-flex justify-content-between">
+                <h4></h4>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{{route('admin.index')}}">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     @yield('content')
-
      <footer>
             <div class="container-fluid">
-                
-                  
                 </div>
             </div>
         </footer>
         <!-- end::footer -->
-
     </div>
     <!-- end::main-content -->
 
@@ -226,6 +258,9 @@
 <script src="{{asset('/backend/vendors/bundle.js')}}"></script>
 <!-- Chartjs -->
 <script src="{{asset('/backend/vendors/charts/chartjs/chart.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/dataTables.bootstrap4.min.js')}}"></script>
 <!-- Apex chart -->
 <script src="{{asset('/backend/vendors/charts/apex/apexcharts.min.js')}}"></script>
 <!-- Circle progress -->
@@ -245,6 +280,11 @@
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('/backend/vendors/vmap/maps/jquery.vmap.usa.js')}}"></script>
 <script src="{{asset('/backend/js/examples/vmap.js')}}"></script>
+<script>
+$(document).ready(function (){
+    $('#myTable').DataTable();
+});
+</script>
 <!-- Dashboard scripts -->
 <script src="{{asset('/backend/js/examples/dashboard.js')}}"></script>
 <div class="colors"> <!-- To use theme colors with Javascript -->
@@ -263,7 +303,9 @@
 </div>
 <!-- App scripts -->
 <script src="{{asset('/backend/js/app.min.js')}}"></script>
+
 @yield('script')
+
 
 
 </body>

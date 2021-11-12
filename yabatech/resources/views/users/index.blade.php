@@ -10,7 +10,7 @@
   </ol>
         <div class="carousel-inner">
              @foreach ($sliders as $slider )
-            <div class="carousel-item padding-y-80 height-80vh {{$slider->is_active ==1? 'active': ''}}">
+            <div class="carousel-item padding-y-80 height-70vh {{$slider->is_active ==1? 'active': ''}}">
                 <div
                     class="bg-absolute"
                     data-dark-overlay="0"
@@ -18,17 +18,43 @@
               background: url({{asset('/assets/img/'.$slider->image)}})
                 no-repeat;
             "
-                ></div>
+                >
+                
+           <div class="col-lg-4 mt-5 mt-md-0">
+        <div class="card shadow-v2 z-index-5" data-offset-top-xl="4">
+          <div class="card-header bg-danger text-white border-bottom-0">
+            <span class="lead font-semiBold text-uppercase">
+              <i class="fa fa-bullhorn"> Notifications</i>
+            </span>
+          </div>
+          
+          @foreach ($notices as $notice )
+          <div class="px-3 border-bottom wow fadeInUp">
+            <p class="text-primary inline">
+            
+            </p>
+             <p style="font-size:15px">
+             <a href="{{route('noticeDetails', encrypt($notice->id))}}">
+             {{$notice->headline}} 
+            </a><br>
+            <small style="font-style:italic; color:#006600"> read more</small>
+            <small>  - posted {{$notice->created_at->DiffForHumans()}} </small>
+            </p>
+          </div>
+          @endforeach
+        </div>
+      </div>
+      
+      
+      </div>
               
             </div>
                   @endforeach
+                  
          </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <i class="ti-angle-left iconbox bg-black-0_5 hover:primary"></i>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <i class="ti-angle-right iconbox bg-black-0_5 hover:primary"></i>
-  </a>
+
+  
+  
 </div>
 
 
@@ -83,7 +109,7 @@
     <div class="row">
        <div class="col-lg-6 marginTop-20">
         <div class="card">
-        <center>  <img src="{{asset('')}}assets/img/site/rector.jpg"  height="350px" width="350px" alt=""/></center>
+        <center>  <img src="{{asset('/assets/img/site/'.$rector->image)}}" height="350px" width="350px" alt=""/></center>
           <div class="card-body" style="padding-left:100px">
            <p class="text-dark">
             {{$rector->name}}
@@ -104,7 +130,7 @@
         </h2>
        
         <p style="text-align:justify">
-      {{substr($rector->message,0,600)}}
+      {!!substr($rector->message,0,600)!!}
        <a href="{{route('administration',$rector->link)}}" class="btn btn-outline-primary"> Read More</a>
       </div>
    
@@ -159,14 +185,14 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
           @foreach ($notices as $notice )
           <div class="p-4 border-bottom wow fadeInUp">
             <p class="text-primary mb-1">
-              {{$notice->created_at->DiffForHumans()}}
+             Posted {{$notice->created_at->DiffForHumans()}}
             </p>
-             <h6>{{$notice->headline}}</h6>
-            <a href="{{route('noticeDetails', encrypt($notice->id))}}">{{substr($notice->content,0,100)}}
+             <p>{{$notice->headline}}
+            <a href="{{route('noticeDetails', encrypt($notice->id))}}">
+            <span class=" btn-outline-primary btn-xs"> Read More </span>
             </a>
-             <a href="{{route('noticeDetails', encrypt($notice->id))}}" class="btn btn-outline-primary">
-              Read More
-            </a>
+            </p>
+            
           </div>
           @endforeach
     
@@ -198,7 +224,22 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
   <div class="container">
     <div class="row">
      
-      <div class="col-md-6 mt-5">
+      <div class="col-md-4 mt-5">
+        <h2 class="mb-4">
+          Facebook Page
+        </h2>
+        <div class="width-3rem height-4 rounded bg-primary mb-5"></div>
+        
+        <div class="mb-5 wow fadeIn" data-wow-delay=".1">
+          <div class="media mb-3">    
+          </div>
+         <div class="fb-page" data-href="https://web.facebook.com/Yabatech/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://web.facebook.com/Yabatech/" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/Yabatech/">Yaba College of Technology - Yabatech</a></blockquote></div>
+        </div>
+        
+     
+        
+      </div> 
+        <div class="col-md-4 mt-5">
         <h2 class="mb-4">
           Facebook Page
         </h2>
@@ -214,17 +255,16 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
         
       </div> 
      
-      <div class="col-md-6 mt-5">
+      <div class="col-md-4 mt-5">
         <h2 class="mb-4">
         Instagram Page
         </h2>
         <div class="width-3rem height-4 rounded bg-primary mb-5"></div>
         
-        <div class="mb-5 wow fadeIn" data-wow-delay=".1">
-        
-          <p>
-        <a href="https://www.instagram.com/yabatechofficial/?utm_source=ig_embed&ig_rid=90f7f2ea-fd5b-47df-a4af-a084f860dad8"> </p>
-         
+          <div class="mb-5 wow fadeIn" data-wow-delay=".1">
+          <div class="media mb-3">    
+          </div>
+         <div class="fb-page" data-href="https://web.facebook.com/Yabatech/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://web.facebook.com/Yabatech/" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/Yabatech/">Yaba College of Technology - Yabatech</a></blockquote></div>
         </div>
         
        

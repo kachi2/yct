@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pages\PageController;
 use App\Http\Controllers\SchoolController;
@@ -41,7 +42,6 @@ Route::get('news/details/{id}', [HomeController::class, 'newsDetails'])->name('n
 Route::get('notice/details/{id}', [HomeController::class, 'noticeDetails'])->name('noticeDetails');
 //end
 
-
 Route::group(['prefix' => 'special-intervention', 'as' => 's_intervention.'], function () {
     Route::get('academic_staff', [SchoolController::class, 'TetFundTraining'])->name('academic_staff');
     Route::get('education_support', [PageController::class, 'careerDetail'])->name('education_support');
@@ -53,12 +53,100 @@ Route::group(['prefix' => 'annual-intervention', 'as' => 'a_intervention.'], fun
     Route::get('high_impact', [PageController::class, 'careerDetail'])->name('high_impact');
     Route::get('book_development', [SchoolController::class, 'TetFundBooks'])->name('book_development');
     Route::get('training_development', [SchoolController::class, 'TetFundTraining'])->name('training_development');
-    Route::get('academic_manuscript', [PageController::class, 'careerDetail'])->name('academic_manuscript');
     Route::get('journal_conferences', [SchoolController::class, 'TetFundResearch'])->name('journal_conferences');
     Route::get('/tetfunds/research', [SchoolController::class, 'TetFundResearch'])->name('research_grant');
 });
 
+Route::group(['prefix' => 'staff', 'as' => 'staff.'], function () {
+    Route::get('list', [SchoolController::class, 'StaffList'])->name('list');
+    Route::get('profile/{id}', [SchoolController::class, 'StaffDetails'])->name('profile');
+    Route::get('portal', [SchoolController::class, 'StaffPortal'])->name('portal');
+    Route::get('e_learning', [SchoolController::class, 'StaffLearning'])->name('e_learning');
+    Route::get('email', [SchoolController::class, 'StaffEmail'])->name('email');
+    Route::get('accommodation', [SchoolController::class, 'StaffHousing'])->name('accommodation');
+});
 
+Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
+    Route::get('portal', [PageController::class, 'StudentsPortal'])->name('portal');
+    Route::get('donwloads', [PageController::class, 'Downloads'])->name('downloads');
+    Route::get('calendar', [PageController::class, 'noPage'])->name('calenders');
+    Route::get('sports_societies', [PageController::class, 'noPage'])->name('sports_societies');
+});
+
+Route::group(['prefix' => 'enterprise', 'as' => 'enterprise.'], function () {
+    Route::get('service', [PageController::class, 'Enterprise'])->name('consult');   
+});
+
+// CCS Programmes
+Route::group(['prefix' => 'ccs/programmes', 'as' => 'ccs.'], function () {
+    Route::get('weekend', [PageController::class, 'noPage'])->name('weekend-programmes');
+    Route::get('weekday', [PageController::class, 'noPage'])->name('weekday');
+});
+
+
+// Alumni
+Route::group(['prefix' => 'alumni', 'as' => 'alumni.'], function () {
+    Route::get('transcript_guidelines', [PageController::class, 'noPage'])->name('transcript_guidelines');
+    Route::get('portal', [PageController::class, 'graduatePortal'])->name('portal');
+    Route::get('relations', [PageController::class, 'noPage'])->name('relations');
+});
+
+Route::group(['prefix' => '', 'as' => 'more.'], function (){
+    Route::get('epe_campus', [PageController::class, 'noPage'])->name('epe_campus');
+    Route::get('e-journal', [PageController::class, 'noPage'])->name('e-journal');
+    Route::get('fsdc', function () {
+        return redirect('https://yctfsdc.org/');
+    })->name('fsdc');
+});
+#===================================== end of frontend routes =====================
+
+
+
+#==================Admin Routes =========================
+Route::domain('dashboard.yabatech.com')->prefix('admin')->group(function(){
+Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/administration', [AdminController::class, 'adminIndex'])->name('pages.administration');
+Route::get('/administration/create', [AdminController::class, 'createAdministration'])->name('administration.create');
+Route::post('/administration/store', [AdminController::class, 'StoreAdministration'])->name('administration.store');
+Route::get('/administration/edit/{id}', [AdminController::class, 'editAdministration'])->name('administration.edit');
+Route::post('/administration/update/{id}', [AdminController::class, 'updateAdministration'])->name('administration.update');
+Route::get('/administration/disable/{id}', [AdminController::class, 'disableAdministration'])->name('administration.disabled');
+Route::get('/administration/enaable/{id}', [AdminController::class, 'enableAdministration'])->name('administration.enable');
+Route::get('/admission/list', [AdminController::class, 'AdmissionIndex'])->name('admission.list');
+Route::get('/admission/create', [AdminController::class, 'AdmissionCreate'])->name('admission.create');
+Route::post('/admission/store/', [AdminController::class, 'AdmissionStore'])->name('admission.store');
+Route::get('/admission/edit/{id}', [AdminController::class, 'AdmissionEdit'])->name('admission.edit');
+Route::post('/admission/update/{id}', [AdminController::class, 'AdmissionUpdate'])->name('admission.update');
+Route::get('/staff/list', [AdminController::class, 'StaffList'])->name('admin.staff.list');
+Route::get('/staff/assign/{id}', [AdminController::class, 'StaffAssign'])->name('admin.staff.assign');
+Route::post('/staff/assign/store/{id}', [AdminController::class, 'StaffAssignPost'])->name('staff.assignPost');
+Route::get('/staff/create', [AdminController::class, 'StaffCreate'])->name('staff.create');
+Route::post('/staff/store/', [AdminController::class, 'StaffStore'])->name('staff.store');
+Route::get('/staff/edit/{id}', [AdminController::class, 'StaffEdit'])->name('staff.edit');
+Route::post('/staff/update/{id}', [AdminController::class, 'StaffUpdate'])->name('staff.update');
+
+Route::get('/news/index', [AdminController::class, 'NewsIndex'])->name('news.index');
+Route::get('/news/create', [AdminController::class, 'NewsCreate'])->name('news.create');
+Route::post('/news/store', [AdminController::class, 'NewsStore'])->name('news.store');
+Route::get('/news/edit/{id}', [AdminController::class, 'NewsEdit'])->name('news.edit');
+Route::post('/news/update/{id}', [AdminController::class, 'NewsUpdate'])->name('news.update');
+
+Route::get('/notice/index', [AdminController::class, 'NoticeIndex'])->name('notice.index');
+Route::get('/notice/create', [AdminController::class, 'NoticeCreate'])->name('notice.create');
+Route::post('/notice/store', [AdminController::class, 'NoticeStore'])->name('notice.store');
+Route::get('/notice/edit/{id}', [AdminController::class, 'NoticeEdit'])->name('notice.edit');
+Route::post('/notice/update/{id}', [AdminController::class, 'NoticeUpdate'])->name('notice.update');
+
+Route::get('/schools/index', [AdminController::class, 'SchoolsIndex'])->name('admin.schools.index');
+Route::get('/departments/index', [AdminController::class, 'DepartmentIndex'])->name('admin.departments.index');
+Route::get('/schools/deans/index', [AdminController::class, 'DeansIndex'])->name('schools.deans');
+});
+
+
+
+
+
+#=================end of Admin routes
 
 
 
@@ -88,43 +176,13 @@ Route::group(['prefix' => 'about', 'as' => 'about.'], function () {
 });
 
 
- 
 
-
-// CCS Programmes
-Route::group(['prefix' => 'ccs/programmes', 'as' => 'ccs.'], function () {
-    Route::get('weekend', [PageController::class, 'careerDetail'])->name('weekend-programmes');
-    Route::get('weekday', [PageController::class, 'careerDetail'])->name('weekday');
-});
 // Students
-Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
-    Route::get('portal', [PageController::class, 'careerDetail'])->name('portal');
-    Route::get('student_affairs', [PageController::class, 'careerDetail'])->name('student_affairs');
-    Route::get('email', [PageController::class, 'careerDetail'])->name('students.email');
-    Route::get('email', [PageController::class, 'careerDetail'])->name('student.handbook');
-    Route::get('sports_societies', [PageController::class, 'careerDetail'])->name('sports_societies');
-});
+
 // Service Units
 
-Route::group(['prefix' => '', 'as' => 'more.'], function () {
-    Route::get('consult', [PageController::class, 'careerDetail'])->name('consult');
-    Route::get('payments', [PageController::class, 'careerDetail'])->name('payments');
-    Route::get('events', [PageController::class, 'events'])->name('events');
-    Route::get('epe_campus', [PageController::class, 'careerDetail'])->name('epe_campus');
-    Route::get('announcements', [PageController::class, 'careerDetail'])->name('announcements');
-    Route::get('e-journal', [PageController::class, 'ejournal'])->name('e-journal');
-    Route::get('fsdc', function () {
-        return redirect('https://yctfsdc.org/');
-    })->name('fsdc');
-});
-// Staff
-Route::group(['prefix' => 'staff', 'as' => 'staff.'], function () {
-    Route::get('list', [PageController::class, 'careerDetail'])->name('list');
-    Route::get('portal', [PageController::class, 'careerDetail'])->name('portal');
-    Route::get('e_learning', [PageController::class, 'careerDetail'])->name('e_learning');
-    Route::get('email', [PageController::class, 'careerDetail'])->name('email');
-    Route::get('accommodation', [PageController::class, 'careerDetail'])->name('accommodation');
-});
+
+
 // Contact
 Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
     Route::get('contact_us', [PageController::class, 'contact'])->name('contact_us');
@@ -132,12 +190,6 @@ Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
     Route::get('buildings_in_college', [PageController::class, 'careerDetail'])->name('buildings_in_college');
     Route::get('faq', [PageController::class, 'faq'])->name('faq');
     Route::get('careers', [PageController::class, 'careers'])->name('careers');
-});
-// Alumni
-Route::group(['prefix' => 'alumni', 'as' => 'alumni.'], function () {
-    Route::get('transcript_guidelines', [PageController::class, 'careerDetail'])->name('transcript_guidelines');
-    Route::get('portal', [PageController::class, 'careerDetail'])->name('portal');
-    Route::get('relations', [PageController::class, 'careerDetail'])->name('relations');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

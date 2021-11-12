@@ -30,4 +30,12 @@ class School extends Model
     {
         return $this->hasMany(Event::class);
     }
+
+    public function gallery(){
+        return $this->hasMany(SchoolGallery::class);
+    }
+
+    public function deans(){
+        return $this->hasMany(SchoolDean::class, 'school_id', 'id');
+    }
 }

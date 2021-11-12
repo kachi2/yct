@@ -1,8 +1,5 @@
 @extends('users.layout.app')
 @section('content')
-
-
-
 <div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url({{ asset('./assets/img/site/categ.jpg') }}) no-repeat">
   <div class="container">
    <div class="row align-items-center">
@@ -19,8 +16,6 @@
   </div>
 </div>
     
-
-    
 <section class="pt-5 paddingBottom-150 bg-light-v2">
   <div class="container">
     <div class="row">
@@ -34,13 +29,13 @@
           Your browser does not support the audio element.
         </audio>-->
         
-         <h2 class="my-4">
-        {{$notice->title}}
-         </h2>
+         <h3 class="my-4">
+        {{$notice->headline}}
+         </h3>
          
          <div class="media align-items-center justify-content-between mb-5">
           <div class="media align-items-center">
-            
+           
           </div>
            <div class="text-gray">
              <span class="d-inline-flex align-items-center"> 
@@ -69,18 +64,19 @@
             <input type="text" class="form-control border-0 pr-0 pl-3 u-py-15" placeholder="Search" required="">
             <button type="submit" class="input-group-btn btn bg-white">
               <span class="ti-search"></span>
-            </button>
+            </button> 
           </div>
         </form>
        </div> <!-- END widget--> 
        <div class="widget">
-         <h2 class="widget-title">
+         <h2 class="widget-title border-bottom">
            Latest Post
+
          </h2>
          @foreach ($latest as $lat )
-           <div class="mb-4">
+           <div class="mb-4 border-bottom">
              
-              <h2 class="font-size-16 mt-2">
+              <h2 class="font-size-14 mt-2">
                 <a href="{{route('noticeDetails', encrypt($lat->id))}}">
                  {{substr($lat->headline,0,40)}}{{strlen($lat->headline) > 40? '...':''}}
                 </a>

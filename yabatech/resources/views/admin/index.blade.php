@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layout.admin')
 @section('content')
 
 
@@ -35,9 +35,9 @@
                                         <div>
                                             <h6 class="card-title mb-3">Tickets Purchased</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($booking)}}</h2>
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2>
                                                <p class="small text-muted mb-0 line-height-20">
-                                                    <span class="text-success">N{{number_format($booking->sum('payable'))}}</span> Total Paid
+                                                    <span class="text-success"></span> Total Paid
                                                 </p>
                                             </div>
                                         </div>
@@ -59,9 +59,9 @@
                                         <div>
                                             <h6 class="card-title mb-3">Journal Purchased</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($journals)}}</h2>
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2>
                                                 <p class="small text-muted mb-0 line-height-20">
-                                                    <span class="text-success">N{{number_format($journal)}}</span> Total Paid
+                                                    <span class="text-success"></span> Total Paid
                                                 </p>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@
                                         <div>
                                             <h6 class="card-title mb-3">Registered Talents</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($talent)}}</h2>
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2>
                                                 
                                             </div>
                                         </div>
@@ -108,9 +108,9 @@
                                         <div>
                                             <h6 class="card-title mb-3">Sponsors</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($cc)}}</h2>
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2>
                                               <p class="small text-muted mb-0 line-height-20">
-                                                    <span class="text-success">N{{number_format($campaign)}}</span> Total Paid
+                                                    <span class="text-success">N</span> Total Paid
                                                 </p>
                                             </div>
                                         </div>
@@ -132,9 +132,9 @@
                                         <div>
                                             <h6 class="card-title mb-3">Advertizers</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($sponsor)}}</h2>
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2>
                                                 <p class="small text-muted mb-0 line-height-20">
-                                                    <span class="text-success">N{{number_format($sponsor->sum('amount'))}}</span> Total Paid
+                                                    <span class="text-success"></span> Total Paid
                                                 </p>
                                             </div>
                                         </div>
@@ -156,7 +156,7 @@
                                         <div>
                                             <h6 class="card-title mb-3">Total Users</h6>
                                             <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                                <h2 class="mb-0 mr-2 font-weight-bold">{{count($users)}}</h2> 
+                                                <h2 class="mb-0 mr-2 font-weight-bold"></h2> 
                                             </div>
                                         </div>
                                         <div>

@@ -31,6 +31,8 @@ class NavListSeeder extends Seeder
             ['name' => 'Staff', 'menu_id' => 14],
             ['name' => 'Alumni', 'menu_id' => 15],
             ['name' => 'Contact', 'menu_id' => 16],
+            ['name' => 'Enterprise', 'menu_id' => 17]
+            
         ];
 
         foreach ($navDropdownItems as $navDropdownItem) {

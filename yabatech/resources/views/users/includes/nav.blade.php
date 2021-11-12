@@ -42,10 +42,6 @@
                         </ul>
                     </li>
                     
-                  
-                 
-
-              
                     <li class="nav-item nav-item__has-dropdown">
                         <a
                             class="nav-link dropdown-toggle"
@@ -93,15 +89,73 @@
                             @endif
                         </ul>
                     </li>
+
+
+                       <li class="nav-item nav-item__has-dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >Students</a
+                        >
+                        <ul class="dropdown-menu px-0">
+                             @if($menuNavs['students'])
+                             @foreach($menuNavs['students'] as $students)
+                                    <li class="px-0 col-12">
+                                        <a target="_blank" href="{{ route($students->link)}}"
+                                           class="nav-link__list"
+                                        >{{ $students->name }}</a
+                                        >
+                                    </li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </li>
+                    
+
+                  <li class="nav-item nav-item__has-dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >Staff</a
+                        >
+                        <ul class="dropdown-menu px-0">
+                               @if($menuNavs['staff'])
+                                            @foreach($menuNavs['staff'] as $staff)
+                                                <li class="col-md-12 px-0">
+                                                    <a target="_blank" href="{{ route($staff->link) }}"
+                                                       class="nav-link__list"
+                                                    >{{ $staff->name }}</a
+                                                    >
+                                                </li>
+                                @endforeach
+                          @endif
+                        </ul>
+                    </li>
                     <li class="nav-item">
                   <a  target="_blank" href="https://portal.yabatech.edu.ng/payment/home/paymentportal" class="nav-link"> Payments </a>
                   </li>
-                  <li class="nav-item ">
-                  <a href="{{route('library')}}" class="nav-link">Library</a>
-                  </li>
-                  <li class="nav-item ">
-                  <a href="{{route('news')}}"  class="nav-link">News</a>
-                  </li>
+                   <li class="nav-item nav-item__has-dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-toggle="dropdown"
+                        >Enterprise</a
+                        >
+                        <ul class="dropdown-menu px-0">
+                               @if($menuNavs['staff'])
+                                            @foreach($menuNavs['enterprise'] as $enterp)
+                                                <li class="col-md-12 px-0">
+                                                    <a target="_blank" href="{{ route('enterprise.consult') }}"
+                                                       class="nav-link__list"
+                                                    >{{ $enterp->name }}</a
+                                                    >
+                                                </li>
+                                @endforeach
+                          @endif
+                        </ul>
+                    </li>
                     <li class="nav-item nav-item__has-megamenu">
                         <a
                             class="nav-link dropdown-toggle"
@@ -220,11 +274,11 @@
                                             >Students</a
                                             >
                                         </li>
-                                        @if($menuNavs['students'])
-                                            @foreach($menuNavs['students'] as $students)
-                                                <li class="col-md-12 px-0">
-                                                    <a href="#"
-                                                       class="nav-link__list"
+                                    @if($menuNavs['students'])
+                                        @foreach($menuNavs['students'] as $students)
+                                                <li class="px-0 col-12">
+                                                    <a target="_blank" href="{{ route($students->link)}}"
+                                                    class="nav-link__list"
                                                     >{{ $students->name }}</a
                                                     >
                                                 </li>
@@ -354,8 +408,8 @@
                         >
                         <div class="dropdown-menu p-2 p-md-4">
                             <div class="row mx-0">
-                                <div class="col-md-5 d-flex">
-                                    <div class="col-md-6">
+                               
+                                    <div class="col-md-2">
                                         <ul class="list-unstyled px-0 nav-link__list">
                                             @if($menuNavs['more'])
                                                 @foreach($menuNavs['more'] as $more)
@@ -372,7 +426,7 @@
                                             @endif
                                         </ul>
                                     </div>
-                                </div>
+                               
 
                                 <div class="col-md-2">
                                     <ul class="list-unstyled px-0 nav-link__list">
@@ -386,7 +440,7 @@
                                         @if($menuNavs['staff'])
                                             @foreach($menuNavs['staff'] as $staff)
                                                 <li class="col-md-12 px-0">
-                                                    <a href="{{ route($staff->link) }}"
+                                                    <a target="_blank" href="{{ route($staff->link) }}"
                                                        class="nav-link__list"
                                                     >{{ $staff->name }}</a
                                                     >

@@ -51,7 +51,7 @@
          </div>
          
          <p>
-       {{$news->content}}  </p>
+       {!!$news->content!!}  </p>
          <p>
          <div class="sharethis-inline-share-buttons"></div>
         </p>  

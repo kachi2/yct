@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Arr;
 use App\Models\NavDropdown;
@@ -9,6 +10,7 @@ use App\Models\School;
 use App\Models\SchoolDean;
 use App\Models\News;
 use App\Models\NoticeBoard;
+use App\Models\Staff;
 use App\Models\SchoolGallery;
 use App\Models\TetfundSupport;
 use App\Models\TetfundBook;
@@ -29,6 +31,7 @@ class SchoolController extends Controller
             ->with('notice', NoticeBoard::where(['school_id'=>$ss->id, 'status'=>1])->get())
             ->with('gallery', SchoolGallery::where(['school_id'=>$ss->id, 'status'=>1])->first())
             ->with('dean', SchoolDean::where(['school_id' => $ss->id])->first())
+            ->with('departments', Department::where('school_id', 1)->get())
             ->with('school',School::where('slug', $link->external_link)->first());
     }
 
@@ -55,5 +58,34 @@ class SchoolController extends Controller
     public function TetFundICT(){
       return view('users.tetfunds.ict')
                 ->with('ict', TetFundsIct::get());
+    }
+
+    public function StaffList(){
+      $data['staffs'] = Staff::get();
+      $data['departments'] = Department::get();
+      return view('users.staffs.index', $data);
+    }
+
+    public function StaffDetails($id){
+      $id = decrypt($id);
+      $staff = Staff::where('id', $id)->first();
+      return view('users.staffs.details', compact('staff'));
+
+    }
+
+    public function StaffEmail(){
+      return redirect()->intended('https://www.google.com/intl/en-GB/gmail/about/#'); 
+    }
+
+    public function StaffPortal(){
+      return redirect()->intended('https://staff.yabatech.edu.ng/index.php'); 
+    }
+
+    public function StaffLearning(){
+      return redirect()->intended('https://edu.google.com/intl/en-GB/products/classroom/'); 
+    }
+
+    public function StaffHousing(){
+      return redirect()->intended('https://portal.yabatech.edu.ng/Accomodation/login.aspx'); 
     }
 }

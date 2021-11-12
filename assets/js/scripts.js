@@ -1,12 +1,11 @@
-// Adeniran Opeyemi
-// Horpey Eureka
+
 (function ($) {
   "use strict";
 
   //////////////////////////////////////////////////
   ///////////////// Helper variables
   // ///////////////////////////////////////////////
-  var $assetsPath = "assets/vendor",
+  var $assetsPath = "/assets/vendor",
     $window = $(window),
     $windowHeight = $(window).height(),
     $windowWidth = $(window).width(),

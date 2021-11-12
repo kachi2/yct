@@ -1,4 +1,4 @@
-@extends('pages.layout.app')
+@extends('users.layout.app')
 @section('title', '>> Vision & Mission')
 @section('styles')
     <!-- Include additional page css files here-->
@@ -20,19 +20,11 @@
         </div>
     </div>
 
-    <section class="padding-y-100 border-bottom">
+    <section class="padding-y-40 border-bottom">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mr-auto text-center">
-                    <img
-                        class="wow fadeInLeft w-100 rounded"
-                        src="{{ asset('assets/img/384x320/3.jpg') }}"
-                        alt=""
-                        style="visibility: visible; animation-name: fadeInLeft"
-                    />
-                </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-10">
                     <h2><span class="text-primary">Our</span> Vision</h2>
                     <div
                         class="width-4rem height-4 bg-primary rounded mt-4 marginBottom-40"
@@ -52,10 +44,10 @@
         <!-- END container-->
     </section>
 
-    <section class="padding-y-100">
+    <section class="padding-y-10 ">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-10">
                     <h2>Our Mission</h2>
                     <div
                         class="width-4rem height-4 bg-primary rounded mt-4 marginBottom-40"
@@ -82,14 +74,7 @@
                     </ul>
                 </div>
                 <!-- END col-lg-6 ml-auto-->
-                <div class="col-lg-5 mb-4 mr-auto text-center">
-                    <img
-                        class="wow fadeInRight w-100 rounded"
-                        src="{{ asset('assets/img/360x300/4.jpg') }}"
-                        alt=""
-                        style="visibility: visible; animation-name: fadeInRight"
-                    />
-                </div>
+             
             </div>
             <!-- END row-->
         </div>

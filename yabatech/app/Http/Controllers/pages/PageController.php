@@ -5,6 +5,7 @@ namespace App\Http\Controllers\pages;
 use App\Http\Controllers\Controller;
 use App\Models\AdmissionList;
 use App\Models\Menu;
+use App\Models\Download;
 use App\Models\Rector;
 use App\Models\Library;
 use Illuminate\Http\Request;
@@ -184,39 +185,48 @@ class PageController extends Controller
     }
 
     public function Library(){
-        $library = Library::latest()->first();
-        return view('users.library', compact('library', $library));
+        $data['library'] = Library::latest()->first();
+        $data['librarian'] = Rector::where(['link' => 'librarian'])->first();
+        return view('users.library', $data);
     }
 
 
     public function morePages($name){
-
-
         if($name == 'consult'){
-
             return redirect()->intended('https://consult.yabatech.edu.ng/');
-
         }elseif ($name == 'libary'){
-            
         $library = Library::latest()->first();
         return view('users.library', compact('library', $library));
 
         }elseif($name == 'entry_requirement'){
             return redirect()->intended('https://portal.yabatech.edu.ng/entry/');
 
-        }elseif($name == 'nd_pt'){
-
-            return redirect()->intended('https://yabatech.edu.ng/admlist/ndptlist1.htm');
-        }elseif($name == 'hnd_pt'){
-
-            return redirect()->intended('https://yabatech.edu.ng/admlist/hndptlist1.htm');
-        }elseif($name == 'acceptance_fee'){
-
-            return redirect()->intended('http://erp.yabatech.edu.ng/portal/index.php?register/account_verification_acceptancefees');
         }else{
             return redirect()->back();
         }
-
+    }
+    public function StudentsPortal(){
+        return redirect()->intended('https://portal.yabatech.edu.ng/');
     }
 
+    public function StudentSports(){
+        return redirect()->intended('https://portal.yabatech.edu.ng/');
+    }
+
+    public function Downloads(){
+        $downloads = Download::latest()->get();
+        return view('users.students.downloads', compact('downloads', $downloads));
+    }
+
+    public function noPage(){
+        return redirect()->route('pages.index');
+    }
+
+    public function graduatePortal(){
+        return redirect()->intended('https://yabatech.edu.ng/graduates/');
+    }
+
+    public function Enterprise(){
+        return redirect()->intended('https://consult.yabatech.edu.ng/');
+    }
 }

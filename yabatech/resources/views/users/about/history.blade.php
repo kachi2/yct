@@ -1,8 +1,5 @@
-@extends('pages.layout.app')
+@extends('users.layout.app')
 @section('title', '>> History')
-@section('styles')
-    <!-- Include additional page css files here-->
-@endsection
 @section('content')
     <div
         class="py-5 bg-cover"

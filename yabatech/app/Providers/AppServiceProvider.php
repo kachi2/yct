@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             $navCollection->name === 'Units_Academic' ? $academicUnits = $navCollection->navItems : $empty = '';
             $navCollection->name === 'Units_Service' ? $serviceUnits = $navCollection->navItems : $empty = '';
             $navCollection->name === 'Units_Bursary' ? $bursary = $navCollection->navItems : $empty = '';
+            $navCollection->name === 'Enterprise' ? $enterprise = $navCollection->navItems : $empty = '';
             $navCollection->name === 'Units_Registry' ? $registry = $navCollection->navItems : $empty = '';
             $navCollection->name === 'More_Others' ? $more = $navCollection->navItems : $empty = '';
             $navCollection->name === 'More_Contact' ? $contact = $navCollection->navItems : $empty = '';
@@ -46,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
             $navCollection->name === 'More_Alumni' ? $alumni = $navCollection->navItems : $empty = '';
         }
         $menuItems = ['about' => $about, 'administration' => $administration, 'admission' => $admissions, 'bursary' => $bursary,
-            'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'contact' => $contact, 'ccs' => $ccs, 'schools' => $schools,
+            'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'enterprise' => $enterprise, 'contact' => $contact, 'ccs' => $ccs, 'schools' => $schools,
             'students' => $students, 'sIntervention' => $sIntervention, 'aIntervention' => $aIntervention, 'registry' => $registry,
             'academicUnits' => $academicUnits, 'serviceUnits' => $serviceUnits];
         view()->composer(['users.layout.app'], function ($view) use ($menuItems) {

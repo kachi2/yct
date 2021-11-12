@@ -30,7 +30,8 @@ class MenuSeeder extends Seeder
             ['name' => 'More_Others'],
             ['name' => 'More_Staff'],
             ['name' => 'More_Alumni'],
-            ['name' => 'More_Contact']
+            ['name' => 'More_Contact'],
+            ['name' => 'Enterprise']
         ];
         foreach ($menuItems as $menuItem) {
             Menu::create($menuItem);

@@ -34,15 +34,36 @@
                 </li>
             </ul>
             <ul class="list-inline mb-0">
+            <li
+                    class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
+                >
+                    <a href="{{ route('separate.research') }}">E-Journals</a>
+                </li>
+             <li
+                    class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
+                >
+                    <a href="{{ route('separate.research') }}">Epe Campus</a>
+                </li>
                 <li
-                    class="list-inline-item mr-0 p-md-2 p-2 border-right border-left border-white-0_1"
+                    class="list-inline-item mr-0 p-md-2 p-2 border-right  border-white-0_1"
                 >
                     <a href="{{ route('separate.research') }}">Research</a>
                 </li>
+                 <li
+                    class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
+                >
+                    <a href="{{ route('separate.research') }}">News</a>
+                </li>
+                 <li
+                    class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
+                >
+                    <a href="{{ route('separate.research') }}">FSDC</a>
+                </li>
+                
                 <li
                     class="list-inline-item mr-0 p-md-2 p-2 border-right border-white-0_1"
                 >
-                    <a  target="_blank" href="https://portal.yabatech.edu.ng/misc/resultchecker/"><button class="btn btn-warning btn-sm">Check Post-UTME Result</button></a>
+                    <a  target="_blank" href="https://portal.yabatech.edu.ng/misc/resultchecker/"><button class="btn btn-warning btn-sm" style="color:#000">Check UTME Result</button></a>
                 </li>
             </ul>
         </div>

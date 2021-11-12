@@ -49,42 +49,6 @@
       </div> <!--END row-->
     </div> <!--END container-->
   </section>
-
- 
-
-<section class="padding-y-100 border-bottom border-light">
-  <div class="container">
-    <div class="row">
-     <div class="col-12 text-center mb-5">
-       <h4>@if(isset($slug)) {{$slug->name}} @endif <span class="text-primary">image Gallery</span></h4>
-     </div>
-      @if(isset($slug)) 
-     <div class="col-12">
-       <div class="owl-carousel" data-items="4" data-space="30" data-arrow="true">
-         <div class="media-viewer">
-           <img class="media-viewer__media" src="{{asset('/assets/'.$slug->header_image)}}" alt=""> 
-            <div class="media-viewer__overlay bg-black-0_7 flex-center">
-            <a href="{{asset('/assets/'.$slug->header_image)}}" class="text-white font-size-30" data-fancybox="gallery">
-                <i class="ti-plus"></i> 
-              </a>
-            </div>
-          </div>
-       
-      
-         <div class="media-viewer">
-            <img class="media-viewer__media" src="{{asset('/assets/'.$slug->header_image)}}" alt="">
-            <div class="media-viewer__overlay bg-black-0_7 flex-center">
-              <a href="{{asset('/assets/'.$slug->header_image)}}" class="text-white font-size-30" data-fancybox="gallery">
-                <i class="ti-plus"></i>
-              </a>
-            </div>
-          </div>
-       </div>
-     </div>
-     @endif
-    </div> <!-- END row-->
-  </div> <!-- END container-->
-</section>
 @endsection
 
 @section('script')
