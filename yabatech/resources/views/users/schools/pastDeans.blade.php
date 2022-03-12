@@ -45,31 +45,26 @@
            <a href="{{route('school.deans', encrypt($school->id))}}" class="btn-outline-secondary " >Past Deans</a>
         </div>
         
-        </div> <!-- END col-md-4 --> 
+        </div> <!-- END col-md-4 -->
       <div class="col-lg-10 mx-auto">
         <div class="table-responsive my-4">
           <table class="table">
             <thead class="thead-light" >
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Department</th>
-                <th scope="col">Category</th>
-                <th scope="col">Designation</th>
-                
-                <th scope="col"></th>
+                <th scope="col">School</th>
+                <th scope="col">Year Started</th>
+                <th scope="col">Year Ended</th>
               </tr>
             </thead>
             <tbody>
-            @foreach ($staffs as $staff)
+            @foreach ($deans as $dean)
               <tr>
-                <td><img width="100px" src="{{asset('/assets/profile/'.$staff->image)}}"></td>
-                <td scope="row">{{$staff->name}}</td>  
-                <td scope="row">{{substr($staff->department->name, 0,20)}} </td> 
-                <td scope="row">{{$staff->category->name}}</td> 
-                    <td scope="row">{{$staff->designation}}</td> 
-                <td scope="row" > <a href="{{route('staff.profile', encrypt($staff->id))}}" style="color:green"> View</a></td> 
-              </tr>
+                <td scope="row">{{$dean->name}}</td>  
+                <td scope="row">{{$dean->school->name}} </td> 
+                <td scope="row">{{$dean->created_at->format('Y-m-d H:I:s')}}</td> 
+                    <td scope="row">{{$dean->expired_at}}</td> 
+               </tr>
             @endforeach
             </tbody>
           </table>    

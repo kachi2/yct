@@ -38,7 +38,7 @@
              {{$notice->headline}} 
             </a><br>
             <small style="font-style:italic; color:#006600"> read more</small>
-            <small>  - posted {{$notice->created_at->DiffForHumans()}} </small>
+            <small style="color:red">  - posted {{$notice->created_at->DiffForHumans()}} </small>
             </p>
           </div>
           @endforeach
@@ -49,18 +49,11 @@
       </div>
               
             </div>
-                  @endforeach
-                  
+                  @endforeach   
          </div>
-
-  
-  
 </div>
-
-
 <section class="paddingTop-10 paddingBottom bg-light-v2">
   <div class="container">
-   
     <div class="row marginTop-50">
       <div class="col-md-6 my-2">
         <h3>
@@ -84,8 +77,8 @@
               <img class="w-100" src="{{asset('/assets/img/'.$new->image)}}" alt="" width="100px" height="200px">
             </a>
             <div class="p-4">
-              <a href="{{route('news.details',encrypt($new->id))}}" class="h6">
-                {{substr($new->title,0,40)}}{{strlen($new->title) > 40? '...':''}}
+              <a href="{{route('news.details',encrypt($new->id))}}" style="text-decoration:none; font-size:14px; color#000">
+                {{substr($new->title,0,60)}}{{strlen($new->title) > 60? '...':''}}
               </a>
            
             </div>
@@ -178,16 +171,17 @@ Subscribe to our youtube channel (Yabatech Webometrics) to watch other videos.
         <div class="card shadow-v2 z-index-5" data-offset-top-xl="-160">
           <div class="card-header bg-danger text-white border-bottom-0">
             <span class="lead font-semiBold text-uppercase">
-              Notice Board
+              Upcoming Events
             </span>
           </div>
           
-          @foreach ($notices as $notice )
+          @foreach ($events as $notice )
           <div class="p-4 border-bottom wow fadeInUp">
             <p class="text-primary mb-1">
              Posted {{$notice->created_at->DiffForHumans()}}
+              <img class="w-100" src="{{asset('/assets/img/'.$notice->image)}}" alt="" width="100px" height="200px">
             </p>
-             <p>{{$notice->headline}}
+             <p>{{$notice->title}}
             <a href="{{route('noticeDetails', encrypt($notice->id))}}">
             <span class=" btn-outline-primary btn-xs"> Read More </span>
             </a>

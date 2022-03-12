@@ -6,11 +6,8 @@
                      <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
-                                <h6 class="card-title">Schools Deans</h6>
+                                <h6 class="card-title">Department HOD</h6>
                                 <div>
-                                    <a href="{{route('news.create')}}" class="mr-3">
-                                        <i class="btn btn-success btn-sm">Create New</i>
-                                    </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
                                            aria-expanded="false">
@@ -28,37 +25,43 @@
                                             <tr>
                                             <th class="text-left">S/N</th>
                                                 <th>Name</th>
-                                                <th>School</th>
-                                                <th>Image</th>
+                                                <th>Department</th>
                                                 <th>Welcome Message</th>
+                                                  <th>status</th>
                                                 <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                   
-                                        @if(count($deans) > 0)
-                                        @foreach ($deans as  $sp)
+                                        @if(count($hods) > 0)
+                                        @foreach ($hods as  $sp)
                                             <tr>
                                             <td>{{$sp->id}}</td>
                                                 <td>
-                                                    <a href="#">{{$sp->name}}</a>
+                                                    <a href="#">{{$sp->staff->name}}</a>
                                                 </td> 
                                                 <td>
-                                                <a href="#">{{$sp->school->name}}</a>
+                                                <a href="#">{{$sp->department->name}}</a>
                                                 </td>
-                                                <td>
-                                                    <a href="#"><img src="{{asset('/assets/profile/'.$sp->image)}}" width="50px" height="50px"></a> 
-                                                </td> 
                                                 <td>
                                                     <a href="#">{!!substr($sp->message,0,100) !!}</a> 
                                                 </td> 
+                                                
+                                                <td>
+                                                <a href="#">@if($sp->expired_at == null) Active @else Tenure Ended @endif</a>
+                                                </td>
                                                 <td class="text-right">
                                                     <div class="dropdown">
                                                         <a href="#" data-toggle="dropdown">
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a href="{{route('admin.deanEdit', encrypt($sp->id))}}" class="dropdown-item">Edit</a>
+                                                        @if($sp->is_active != 2)
+                                                                 <a href="{{route('administration.disabled', encrypt($sp->id))}}" class="dropdown-item " style="color:red">Mark Expired</a>
+                                                            @else
+                                                                   <a href="{{route('administration.enable', encrypt($sp->id))}}" class="dropdown-item " style="color:green">Return Tenure</a>
+                                                          @endif
+                                                            <a href="{{route('admin.hodEdit', encrypt($sp->id))}}" class="dropdown-item">Edit</a>
                                                         </div>
                                                     </div>
                                                 </td>

@@ -14,9 +14,9 @@ class HomeController extends Controller
     //
 
     public function Index(){
-
         $data['sliders'] = HomeSliderImage::where('status', 1)->latest()->get();
         $data['notices'] = NoticeBoard::where([ 'status'=>1])->latest()->take(4)->get();
+        $data['events'] = News::where([ 'status'=>1, ])->latest()->take(2)->get();
         $data['news'] = News::where(['school_id'=>0, 'status'=>1])->latest()->take(5)->get();
         $data['rector'] = Rector::where('designation', 'rector')->first();
         return view('users.index', $data);

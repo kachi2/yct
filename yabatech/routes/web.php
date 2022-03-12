@@ -26,6 +26,10 @@ Route::get('/index', [SchoolController::class, 'index'])->name('schools');
 #============ index pages ===========================
 Route::get('/', [HomeController::class, 'index'])->name('pages.index');
 Route::get('/schools', [SchoolController::class, 'index'])->name('schools.index');
+Route::get('/school/staffs/{id}', [SchoolController::class, 'schoolStaff'])->name('schoolStaff');
+Route::get('/school/history/{id}', [SchoolController::class, 'schoolHistory'])->name('schoolHistory');
+Route::get('/school/deans/{id}', [SchoolController::class, 'schoolDeans'])->name('school.deans');
+
 
 #================= page routes ==================================
 Route::get('administration/{name}', [PageController::class, 'administration'])->name('administration');
@@ -125,6 +129,15 @@ Route::post('/staff/store/', [AdminController::class, 'StaffStore'])->name('staf
 Route::get('/staff/edit/{id}', [AdminController::class, 'StaffEdit'])->name('staff.edit');
 Route::post('/staff/update/{id}', [AdminController::class, 'StaffUpdate'])->name('staff.update');
 
+Route::get('/staff/assign/school/office/{id}', [AdminController::class, 'StaffAssignOffice'])->name('admin.staff.assign.office');
+Route::post('/staff/assign/school/office/store/{id}', [AdminController::class, 'StaffAssignOfficeStore'])->name('staff.assign.officeStore');
+Route::get('/staff/hods/index', [AdminController::class, 'HodsIndex'])->name('admin.staff.Hods');
+Route::get('/staff/dean/edit/message/{id}', [AdminController::class, 'deanEdit'])->name('admin.deanEdit');
+Route::post('/staff/dean/update/message/{id}', [AdminController::class, 'deanUpdate'])->name('admin.deanUpdate');
+Route::get('/staff/hod/edit/message/{id}', [AdminController::class, 'hodEdit'])->name('admin.hodEdit');
+Route::post('/staff/hod/update/message/{id}', [AdminController::class, 'hodUpdate'])->name('admin.hodUpdate');
+
+
 Route::get('/news/index', [AdminController::class, 'NewsIndex'])->name('news.index');
 Route::get('/news/create', [AdminController::class, 'NewsCreate'])->name('news.create');
 Route::post('/news/store', [AdminController::class, 'NewsStore'])->name('news.store');
@@ -140,6 +153,9 @@ Route::post('/notice/update/{id}', [AdminController::class, 'NoticeUpdate'])->na
 Route::get('/schools/index', [AdminController::class, 'SchoolsIndex'])->name('admin.schools.index');
 Route::get('/departments/index', [AdminController::class, 'DepartmentIndex'])->name('admin.departments.index');
 Route::get('/schools/deans/index', [AdminController::class, 'DeansIndex'])->name('schools.deans');
+Route::get('/schools/create', [AdminController::class, 'SchoolCreate'])->name('admin.school.create');
+Route::post('/schools/store', [AdminController::class, 'SchoolStore'])->name('admin.school.store');
+
 });
 
 

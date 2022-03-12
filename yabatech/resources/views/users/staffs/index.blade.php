@@ -93,10 +93,10 @@
      </div> <!-- END col-lg-9 -->
      <aside class="col-lg-3 order-2 order-lg-2">
        <div class="card shadow-v2 marginTop-30">
-         <h4 class="card-header bg-primary text-white mb-0">By Departments</h4>
+         <h4 class="card-header bg-primary text-white mb-0">By Schools</h4>
          <ul class="card-body list-unstyled mb-0">
-          @foreach ($departments as $dpt )
-               <li class="mb-2"><a href="">{{$dpt->name}}</a></li>
+          @foreach ($schools as $school )
+               <li class="mb-2"><a href="{{route('schoolStaff', encrypt($school->id))}}">{{$school->name}}</a></li>
                <hr>
           @endforeach
         

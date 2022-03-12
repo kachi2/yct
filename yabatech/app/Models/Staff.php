@@ -11,7 +11,7 @@ class Staff extends Model
 
     protected $fillable = [
 
-        'name', 'image', 'email', 'department_id', 'category_id', 'departments', 'designation', 'qualification', 'Publications', 'research_areas'
+        'name', 'image', 'email', 'department_id', 'school_id', 'category_id', 'departments', 'designation', 'qualification', 'Publications', 'research_areas'
     ];
 
     public function category(){
@@ -20,6 +20,10 @@ class Staff extends Model
 
     public function department(){
         return $this->belongsTo(Department::class, 'department_id', 'id');
+    }
+
+    public function school(){
+        return $this->belongsTo(school::class, 'school_id', 'id');
     }
 
     public function image($image, $staff){

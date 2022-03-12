@@ -1,6 +1,5 @@
 @extends('users.layout.app')
 @section('content')
-
 <div class="padding-y-60 bg-cover" data-dark-overlay="6" style="background:url({{ asset('./assets/img/'.$gallery->header_image) }}) no-repeat">
   <div class="container">
    <div class="row align-items-center">
@@ -16,14 +15,10 @@
    </div>
   </div>
 </div>
-
-
-
-
  <section class="paddingTop-50 paddingBottom-120 bg-light">
     <div class="container">
       <div class="row">
-              <div class="col-lg-2 " style="background:#fff">
+             <div class="col-lg-2 " style="background:#fff">
            <div class="dropright  border-bottom  p-2" >
            <a href="{{route('schools.index')}}" class="  btn-outline-secondary"   >Welcome Page</a>
         </div>
@@ -51,24 +46,23 @@
         </div>
         
         </div> <!-- END col-md-4 -->
-        @if(isset($dean->name))
+        @if(isset($school))
         <div class="col-lg-7 mlt-4">
           <div class="card shadow-v1 padding-10">
             <ul class="nav tab-line tab-line border-bottom mb-4" role="tablist">
              <li class="nav-item">
               <a class="nav-link active" data-toggle="tab" href="#Tabs_1-1" role="tab" aria-selected="true">
-                {{'Welcome Message'}}
+                {{'History'}}
               </a>
              </li>
            </ul>
-           
             <div class="tab-content">
               <div class="tab-pane fade show active" id="Tabs_1-1" role="tabpanel">
                <p  style="text-align:justify">
-             @if(isset($dean->message)) {!!substr($dean->message,0,650)!!} 
+             @if(isset($school->description)) {!!substr($school->description,0,650)!!} 
             &nbsp; <button class="btn btn-primary btn-sm" id="more"> Read More</button> 
 <span style="text-align:justify" id="readMore" hidden>
- {!!substr($dean->message,650,6000)!!} 
+ {!!substr($school->description,650,6000)!!} 
 </span>
 @endif
               </div>

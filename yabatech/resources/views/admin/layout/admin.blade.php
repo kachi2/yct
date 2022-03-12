@@ -149,14 +149,14 @@
                     <ul>
                      <li class="navigation-divider">Dashboard</li>
                            <li>
-                            <a href="#" > <i data-feather="package"></i>&nbsp; Administration</a>
+                            <a href="#" > <i data-feather="grid"></i>&nbsp; Administration</a>
                             <ul>
                                 <li><a  href="{{route('pages.administration')}}">Administration List</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">
-                                 <i data-feather="package"></i>&nbsp; Admission</a>
+                                 <i data-feather="award"></i>&nbsp; Admission</a>
                             <ul>
                                 <li><a href="{{route('admission.list')}}">Admission List</a></li>
                             </ul>
@@ -172,20 +172,23 @@
                         </li> -->
                          <li>
                             <a href="#">
-                                 <i data-feather="package"></i>&nbsp; Staff</a>
+                                 <i data-feather="user"></i>&nbsp; Staff</a>
                             <ul>
                               <li><a href="{{route('admin.staff.list')}}">Staff List</a></li>
+                                   <li><a href="{{route('admin.staff.Hods')}}">HODs</a></li>
+                                   <li><a href="{{route('schools.deans')}}">School Deans</a></li>
+                              
                             </ul>
                         </li>
                       <li>
                               <a href="#">
-                                 <i data-feather="package"></i>&nbsp; News</a>
+                                 <i data-feather="book"></i>&nbsp; News</a>
                             <ul>
                                  <li><a href="{{route('news.index')}}">All News</a></li>
                                  <li><a href="{{route('notice.index')}}">All Notice</a></li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">
                                  <i data-feather="package"></i>&nbsp; TETFund</a>
                             <ul>
@@ -194,13 +197,12 @@
                                  <li><a href="">Book Intervention</a></li>
                                   <li><a href="">Training & Development</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                       <li>
                             <a href="#">
-                                 <i data-feather="package"></i>&nbsp; Academics</a>
+                                 <i data-feather="layers"></i>&nbsp; Academics</a>
                             <ul>
                                 <li><a href="{{route('admin.schools.index')}}">Schools</a></li>
-                                   <li><a href="{{route('schools.deans')}}">School Deans</a></li>
                                     <li><a href="{{route('admin.departments.index')}}">Departments</a></li>
                             </ul>
                         </li>
@@ -214,7 +216,7 @@
                         </li>
                          <li>
                             <a href="#">
-                                 <i data-feather="package"></i>&nbsp; Users</a>
+                                 <i data-feather="user"></i>&nbsp; Users</a>
                             <ul>
                                 <li><a href="">Add Admin</a></li>
                             </ul>

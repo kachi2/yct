@@ -67,8 +67,10 @@
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a href="{{route('staff.edit', encrypt($sp->id))}}" class="dropdown-item">Edit</a>
-                                                                 <a href="{{route('admin.staff.assign', encrypt($sp->id))}}" class="dropdown-item">Assign an Office</a>
-                                                       
+                                                            
+                                                                 <a href="{{route('admin.staff.assign', encrypt($sp->id))}}" class="dropdown-item">Assign Admin Office</a>
+                                                                 <a href="{{route('admin.staff.assign.office', encrypt($sp->id))}}" class="dropdown-item">Assign School Office</a>
+                                                              
                                                         </div>
                                                          
                                                     </div>

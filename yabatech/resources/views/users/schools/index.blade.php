@@ -16,24 +16,18 @@
    </div>
   </div>
 </div>
-
-
-
-
  <section class="paddingTop-50 paddingBottom-120 bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-2 " style="background:#fff">
            <div class="dropright  border-bottom  p-2" >
-           <a href="#" class="  btn-outline-success "   >Welcome Page</a>
-          
+           <a href="{{route('schools.index')}}" class="  btn-outline-secondary"   >Welcome Page</a>
         </div>
          <div class="dropright p-2 border-bottom" >
-           <a href="#" class="    btn-outline-success ">History</a>
-         
+           <a href="{{route('schoolHistory', encrypt($school->id))}}" class="    btn-outline-secondary">History</a>
         </div>
         <div class="dropright p-2 border-bottom">
-           <a href="#" class="dropdown-toggle btn-outline-success "    data-toggle="dropdown">Departments</a>
+           <a href="#" class="dropdown-toggle btn-outline-secondary"    data-toggle="dropdown">Departments</a>
           <div class="dropdown-menu">
             @foreach ($departments as $dpt )
             <a class="dropdown-item" href="#">
@@ -41,18 +35,17 @@
             </a>
                  @endforeach
              </div>
-          
         </div>
         <div class="dropright p-2 border-bottom" >
-           <a href="#" class=" btn-outline-success ">Dean's Profile</a>
-        </div>
-        <div class="dropright p-2 border-bottom" >
-           <a href="#" class="btn-outline-success " >Past Deans</a>
-         
-        </div>
-        <div class="dropright p-2 border-bottom" >
-           <a href="#" class=" btn-outline-success ">Staffs</a>
+           <a href="{{route('schoolStaff', encrypt($school->id))}}" class=" btn-outline-secondary">Staffs</a>
           </div>
+        <div class="dropright p-2 border-bottom" >
+           <a href="{{route('staff.profile', encrypt($dean->id))}}" class=" btn-outline-secondary ">Dean's Profile</a>
+        </div>
+        <div class="dropright p-2 border-bottom" >
+           <a href="{{route('school.deans', encrypt($school->id))}}" class="btn-outline-secondary " >Past Deans</a>
+        </div>
+        
         </div> <!-- END col-md-4 -->
         @if(isset($dean->name))
         <div class="col-lg-7 mlt-4">
@@ -64,7 +57,6 @@
               </a>
              </li>
            </ul>
-           
             <div class="tab-content">
               <div class="tab-pane fade show active" id="Tabs_1-1" role="tabpanel">
                <p  style="text-align:justify">

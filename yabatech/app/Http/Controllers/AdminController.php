@@ -10,8 +10,10 @@ use App\Models\AdmissionList;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\School;
+use App\Models\SchoolGallery;
 use App\Models\NoticeBoard;
 use App\Models\Department;
+use App\Models\Hod;
 use Illuminate\Support\Facades\DB;
 use App\Models\SchoolDean;
 use App\Models\Staff;
@@ -398,7 +400,8 @@ public function StaffUpdate(Request $request, $id){
             $ext =  $image->getClientOriginalExtension();
             $dd = md5(time());
             $fileName = $dd.'.'.$ext;
-            $image->move('assets/img/', $fileName);
+            Image::make($request->image)->resize(400,307)->save('/assets/img/'.$fileName);
+           // $image->move('assets/img/', $fileName);
             $news->image = $fileName;
         }
         if($news->save()){
@@ -429,7 +432,7 @@ public function StaffUpdate(Request $request, $id){
             $ext =  $image->getClientOriginalExtension();
             $dd = md5(time());
             $fileName = $dd.'.'.$ext;
-            $image->move('assets/img/', $fileName);
+            Image::make($request->image)->resize(400,307)->save('assets/img/'.$fileName);
             $news->image = $fileName;
         }  
         if($news->save()){
@@ -510,6 +513,65 @@ public function StaffUpdate(Request $request, $id){
             ->with('schools', School::get());
     }
 
+    public function SchoolCreate(){
+        $school_list = NavDropDown::where(['nav_list_id'=> 7, 'status' => 1])->get();
+        return view('admin.schools.create')
+            ->with('menus', $school_list);
+    }
+
+    public function SchoolStore(Request $request){
+        $valid = Validator::make($request->all(),[
+        'image' => 'required',
+        'images' => 'required',
+        'school' => 'required|integer',
+        'history' => 'required'
+        ]);
+        if($valid->fails()){
+            Session::flash('alert', 'error');
+            Session::flash('message', 'Some fields are missing');
+            return redirect()->back()->withInput($request->all())->withErrors($valid);
+        }
+        $nav = NavDropdown::where('id', $request->school)->first();
+        $link = explode('.',$nav->link);
+                NavDropdown::where('id', $nav->id)->update(['status'=>2]);
+        $school = new School;
+        $school->name = $nav->name;
+        $school->description = $request->history;
+        $school->link = $link[1];
+        $school->slug = $link[1];
+      // $school->save();
+      // sleep(2);
+
+        $sk = School::latest()->first();
+        $gallery = new SchoolGallery;
+       $gallery->school_id = 1;
+        if($request->has('image')){
+            $image = $request->image;
+            $name =  $image->getClientOriginalName();
+            $ext =  $image->getClientOriginalExtension();
+            $dd = md5(time());
+            $fileName = $dd.'.'.$ext;
+            Image::make($request->image)->resize(800,307)->save('assets/img/'.$fileName);
+           // $image->move('/assets/img/', $fileName);
+            $gallery->header_image = $fileName;
+        }
+        if($request->has('images')){
+            foreach($request->images as $image){
+                //dd($image);
+                $ext =  $image->getClientOriginalExtension();
+                $dd = md5(time());
+                $fileName = $dd.'.'.$ext;
+                Image::make($image)->resize(400,307)->save('assets/img/'.$fileName);
+               // $image->move('/assets/img/', $fileName);
+                $gg[] = $fileName;
+            }
+                $gallery->gallery = json_encode($gg);
+        }
+        $gallery->save();
+        return back();
+
+    }
+
     public function DepartmentIndex(){
         return view('admin.schools.departments')
         ->with('departments', Department::get());
@@ -518,6 +580,119 @@ public function StaffUpdate(Request $request, $id){
     public function DeansIndex(){
         return view('admin.schools.dean')
         ->with('deans', SchoolDean::get());
+    }
+
+    public function StaffAssignOffice($id){
+        $data['staff'] = Staff::where('id', decrypt($id))->first();
+        return view('admin.staffs.assignPost',$data);
+    }
+
+    
+    public function StaffAssignOfficeStore(Request $request, $id){
+        $staff = Staff::where('id', decrypt($id))->first();
+        
+
+        if($request->role == 1){
+            $chk = SchoolDean::where(['school_id' => $staff->school->id, 'status' => '1'])->first();
+        if($chk){
+             Session::flash('alert', 'error');
+             Session::flash('message','This post is already assigned to another staff, end staff tenure to assign new staff');
+             return redirect()->back();
+         }
+         $userExist = SchoolDean::where(['staff_id' => $staff->id])->first();
+         if($userExist){
+             Session::flash('alert', 'error');
+             Session::flash('message','This user tenrure is already expired, you cannot reassign');
+             return redirect()->back();
+         }
+         $assignPost = Hod::where(['staff_id' => $staff->id, 'status' => 1])->first();
+         if($assignPost){
+             Session::flash('alert', 'error');
+             Session::flash('message','This user is already assigned another office, you cannot assign this office');
+             return redirect()->back();
+         }
+            //assign the user dean post
+            $dean = SchoolDean::create([
+                'staff_id' => $staff->id,
+                'school_id' => $staff->school->id,
+                'image' => $staff->image,
+                'message' => $request->message,
+                'status' => 1,
+            ]);
+
+            if($dean){
+                Session::flash('alert', 'success');
+                Session::flash('message','Staff assigned as Dean of '.$staff->school->name.' Successfylly');
+                return redirect()->back();
+            }
+        }else{
+            $assignPost = Hod::where(['staff_id' => $staff->id, 'status' => 1])->first();
+            if($assignPost){
+                Session::flash('alert', 'error');
+                Session::flash('message', $staff->name.' is already assigned another office, you cannot assign this office');
+                return redirect()->back();
+            }
+            $chk = Hod::where(['department_id' => $staff->department->id, 'status' => '1'])->first();
+            if($chk){
+                Session::flash('alert', 'error');
+                Session::flash('message','This post is already assigned to another staff, end staff tenure to assign new staff');
+                return redirect()->back();
+            }
+            $userExistHod =  Hod::where(['department_id' => $staff->department->id, 'status' => 1])->first();
+         if($userExistHod){
+             Session::flash('alert', 'error');
+             Session::flash('message','This post is already assigned to another staff, end staff tenure to assign new staff');
+             return redirect()->back();
+         }
+            $dean = Hod::create([
+                'staff_id' => $staff->id,
+                'school_id' => $staff->school->id,
+                'department_id' => $staff->department->id,
+                'message' => $request->message,
+                'status' => 1,
+            ]);
+            if($dean){
+                Session::flash('alert', 'success');
+                Session::flash('message',$staff->name.' assigned as HOD of '.$staff->department->name.' Successfylly');
+                return redirect()->back();
+            }
+        }
+        
+    }
+
+    public function HodsIndex(){
+        return view('admin.schools.hod')
+            ->with('hods', Hod::get());
+    }
+
+    public function DeanEdit($id){
+        $dean = SchoolDean::where('id', decrypt($id))->first();
+        return view('admin.schools.deanEdit', compact('dean', $dean));
+    }
+
+    public function DeanUpdate(Request $request, $id){
+        $dean = SchoolDean::where('id', decrypt($id))->first();
+        $dean->message = $request->message;
+        $dean->save();
+        Session::flash('alert', 'success');
+        Session::flash('message','Welcome Message updated Successfully');
+        return redirect()->back();
+
+    }
+
+    public function HodEdit($id){
+        $hod = Hod::where('id', decrypt($id))->first();
+        return view('admin.schools.hodEdit', compact('hod', $hod));
+    }
+
+    public function HodUpdate(Request $request, $id){
+        $hod = hod::where('id', decrypt($id))->first();
+        $hod->message = $request->message;
+        $hod->save();
+        Session::flash('alert', 'success');
+        Session::flash('message','Welcome Message updated Successfully');
+        return redirect()->back();
+
     }
 }
 

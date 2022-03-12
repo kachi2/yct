@@ -62,7 +62,7 @@ class SchoolController extends Controller
 
     public function StaffList(){
       $data['staffs'] = Staff::get();
-      $data['departments'] = Department::get();
+      $data['schools'] = School::get();
       return view('users.staffs.index', $data);
     }
 
@@ -88,4 +88,34 @@ class SchoolController extends Controller
     public function StaffHousing(){
       return redirect()->intended('https://portal.yabatech.edu.ng/Accomodation/login.aspx'); 
     }
+
+    public function schoolStaff($id){
+      return view('users.schools.staffs')
+            ->with('staffs', Staff::where('school_id', decrypt($id))->get())
+          ->with('school', School::where('id', decrypt($id))->first())
+          ->with('dean', SchoolDean::where(['school_id' => decrypt($id)])->first())
+          ->with('gallery', SchoolGallery::where(['school_id'=>decrypt($id)])->first())
+          ->with('departments', Department::where('school_id', decrypt($id))->get());
+  }
+
+
+  public function schoolHistory($id){
+    return view('users.schools.history')
+           ->with('news', News::where(['school_id'=> decrypt($id), 'status'=>1])->get())
+            ->with('notice', NoticeBoard::where(['school_id'=>decrypt($id), 'status'=>1])->get())
+            ->with('gallery', SchoolGallery::where(['school_id'=>decrypt($id), 'status'=>1])->first())
+            ->with('dean', SchoolDean::where(['school_id' => decrypt($id)])->first())
+        ->with('school', School::where('id', decrypt($id))->first())
+        ->with('gallery', SchoolGallery::where(['school_id'=>decrypt($id)])->first())
+        ->with('departments', Department::where('school_id', decrypt($id))->get());
+}
+
+  public function SchoolDeans($id){
+    return view('users.schools.pastDeans')
+        ->with('deans', SchoolDean::where('school_id', decrypt($id))->get())
+        ->with('school', School::where('id', decrypt($id))->first())
+        ->with('departments', Department::where('school_id', decrypt($id))->get())
+        ->with('gallery', SchoolGallery::where(['school_id'=>decrypt($id)])->first());
+
+  }
 }

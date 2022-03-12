@@ -8,7 +8,7 @@
                             <div class="d-flex justify-content-between">
                                 <h6 class="card-title">Schools</h6>
                                 <div>
-                                    <a href="{{route('news.create')}}" class="mr-3">
+                                    <a href="{{route('admin.school.create')}}" class="mr-3">
                                         <i class="btn btn-success btn-sm">Create New</i>
                                     </a>
                                     <div class="dropdown">
