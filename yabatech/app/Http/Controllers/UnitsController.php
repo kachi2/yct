@@ -13,10 +13,7 @@ class UnitsController extends Controller
 
 
     public function Index($slug){
-
       $slug = Unit::where('slug', $slug)->first();
-     
-
       return view('users.units', compact('slug', $slug));
 
     }

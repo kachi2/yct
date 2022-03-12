@@ -210,8 +210,8 @@
                             <a href="#">
                                  <i data-feather="package"></i>&nbsp; Units</a>
                             <ul>
-                                <li><a href="">UNits</a></li>
-                                <li><a href="">Set Audition Date</a></li>
+                                <li><a href="{{route('admin.units.index')}}">All Units</a></li>
+                                <li><a href="">Create Units</a></li>
                             </ul>
                         </li>
                          <li>

@@ -564,6 +564,7 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         'App\\Models\\TetfundSupport' => __DIR__ . '/../..' . '/app/Models/TetfundSupport.php',
         'App\\Models\\TetfundTraining' => __DIR__ . '/../..' . '/app/Models/TetfundTraining.php',
         'App\\Models\\Unit' => __DIR__ . '/../..' . '/app/Models/Unit.php',
+        'App\\Models\\UnitsHod' => __DIR__ . '/../..' . '/app/Models/UnitsHod.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

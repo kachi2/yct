@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\School;
 use App\Models\SchoolGallery;
 use App\Models\NoticeBoard;
+use App\Models\Unit;
 use App\Models\Department;
 use App\Models\Hod;
 use Illuminate\Support\Facades\DB;
@@ -692,6 +693,16 @@ public function StaffUpdate(Request $request, $id){
         Session::flash('alert', 'success');
         Session::flash('message','Welcome Message updated Successfully');
         return redirect()->back();
+
+    }
+
+    #====================== lets create units functions ==================
+
+
+    function UnitsIndex(){
+        //get all created units 
+        $units = Unit::get();
+        return view('admin.units.index', compact('units'));
 
     }
 }

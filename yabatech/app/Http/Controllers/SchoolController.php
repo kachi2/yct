@@ -90,13 +90,15 @@ class SchoolController extends Controller
     }
 
     public function schoolStaff($id){
+      dd(decrypt($id));
+       $dpt = Department::where('school_id', decrypt($id))->first();
       return view('users.schools.staffs')
-            ->with('staffs', Staff::where('school_id', decrypt($id))->get())
-          ->with('school', School::where('id', decrypt($id))->first())
-          ->with('dean', SchoolDean::where(['school_id' => decrypt($id)])->first())
-          ->with('gallery', SchoolGallery::where(['school_id'=>decrypt($id)])->first())
-          ->with('departments', Department::where('school_id', decrypt($id))->get());
-  }
+            ->with('staffs', Staff::where('department_id', $dpt->school_id)->get())
+          ->with('school', School::where('id', $dpt->school_id)->first())
+          ->with('dean', SchoolDean::where(['school_id' => $dpt->school_id])->first())
+          ->with('gallery', SchoolGallery::where(['school_id'=>$dpt->school_id])->first())
+          ->with('departments', Department::where('school_id', $dpt->school_id)->get());
+  } 
 
 
   public function schoolHistory($id){

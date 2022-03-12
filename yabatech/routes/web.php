@@ -156,6 +156,11 @@ Route::get('/schools/deans/index', [AdminController::class, 'DeansIndex'])->name
 Route::get('/schools/create', [AdminController::class, 'SchoolCreate'])->name('admin.school.create');
 Route::post('/schools/store', [AdminController::class, 'SchoolStore'])->name('admin.school.store');
 
+
+//units routes
+
+Route::get('/units/index', [AdminController::class, 'Unitsindex'])->name('admin.units.index');
+
 });
 
 

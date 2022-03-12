@@ -27,4 +27,8 @@ class Department extends Model
     {
         return $this->belongsTo(School::class);
     }
+
+    public function schools($id){
+        return School::where('id', $id)->get();
+    }
 }

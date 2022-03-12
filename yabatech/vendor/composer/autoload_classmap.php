@@ -57,6 +57,7 @@ return array(
     'App\\Models\\TetfundSupport' => $baseDir . '/app/Models/TetfundSupport.php',
     'App\\Models\\TetfundTraining' => $baseDir . '/app/Models/TetfundTraining.php',
     'App\\Models\\Unit' => $baseDir . '/app/Models/Unit.php',
+    'App\\Models\\UnitsHod' => $baseDir . '/app/Models/UnitsHod.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

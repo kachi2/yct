@@ -35,7 +35,7 @@
             </a>
                  @endforeach
              </div>
-        </div>
+        </div> 
         <div class="dropright p-2 border-bottom" >
            <a href="{{route('schoolStaff', encrypt($school->id))}}" class=" btn-outline-secondary">Staffs</a>
           </div>
