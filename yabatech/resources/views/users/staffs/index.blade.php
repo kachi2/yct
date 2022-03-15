@@ -36,6 +36,7 @@
      <div class="col-lg-9 order-1 order-lg-1">
        <div class="row">
        @foreach ($staffs as $staff )
+       
       <div class="col-md-3 marginTop-30">
         <div href="#" class="card text-gray shadow-v1">
         <a href="{{route('staff.profile', encrypt($staff->id))}}">  <img class="card-img-top" src="{{asset('/assets/profile/'.$staff->image)}}" alt=""></a>

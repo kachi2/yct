@@ -61,9 +61,12 @@
               </tr>
             </thead>
             <tbody>
+            
             @foreach ($staffs as $staff)
+           
               <tr>
-                <td><img width="100px" src="{{asset('/assets/profile/'.$staff->image)}}"></td>
+               
+                <td>  <img width="100px" src="{{asset('/assets/profile/'.$staff->image)}}"></td>
                 <td scope="row">{{$staff->name}}</td>  
                 <td scope="row">{{substr($staff->department->name, 0,20)}} </td> 
                 <td scope="row">{{$staff->category->name}}</td> 

@@ -23,7 +23,7 @@ class School extends Model
 
     public function departments()
     {
-        return $this->hasMany(Department::class);
+        return $this->hasMany(Department::class, 'school_id', 'id');
     }
 
     public function events()
@@ -38,4 +38,10 @@ class School extends Model
     public function deans(){
         return $this->hasMany(SchoolDean::class, 'school_id', 'id');
     }
+
+    function staff(){
+        return $this->hasManyThrough(Staff::class, Department::class);
+    
+    }
+
 }

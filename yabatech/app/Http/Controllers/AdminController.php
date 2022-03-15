@@ -545,7 +545,7 @@ public function StaffUpdate(Request $request, $id){
 
         $sk = School::latest()->first();
         $gallery = new SchoolGallery;
-       $gallery->school_id = 1;
+       $gallery->school_id = $sk->id;
         if($request->has('image')){
             $image = $request->image;
             $name =  $image->getClientOriginalName();

@@ -88,18 +88,16 @@ class SchoolController extends Controller
     public function StaffHousing(){
       return redirect()->intended('https://portal.yabatech.edu.ng/Accomodation/login.aspx'); 
     }
-
     public function schoolStaff($id){
-      dd(decrypt($id));
-       $dpt = Department::where('school_id', decrypt($id))->first();
+      $id = decrypt($id);
+       $dpt = School::where('id', $id)->first();
       return view('users.schools.staffs')
-            ->with('staffs', Staff::where('department_id', $dpt->school_id)->get())
-          ->with('school', School::where('id', $dpt->school_id)->first())
-          ->with('dean', SchoolDean::where(['school_id' => $dpt->school_id])->first())
-          ->with('gallery', SchoolGallery::where(['school_id'=>$dpt->school_id])->first())
-          ->with('departments', Department::where('school_id', $dpt->school_id)->get());
+            ->with('staffs', $dpt->staff)
+          ->with('school', School::where('id', $id)->first())
+          ->with('dean', SchoolDean::where(['school_id' => $id])->first())
+          ->with('gallery', SchoolGallery::where(['school_id'=>$id])->first())
+          ->with('departments', Department::where('school_id', $id)->get());
   } 
-
 
   public function schoolHistory($id){
     return view('users.schools.history')
