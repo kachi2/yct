@@ -574,8 +574,14 @@ public function StaffUpdate(Request $request, $id){
     }
 
     public function DepartmentIndex(){
-        return view('admin.schools.departments')
+        return view('admin.departments.index')
         ->with('departments', Department::get());
+    }
+
+    public function DepartmentCreate(){
+        return view('admin.departments.create')
+        ->with('departments', Department::get())
+        ->with('schools', School::get());
     }
 
     public function DeansIndex(){
@@ -704,6 +710,12 @@ public function StaffUpdate(Request $request, $id){
         $units = Unit::get();
         return view('admin.units.index', compact('units'));
 
+    }
+
+    public function Createunits(){
+        $school_list = NavDropDown::where(['nav_list_id'=> 7, 'status' => 1])->get();
+        return view('admin.schools.create')
+            ->with('menus', $school_list);
     }
 }
 

@@ -156,6 +156,10 @@ Route::get('/schools/deans/index', [AdminController::class, 'DeansIndex'])->name
 Route::get('/schools/create', [AdminController::class, 'SchoolCreate'])->name('admin.school.create');
 Route::post('/schools/store', [AdminController::class, 'SchoolStore'])->name('admin.school.store');
 
+//departments
+Route::post('/departments/create', [AdminController::class, 'DepartmentCreate'])->name('admin.department.create');
+
+
 
 //units routes
 
