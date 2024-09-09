@@ -401,7 +401,7 @@ public function StaffUpdate(Request $request, $id){
             $ext =  $image->getClientOriginalExtension();
             $dd = md5(time());
             $fileName = $dd.'.'.$ext;
-            Image::make($request->image)->resize(400,307)->save('/assets/img/'.$fileName);
+            Image::make($request->image)->resize(400,307)->save('assets/img/'.$fileName);
            // $image->move('assets/img/', $fileName);
             $news->image = $fileName;
         }
