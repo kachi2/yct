@@ -122,6 +122,7 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
             'Laravel\\Tinker\\' => 15,
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sail\\' => 13,
+            'Laravel\\Breeze\\' => 15,
         ),
         'I' => 
         array (
@@ -395,6 +396,10 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -514,6 +519,7 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\Check2faController' => __DIR__ . '/../..' . '/app/Http/Controllers/Check2faController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\SchoolController' => __DIR__ . '/../..' . '/app/Http/Controllers/SchoolController.php',
@@ -528,6 +534,8 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\check2fa' => __DIR__ . '/../..' . '/app/Http/Middleware/check2fa.php',
+        'App\\Mail\\Check2faMail' => __DIR__ . '/../..' . '/app/Mail/Check2faMail.php',
         'App\\Models\\Activity' => __DIR__ . '/../..' . '/app/Models/Activity.php',
         'App\\Models\\Administration' => __DIR__ . '/../..' . '/app/Models/Administration.php',
         'App\\Models\\AdmissionList' => __DIR__ . '/../..' . '/app/Models/AdmissionList.php',
@@ -552,6 +560,7 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         'App\\Models\\School' => __DIR__ . '/../..' . '/app/Models/School.php',
         'App\\Models\\SchoolDean' => __DIR__ . '/../..' . '/app/Models/SchoolDean.php',
         'App\\Models\\SchoolGallery' => __DIR__ . '/../..' . '/app/Models/SchoolGallery.php',
+        'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\SportComplex' => __DIR__ . '/../..' . '/app/Models/SportComplex.php',
         'App\\Models\\Staff' => __DIR__ . '/../..' . '/app/Models/Staff.php',
         'App\\Models\\StaffPost' => __DIR__ . '/../..' . '/app/Models/StaffPost.php',
@@ -2868,6 +2877,11 @@ class ComposerStaticInit05b8ab8d5abd05c18274bfe8e3342397
         'Intervention\\Image\\Response' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Response.php',
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
+        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
+        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
+        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
+        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
         'Laravel\\Sail\\Console\\AddCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/AddCommand.php',
         'Laravel\\Sail\\Console\\Concerns\\InteractsWithDockerComposeServices' => __DIR__ . '/..' . '/laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',

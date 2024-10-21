@@ -3,27 +3,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mt-5">
-                    <img src="{{ asset('./assets/img/logo-white.svg') }}" alt="Logo"/>
+                    <img src="{{asset('assets/'.$settings->logo)}}" alt="Logo"/>
                     <div class="margin-y-40">
                         <p>
-                            On behalf of the Governing Council, College Management, Staff
-                            and Students, it is my pleasure and privilege to welcome you
-                            to Yaba College of Technology...
+                           
                         </p>
                     </div>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href="http://facebook.com/yabatech"
+                            <a class="iconbox bg-white-0_2 hover:primary" href="{{$settings->facebook}}"
                                target="_blank" rel="noreferrer"><i class="ti-facebook"> </i
                                 ></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href="http://twitter.com/yabatechng"
+                            <a class="iconbox bg-white-0_2 hover:primary" href="{{$settings->twitter}}"
                                target="_blank" rel="noreferrer"><i class="ti-twitter"> </i
                                 ></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="iconbox bg-white-0_2 hover:primary" href="http://instagram.com/yabatechofficial"
+                            <a class="iconbox bg-white-0_2 hover:primary" href="{{$settings->instagram}}"
                                target="_blank" rel="noreferrer"><i class="ti-instagram"> </i
                                 ></a>
                         </li>
@@ -36,12 +34,12 @@
                     <ul class="list-unstyled marginTop-40">
                         <li class="mb-3">
                             <i class="ti-headphone mr-3"></i
-                            ><a href="tel:+234-7037431055">234-7037431055 </a>
+                            ><a href="tel:{{$settings->site_phone}} ">{{$settings->site_phone}} </a>
                         </li>
                         <li class="mb-3">
                             <i class="ti-email mr-3"></i
-                            ><a href="mailto:registrar@yabatech.edu.ng"
-                            >registrar@yabatech.edu.ng</a
+                            ><a href="mailto:{{$settings->site_email}}"
+                            >{{$settings->site_email}} </a
                             >
                         </li>
                         <li class="mb-3">
@@ -49,8 +47,7 @@
                                 <i class="ti-location-pin mt-2 mr-3"></i>
                                 <div class="media-body">
                       <span
-                      >Yaba College of Technology, Herbert Macaulay Road,
-                        Opposite WAEC office, Yaba Lagos.</span
+                      >{{$settings->address}}</span
                       >
                                 </div>
                             </div>
@@ -111,8 +108,7 @@
     <div class="footer-bottom py-5 text-white text-center" >
         <div class="container">
             <p class="text-white-0_5 mb-0">
-                &copy; @php echo date('Y') @endphp Yaba College Of Technology . All rights reserved.
-                Created by
+                &copy; @php echo date('Y') @endphp {{$settings->copyright}}
                 <a href="#" target="_blank">CITM</a>
             </p>
         </div>

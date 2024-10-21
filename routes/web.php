@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Check2faController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pages\PageController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\UnitsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,8 +109,14 @@ Route::group(['prefix' => '', 'as' => 'more.'], function (){
 
 
 #==================Admin Routes =========================
-Route::domain('latechserver.com.ng')->prefix('admin')->group(function(){
-// Route::prefix('admin')->group(function(){
+// Route::domain('latechserver.com.ng')->prefix('admin')->group(function(){
+    require __DIR__.'/auth.php';
+Route::prefix('admin')->group(function(){
+
+    Route::get('/2fa', [Check2faController::class, 'Index'])->name('check2fa');
+    Route::post('/2fa/verify/', [Check2faController::class, 'VerifyCode'])->name('VerifyCodes');
+    Route::middleware(['auth','check2fa'])->group(function(){
+        
 Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/administration', [AdminController::class, 'adminIndex'])->name('pages.administration');
 Route::get('/administration/create', [AdminController::class, 'createAdministration'])->name('administration.create');
@@ -157,11 +165,20 @@ Route::get('/schools/deans/index', [AdminController::class, 'DeansIndex'])->name
 Route::get('/schools/create', [AdminController::class, 'SchoolCreate'])->name('admin.school.create');
 Route::post('/schools/store', [AdminController::class, 'SchoolStore'])->name('admin.school.store');
 
+Route::controller(SettingsController::class)->group(function(){
+    Route::get('settings/index', 'Index')->name('admin.settings.index');
+    Route::get('settings/socials', 'Socials')->name('admin.settings.socials');
+    Route::post('settings/update/socials', 'UpdateSocials')->name('admin.settings.updateSocials');
+    Route::post('settings/update/settings', 'UpdateSettings')->name('admin.settings.updateSettings');
+    Route::get('admin/user', 'UserAccount')->name('admin.userAccount');
+    Route::post('admin/uuser/account', 'UpdateAccount')->name('admin.UpdateAccount');
+});
 
 //units routes
 
 Route::get('/units/index', [AdminController::class, 'Unitsindex'])->name('admin.units.index');
 
+});
 });
 
 

@@ -3,7 +3,8 @@
         <div class="navbar p-0 navbar-expand-lg">
             <div class="navbar-brand">
                 <a class="logo-default" href="{{ route('pages.index') }}"
-                ><img width="120" height="50" alt="" src="{{ asset('./assets/img/yabatech.svg') }}"
+                ><img width="150" height="50" alt="" src="{{asset('assets/'.$settings->logo)}}"
+                {{-- {{ asset('./assets/img/yabatech.svg') }} --}}
                     /></a>
             </div>
             <span

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use App\Models\Menu;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -50,8 +51,9 @@ class AppServiceProvider extends ServiceProvider
             'staff' => $staff, 'alumni' => $alumni, 'more' => $more, 'enterprise' => $enterprise, 'contact' => $contact, 'ccs' => $ccs, 'schools' => $schools,
             'students' => $students, 'sIntervention' => $sIntervention, 'aIntervention' => $aIntervention, 'registry' => $registry,
             'academicUnits' => $academicUnits, 'serviceUnits' => $serviceUnits];
-        view()->composer(['users.layout.app'], function ($view) use ($menuItems) {
+        view()->composer('*', function ($view) use ($menuItems) {
             $view->with('menuNavs', $menuItems);
+            $view->with('settings', Setting::latest()->first());
         });
     }
 

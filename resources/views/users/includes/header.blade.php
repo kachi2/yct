@@ -5,15 +5,15 @@
                 <li class="list-inline-item mr-3">
                     <div class="d-flex align-items-center">
                         <i class="ti-email mr-2"></i>
-                        <a href="mailto:registrar@yabatech.edu.ng"
-                        >registrar@yabatech.edu.ng</a
+                        <a href="mailto:{{$settings->site_email}}"
+                        >{{$settings->site_email}}</a
                         >
                     </div>
                 </li>
                 <li class="list-inline-item mr-3">
                     <div class="d-flex align-items-center">
                         <i class="ti-headphone mr-2"></i>
-                        <a href="tel:+2347037431055">+234-7037431055</a>
+                        <a href="tel:{{$settings->site_phone}}">{{$settings->site_phone}}</a>
                     </div>
                 </li>
             </ul>
@@ -21,15 +21,15 @@
                 <li
                     class="list-inline-item mr-0 p-2 border-right border-left border-white-0_1"
                 >
-                    <a href="http://facebook.com/yabatech" target="_blank" rel="noreferrer"><i class="ti-facebook"></i></a>
+                    <a href="{{$settings->facebook}}" target="_blank" rel="noreferrer"><i class="ti-facebook"></i></a>
                 </li>
                 <li class="list-inline-item mr-0 p-2 border-right border-white-0_1">
-                    <a href="http://twitter.com/yabatechng"
+                    <a href="{{$settings->twitter}}"
                        target="_blank" rel="noreferrer"><i class="ti-twitter"></i></a>
                 </li>
 
                 <li class="list-inline-item mr-0 p-2 border-right border-white-0_1">
-                    <a href="http://instagram.com/yabatechofficial"
+                    <a href="{{$settings->instragram}}"
                        target="_blank" rel="noreferrer"><i class="ti-instagram"></i></a>
                 </li>
             </ul>

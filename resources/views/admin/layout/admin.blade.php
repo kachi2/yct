@@ -221,6 +221,24 @@
                                 <li><a href="">Add Admin</a></li>
                             </ul>
                         </li>
+
+                        <li class="navigation-divider">Settings</li>
+                        <li>
+                            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Settings"
+                               data-nav-target="#dashboards">
+                                <i data-feather="settings" ></i>&nbsp; Wesbite Settings</a>
+                                <ul>
+                                      <li >  <a href="{{route('admin.settings.index')}}">Manage Contents</a></li>
+                                </ul>
+                        </li> 
+                        <li>
+                            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Admin"
+                               data-nav-target="#dashboards">
+                               <i data-feather="users"></i>&nbsp;  Manage Admin</a>
+                                <ul>
+                                      <li><a href="{{route('admin.userAccount')}}">Manage Admin</a></li>
+                                </ul>
+                        </li>  
                       
                     </ul>
                 </div>
