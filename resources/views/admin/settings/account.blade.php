@@ -15,9 +15,7 @@
                     <p class="text-muted small">Administrator</p>
                 </div>
                 <hr class="m-0">
-               
             </div>
-
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-title d-flex justify-content-between align-items-center">
